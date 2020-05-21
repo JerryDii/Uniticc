@@ -306,7 +306,7 @@
       },
 
     });
-    var button2 = document.getElementByName("button2");
+    var button2 = document.getElementsByName("button2");
     button2.onclick = function() {
       var selected_groups = image.mapster('get'); //returns keys like "data-num" and "data-group" (attributes of polygons in image map)
       selected_groups.sort();
