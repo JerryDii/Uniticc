@@ -15,6 +15,8 @@
   <script type="text/javascript" src="ImageMapster-master/src/areacorners.js"></script>
   <script type="text/javascript" src="ImageMapster-master/src/scale.js"></script>
   <script type="text/javascript" src="ImageMapster-master/src/tooltip.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
    <h1>
 <img src="Base.jpg" id="face" usemap="#image-map">
 
@@ -312,7 +314,7 @@
     const groupNames = new Array("group_left forehead", "group_right forehead", "group_left cheek", "group_right cheek", "group_mustache", "group_nose", "group_jaw", "group_left eye",
     "group_right eye");
 
-    const requirement = 0.75;
+    const requirement = 0.1;
 
     function match() {
 
@@ -320,10 +322,13 @@
       for(i = 0; i < groupAreas.length; i++) { //initialize the counter
         groupAreas[i] = 0;
       }
+      //console.log(image.mapster('get'))
+      //console.log(image.mapster('get').split(','))
 
       for(i = 0; i < image.mapster('get').split(',').length; i++) {
         let group = "";
-        group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group"); 
+        group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group");
+        //console.log(CSS.escape(image.mapster('get').split(',')[i])) 
         groupAreas[groupNames.indexOf(group)]++; 
       }
       
@@ -332,12 +337,17 @@
       for(i = 0; i < groupAreas.length && satisfied == false; i++) {
         if((groupAreas[i] / groupPolys[i]) >= requirement) { //check if at least 75% of the polygons in an area have been selected
           satisfied = true;
-          alert("test success");
-        }
+          //alert("test success");
+        } 
       }
     
       if(!satisfied) {
-        //display alert
+        swal("Alert!", "Select more regions to narrow down a specific treatment plan!", "error",  {
+        button: "Back!"})
+      } else {
+        swal("Awesome!", "", "success", {
+        button: "Proceed!"})
+
       }
 
       
