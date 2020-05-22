@@ -315,43 +315,42 @@
     "group_right eye");
 
     const requirement = 0.1;
-
+    var treatmentArea;
     function match() {
 
       var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
       for(i = 0; i < groupAreas.length; i++) { //initialize the counter
         groupAreas[i] = 0;
       }
-      //console.log(image.mapster('get'))
-      //console.log(image.mapster('get').split(','))
-
+ 
       for(i = 0; i < image.mapster('get').split(',').length; i++) {
         let group = "";
         group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group");
-        //console.log(CSS.escape(image.mapster('get').split(',')[i])) 
         groupAreas[groupNames.indexOf(group)]++; 
       }
-      
+       
       var satisfied = false; //if the requirements have been met
-
       for(i = 0; i < groupAreas.length && satisfied == false; i++) {
         if((groupAreas[i] / groupPolys[i]) >= requirement) { //check if at least 75% of the polygons in an area have been selected
           satisfied = true;
+
           //alert("test success");
         } 
       }
-    
+      
       if(!satisfied) {
         swal("Alert!", "Select more regions to narrow down a specific treatment plan!", "error",  {
         button: "Back!"})
-      } else {
-        swal("Awesome!", "", "success", {
-        button: "Proceed!"})
 
+      } else {
+        var indexOfMaxValue = groupAreas.reduce((iMax, x, i, array) => x > array[iMax] ? i : iMax, 0) // gets index of greatest value
+        treatmentArea = groupNames[indexOfMaxValue] 
+        swal("Awesome!", treatmentArea, "success", {
+        button: "Proceed!"})
+      
       }
 
-      
-      
+         
     }
 
   </script>
