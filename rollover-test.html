@@ -18,8 +18,8 @@
    <h1>
 <img src="Base.jpg" id="face" usemap="#image-map">
 
-<button name="test" onclick="location.href='Blank-Therapy-Page.html'" type="button">Get results</button> <!--insert therapy page url into href-->
-<button name="button2" onclick="$('img').mapster('highlight', 'left forehead')" type="button">highlight left forehead</button> <!--not working for now-->
+<button name="therapy" onclick="match()" type="button">Get results</button> <!--insert therapy page url into href-->
+<button name="button2" type="button">highlight left forehead</button> <!--not working for now-->
 
 <map name="image-map">
   <!--left forehead-->
@@ -277,18 +277,12 @@
 </map>
 
 <script>
-    const numGroups = 9; //# of groups of polygons (i.e. left forehead)
-    groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
-
-    const groupPolys = new Array(19, 19, 24, 23, 19, 36, 27, 30, 30);
-    const groupNames = new Array("group_left forehead", "group_right forehead", "group_left cheek", "group_right cheek", "group_mustache", "group_nose", "group_jaw", "group_left eye",
-    "group_right eye");
 
     var image = $('#face');
   
     image.mapster({
       clickNavigate: true,
-      mapKey: 'data-group',
+      mapKey: 'data-num',
 
       render_select: {
         fillColor: '0099ff',
@@ -306,32 +300,51 @@
       },
 
     });
-    var button2 = document.getElementsByName("button2");
-    button2.onclick = function() {
-      var selected_groups = image.mapster('get'); //returns keys like "data-num" and "data-group" (attributes of polygons in image map)
-      selected_groups.sort();
 
-      for(i = selected_groups.findIndex(indexOf("group_") != -1); i < selected_groups.length; i++) { //find the first value in selected_groups that begins with "group_"
-        groupAreas[findIndex(groupNames.equals(selected_groups[i]))] = selected_groups[i];
+    // var button1 = document.getElementsByName("therapy");
+    // button1.onclick = function() {
+    //   match;
+    // }
+
+    const numGroups = 9; //# of groups of polygons (i.e. left forehead)
+
+    const groupPolys = new Array(19, 19, 24, 23, 19, 36, 27, 30, 30);
+    const groupNames = new Array("group_left forehead", "group_right forehead", "group_left cheek", "group_right cheek", "group_mustache", "group_nose", "group_jaw", "group_left eye",
+    "group_right eye");
+
+    const requirement = 0.75;
+
+    function match() {
+
+      var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
+      for(i = 0; i < groupAreas.length; i++) { //initialize the counter
+        groupAreas[i] = 0;
+      }
+
+      for(i = 0; i < image.mapster('get').split(',').length; i++) {
+        let group = "";
+        group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group"); 
+        groupAreas[groupNames.indexOf(group)]++; 
       }
       
       var satisfied = false; //if the requirements have been met
 
-      groupAreas.forEach(element => {
-        let index = indexOf(element);
-        if(element / groupPolys[index] >= 0.75) { //check if at least 75% of the polygons in an area have been selected
+      for(i = 0; i < groupAreas.length && satisfied == false; i++) {
+        if((groupAreas[i] / groupPolys[i]) >= requirement) { //check if at least 75% of the polygons in an area have been selected
           satisfied = true;
-          //go to therapy page
-        } 
-      });
-
+          alert("test success");
+        }
+      }
+    
       if(!satisfied) {
         //display alert
       }
 
-    };
+      
+      
+    }
 
-</script>
+  </script>
 
 </h1>
   </body>
