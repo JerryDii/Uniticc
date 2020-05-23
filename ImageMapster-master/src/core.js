@@ -341,7 +341,9 @@
         getMapData: function (obj) {
             var index = this.getMapDataIndex(obj.length ? obj[0]:obj);
             if (index >= 0) {
-                return index >= 0 ? this.map_cache[index] : null;
+                return this.map_cache[index];
+            } else {
+                return null;
             }
         },
         /**
