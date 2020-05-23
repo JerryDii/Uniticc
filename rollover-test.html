@@ -280,6 +280,8 @@
 
 <script>
 
+    const requirement = 0.75;
+    var init = false;
     var groupPolys = new Array(); //# of polygons in each group
     var groupNames = new Array(); //names of each general area of the face
 
@@ -325,13 +327,16 @@
         }
       }
 
+      init = true;
+
     }
     
     function match() {
 
-      initData();
-
-      const requirement = 0.75;
+      if(!init) {
+        initData();
+      }
+      
       const numGroups = groupNames.length; //# of groups of polygons (i.e. left forehead)
       var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
       var satisfied = false; //if the requirements have been met
@@ -365,7 +370,6 @@
       
       }
 
-         
     }
 
   </script>
