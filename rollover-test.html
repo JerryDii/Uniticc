@@ -280,8 +280,9 @@
 
 <script>
 
-    const requirement = 0.75;
+    const REQUIREMENT = 0.75;
     var init = false;
+    var numGroups; //# of groups of polygons (i.e. left forehead)
     var groupPolys = new Array(); //# of polygons in each group
     var groupNames = new Array(); //names of each general area of the face
 
@@ -337,10 +338,10 @@
         initData();
       }
       
-      const numGroups = groupNames.length; //# of groups of polygons (i.e. left forehead)
+      numGroups = groupNames.length;
       var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
       var satisfied = false; //if the requirements have been met
-      var treatmentArea;
+      var treatmentArea = "";
       
       for(i = 0; i < groupAreas.length; i++) { //initialize the counter
         groupAreas[i] = 0;
@@ -353,7 +354,7 @@
       }
        
       for(i = 0; i < groupAreas.length && satisfied == false; i++) {
-        if((groupAreas[i] / groupPolys[i]) >= requirement) { //check if at least 75% of the polygons in an area have been selected
+        if((groupAreas[i] / groupPolys[i]) >= REQUIREMENT) { //check if at least 75% of the polygons in an area have been selected
           satisfied = true;
         } 
       }
@@ -363,10 +364,35 @@
         button: "Back!"})
 
       } else {
-        var indexOfMaxValue = groupAreas.reduce((iMax, x, i, array) => x > array[iMax] ? i : iMax, 0) // gets index of greatest value
-        treatmentArea = groupNames[indexOfMaxValue] 
-        swal("Awesome!", treatmentArea, "success", {
-        button: "Proceed!"})
+        var indexOfMaxValue = groupAreas.reduce((iMax, x, i, array) => x > array[iMax] ? i : iMax, 0); // gets index of greatest value
+        treatmentArea = groupNames[indexOfMaxValue];
+
+        swal("Awesome!", (() => {
+            var group = "";
+            var string = treatmentArea.split("_").slice(1);
+            for(i = 0; i < string.length; i++) {
+              group = group.concat(string[i].concat((i == string.length - 1) ? ":" :" "));
+            }
+            return("Get therapy for the ".concat(group));
+          })(), 
+          "success", 
+          {
+            buttons: {
+              reselect: {
+              text: "Reselect Areas",
+              value: null
+              },
+              proceed: {
+                text: "Proceed!",
+                value: "proceed"
+              }
+            },
+        }).then((choice) => {
+          if(choice) {
+            //transition to dashboard
+            location.assign("dashboard.html");
+          }
+        });
       
       }
 
