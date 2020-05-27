@@ -1,0 +1,12 @@
+#banner {
+    position: absolute;
+    width: width;
+    height: height;
+}
+
+menu {
+    font-size: 32px;
+    font-family: 'Georgia', 'serif';
+    position: relative;
+    top: 126px;
+}
