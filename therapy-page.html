@@ -6,23 +6,24 @@
 </head>
 
 <body>
-<button class="close"><span class="bar"></span></button>
-<div class="outside">	
-	<div class="inside">
-		<ul class="menu">
-			<a style="text-decoration:none" href="#">
-				<li><span class="fa fa-dashboard"></span> Home</li>
-			</a>
-			<a style="text-decoration:none" href="dashboard.html">
-				<li><span class="fa fa-shopping-basket"></span> Dashboard</li>
-			</a>
-			<a style="text-decoration:none" href="rollover-test.html">
-				<li><span class="fa fa-shopping-cart"></span> Compile</li>
-			</a>
 
-		</ul>
-	</div>
-</div>
+
+
+
+
+<template id="card-template">
+  <a class="card" target="_blank" href="" data-link>
+    <img alt="" class="logos" src="" data-image>
+    <p class="names" data-name></p>
+  </a>
+</template>
+<main id="main" class="card-list"></main>	
+
+
+
+
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="therapy-page.js"></script>
 
