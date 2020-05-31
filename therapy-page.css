@@ -25,7 +25,7 @@ a {
 }
 
 .card-list {
-  margin: 50px 5%;
+  margin: 5px 5%;
   display: grid;
   grid-auto-rows: minmax(100px, auto);
   grid-gap: 50px;
@@ -56,6 +56,18 @@ a {
   background-color:#9ae6ae;
   border-radius: 0.4rem;
 }
+
+
+.spec{
+	color: #ffffff;
+  font-family: "Source Code Pro", sans-serif;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+
+
 
 @media screen and (min-width: 820px) {
   .card-list {
