@@ -1,0 +1,58 @@
+name: Drupal8 Zymphonies Theme
+type: theme
+description: 'Designed & Developed by <a href=http://www.zymphonies.com>Zymphonies</a><br/>Contact us for any kind of Drupal services <a href=mailto:info@zymphonies.com>info@zymphonies.com</a>'
+package: core
+# core: 8.x
+
+#Libraries
+libraries:
+  - drupal8_zymphonies_theme/bootstrap
+  - drupal8_zymphonies_theme/fontawesome
+  - drupal8_zymphonies_theme/flexslider
+  - drupal8_zymphonies_theme/smartmenus
+  - drupal8_zymphonies_theme/global-components
+
+#Regions
+regions:
+  header: 'Header'
+  primary_menu: 'Primary Menu'
+
+  topwidget_first: 'Top First Widget'
+  topwidget_second: 'Top Second Widget'
+  topwidget_third: 'Top Third Widget'
+
+  highlighted: 'Highlighted' 
+  page_title: 'Page Title'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'  
+
+  middle_first: 'Middle first widget'
+  middle_second: 'Middle second widget'
+  middle_third: 'Middle third widget'
+
+  bottom_first: 'Bottom First Widget'
+  bottom_second: 'Bottom Second Widget'
+  bottom_third: 'Bottom Third Widget'
+  bottom_forth: 'Bottom Forth Widget'
+
+  footer_first: 'Footer First Widget'
+  footer_second: 'Footer Second Widget'
+  footer_third: 'Footer Third Widget'
+
+  footer_menu: 'Footer Menu'
+  google_map: 'Google Map'
+  auto_hidden_block: 'Auto hidden blocks'
+
+# Information added by Drupal.org packaging script on 2016-01-08
+# version: '8.x-1.0'
+# core: '8.x'
+# project: 'drupal8_zymphonies_theme'
+# datestamp: 1452278346
+
+# Information added by Drupal.org packaging script on 2019-01-24
+version: '8.x-1.4'
+core: '8.x'
+project: 'drupal8_zymphonies_theme'
+datestamp: 1548354785

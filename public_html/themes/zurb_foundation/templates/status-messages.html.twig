@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Zurb Foundations's theme implementation for status messages.
+ *
+ * Displays status, error, and warning messages, grouped by type.
+ *
+ * An invisible heading identifies the messages for assistive technology.
+ * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
+ * for info.
+ *
+ * Add an ARIA label to the contentinfo area so that assistive technology
+ * user agents will better describe this landmark.
+ *
+ * Available variables:
+ * - message_list: List of messages to be displayed, grouped by type.
+ * - status_headings: List of all status types.
+ * - display: (optional) May have a value of 'status' or 'error' when only
+ *   displaying messages of that specific type.
+ * - attributes: HTML attributes for the element, including:
+ *   - class: HTML classes.
+ * - zurb_foundation_status_in_reveal: Boolean indicating whether status
+ *   messages should be shown in a Foundation Reveal modal.
+ */
+#}
+{% block messages %}
+
+{% if zurb_foundation_status_in_reveal %}
+<div id="status-messages" data-reveal class="reveal" role="dialog" data-animation-in="fade-in" data-animation-out="fade-out">
+{% endif %}
+
+{% for type, messages in message_list %}
+  {%
+    set classes = [
+      'zurb-foundation-callout',
+      'callout',
+      zurb_status_class_mapping[type] ? zurb_status_class_mapping[type]
+    ]
+  %}
+  <div role="contentinfo" aria-label="{{ status_headings[type] }}" data-closable="fade-out"{{ attributes.addClass(classes)|without('role', 'aria-label', 'data-closable') }}>
+    {% if status_headings[type] %}
+      <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+    {% endif %}
+
+    {% if messages|length > 1 %}
+      <ul class="messages__list">
+        {% for message in messages %}
+          <li class="messages__item">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ messages|first }}
+    {% endif %}
+
+    {% if not zurb_foundation_status_in_reveal %}
+      <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    {% endif %}
+  </div>
+
+  {# Remove type specific classes. #}
+  {% set attributes = attributes.removeClass(classes) %}
+{% endfor %}
+
+{% if zurb_foundation_status_in_reveal %}
+  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endif %}
+
+{% endblock messages %}

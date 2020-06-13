@@ -1,0 +1,13 @@
+nodejs_notify.settings:
+  title: Notification settings
+  description: 'Configure Nodejs Notify module.'
+  parent: system.admin_config_nodejs
+  route_name: nodejs_notify.settings
+  weight: 10
+
+nodejs_notify.broadcast:
+  title: Broadcast notification
+  description: 'Send a broadcast notification.'
+  parent: system.admin_config_nodejs
+  route_name: nodejs_notify.broadcast
+  weight: 20

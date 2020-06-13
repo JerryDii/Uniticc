@@ -1,0 +1,16 @@
+nodejs_notify.settings:
+  path: '/admin/config/nodejs/notify'
+  defaults:
+    _title: 'Nodejs notify settings'
+    _form: 'Drupal\nodejs_notify\Form\ConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+nodejs_notify.broadcast:
+  path: '/admin/config/nodejs/broadcast'
+  defaults:
+    _title: 'Broadcast notification'
+    _form: 'Drupal\nodejs_notify\Form\BroadcastForm'
+  requirements:
+    _permission: 'send nodejs broadcast'
+

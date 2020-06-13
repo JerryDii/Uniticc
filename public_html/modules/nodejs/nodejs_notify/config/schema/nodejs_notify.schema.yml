@@ -1,0 +1,7 @@
+nodejs_notify.settings:
+  type: config_object
+  label: 'Nodejs notify settings'
+  mapping:
+    notification_lifetime_seconds:
+      type: integer
+      label: 'Notification lifetime'

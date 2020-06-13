@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - showcase_lite
+_core:
+  default_config_hash: HewqczZRLp93kcLkmkxv6wMPQPyAPF_My9XIyqbeAvw
+id: showcase_lite_breadcrumbs
+theme: showcase_lite
+region: banner
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

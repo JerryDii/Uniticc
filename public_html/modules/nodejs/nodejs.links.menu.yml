@@ -1,0 +1,13 @@
+system.admin_config_nodejs:
+  route_name: system.admin_config_nodejs
+  parent: system.admin_config
+  title: 'Nodejs integration'
+  description: 'Nodejs integration.'
+  weight: 10
+
+nodejs.settings:
+  title: 'Nodejs integration settings'
+  description: 'Configure Nodejs integration.'
+  parent: system.admin_config_nodejs
+  route_name: nodejs.settings
+  weight: 0

@@ -1,0 +1,7 @@
+services:
+  nodejs_watchdog.mylog:
+    class: Drupal\nodejs_watchdog\Logger\NodejsLogger
+    calls:
+      - [setContainer, ['@service_container']]
+    tags:
+      - { name: logger }

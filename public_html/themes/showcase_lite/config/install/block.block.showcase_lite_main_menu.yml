@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - showcase_lite
+_core:
+  default_config_hash: I1lBF0Zs41cIx-MuqJheiHFNBJIQlPQc5e2lO8Tz5hw
+id: showcase_lite_main_menu
+theme: showcase_lite
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

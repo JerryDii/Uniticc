@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - showcase_lite
+_core:
+  default_config_hash: Iz_fLkfuz8gDX4VAc9SiT-GhCrvai8vzqcFo1RPzqIU
+id: showcase_lite_page_title
+theme: showcase_lite
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

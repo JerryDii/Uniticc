@@ -1,0 +1,136 @@
+foundation_1col:
+  label: 'Foundation: 1 column row'
+  category: 'Foundation: 1'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_1col/foundation-1col
+  regions:
+    middle:
+      label: Main column
+  icon: layouts/foundation_1col/foundation_1col.png
+foundation_2col:
+  label: 'Foundation: 2 column row'
+  category: 'Foundation: 2'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_2col/foundation-2col
+  regions:
+    left:
+      label: Left
+    right:
+      label: Right
+  icon: layouts/foundation_2col/foundation_2col.png
+foundation_2col_bricks:
+  label: 'Foundation: 2 column bricks'
+  category: 'Foundation: 2'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_2col_bricks/foundation-2col-bricks
+  regions:
+    top:
+      label: Top
+    above_left:
+      label: Above Left
+    above_right:
+      label: Above Right
+    middle:
+      label: Middle
+    below_left:
+      label: Below Left
+    below_right:
+      label: Below Right
+    bottom:
+      label: Bottom
+  icon: layouts/foundation_2col_bricks/foundation_2col_bricks.png
+foundation_2col_stacked:
+  label: 'Foundation: stacked 2 column row'
+  category: 'Foundation: 2'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_2col_bricks/foundation-2col-stacked
+  regions:
+    top:
+      label: Top
+    left:
+      label: Left
+    right:
+      label: Right
+    bottom:
+      label: Bottom
+  icon: layouts/foundation_2col_stacked/foundation_2col_stacked.png
+foundation_3col:
+  label: 'Foundation: 3 column row'
+  category: 'Foundation: 3'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_3col/foundation-3col
+  regions:
+    left:
+      label: Left
+    middle:
+      label: Middle
+    right:
+      label: Right
+  icon: layouts/foundation_3col/foundation_3col.png
+foundation_3col_stacked:
+  label: 'Foundation: stacked 3 column row'
+  category: 'Foundation: 3'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_3col_stacked/foundation-3col-stacked
+  regions:
+    top:
+      label: Top
+    left:
+      label: Left
+    middle:
+      label: Middle
+    right:
+      label: Right
+    bottom:
+      label: Bottom
+  icon: layouts/foundation_3col_stacked/foundation_3col_stacked.png
+foundation_4col:
+  label: 'Foundation: 4 column row'
+  category: 'Foundation: 4'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_4col/foundation-4col
+  regions:
+    left:
+      label: Left
+    middle_left:
+      label: Middle Left
+    middle_right:
+      label: Middle Right
+    right:
+      label: Right
+  icon: layouts/foundation_4col/foundation_4col.png
+foundation_6row_combo:
+  label: 'Foundation: 6 row combo'
+  category: 'Foundation: 6'
+  class: '\Drupal\zurb_foundation\Plugin\Layout\FoundationLayout'
+  template: layouts/foundation_6row_combo/foundation-6row-combo
+  regions:
+    top:
+      label: Top
+    top_first:
+      label: Top First
+    top_second:
+      label: Top Second
+    top_third:
+      label: Top Third
+    top_fourth:
+      label: Top Fourth
+    middle_small:
+      label: Middle Small
+    middle_large:
+      label: Middle Large
+    middle_first:
+      label: Middle First
+    middle_second:
+      label: Middle Second
+    bottom_first:
+      label: Bottom First
+    bottom_second:
+      label: Bottom Second
+    bottom_third:
+      label: Bottom Third
+    bottom_fourth:
+      label: Bottom Fourth
+    bottom:
+      label: Bottom
+  icon: layouts/foundation_6row_combo/foundation_6row_combo.png

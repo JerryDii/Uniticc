@@ -1,0 +1,29 @@
+system.admin_config_nodejs:
+  path: '/admin/config/nodejs'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Nodejs integration'
+  requirements:
+    _permission: 'access administration pages'
+
+nodejs.settings:
+  path: '/admin/config/nodejs/settings'
+  defaults:
+    _form: 'Drupal\nodejs\Form\NodejsConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+nodejs.message:
+  path: '/nodejs/message'
+  defaults:
+    _title: 'Message from Node.js server'
+    _controller: '\Drupal\nodejs\Controller\NodejsPages::messageHandler'
+  requirements:
+    _access: 'TRUE'
+
+nodejs.add_channel:
+  path: '/nodejs/user/channel/add'
+  defaults:
+    _form: 'Drupal\nodejs\Form\AddUserToChannelForm'
+  requirements:
+    _permission: 'administer users'

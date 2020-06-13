@@ -1,0 +1,8 @@
+init:
+  version: 1.1
+  js:
+    nodejs.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

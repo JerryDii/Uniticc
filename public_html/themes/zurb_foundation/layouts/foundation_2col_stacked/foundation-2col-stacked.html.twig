@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Template for a 2 column panel layout.
+ *
+ * This template provides a two column panel display layout, with
+ * additional areas for the top and the bottom.
+ *
+ * Variables:
+ * - css_id: An optional CSS id to use for the layout.
+ * - css_classes: Optional CSS classes to use for the layout.
+ * - content: An array of content, each item in the array is keyed to one
+ *   panel of the layout. This layout supports the following sections:
+ *   - content.top: Content in the top row.
+ *   - content.left: Content in the left column.
+ *   - content.right: Content in the right column.
+ *   - content.bottom: Content in the bottom row.
+ */
+#}
+{% if  settings.css_id or settings.css_classes %}
+<div {{ attributes.setAttribute('id', settings.css_id).addClass('foundation-2col-stacked', settings.css_classes) }}>
+{% endif %}
+  {% if content.top %}
+    <div class="row">
+      <div class="medium-12 columns">
+        {{ content.top }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="row">
+    <div class="medium-6 small-12 columns">
+      {{ content.left }}
+    </div>
+    <div class="medium-6 small-12 columns">
+      {{ content.right }}
+    </div>
+  </div>
+
+  {% if content.bottom %}
+    <div class="row">
+      <div class="medium-12 columns">
+        {{ content.bottom }}
+      </div>
+    </div>
+  {% endif %}
+{% if  settings.css_id or settings.css_classes %}
+</div> <!-- /.foundation-2col-stacked -->
+{% endif %}

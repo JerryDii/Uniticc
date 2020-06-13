@@ -1,0 +1,652 @@
+<?php
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Component\Utility\Crypt;
+use Drupal\Core\Url;
+use Drupal\Core\Site\Settings;
+use Drupal\Core\Session\AnonymousUserSession;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
+use Drupal\nodejs\Nodejs;
+
+/**
+ * Procedural wrapper to get an Nodejs object.
+ */
+function nodejs_get_nodejs() {
+  return \Drupal::service('nodejs.nodejs');
+}
+
+/**
+ * Generate a token for a piece of content.
+ */
+function nodejs_generate_content_token() {
+  return Crypt::hmacBase64(uniqid(mt_rand(), TRUE), \Drupal::service('private_key')->get() . $hash_salt = Settings::getHashSalt());
+}
+
+/**
+ * Send a content change message to a content channel.
+ */
+function nodejs_send_content_channel_message($message) {
+  nodejs_get_nodejs()->sendContentTokenMessage($message);
+}
+
+/**
+ * Send a content channel token to Node.js.
+ *
+ * @param $channel
+ *   The channel to generate the token for.
+ * @param $notify_on_disconnect
+ *   If TRUE, other clients will be notified when this client disconnects.
+ * @param $user_data
+ *   Arbitrary custom data that can be stored with the token. This will be
+ *   broadcast to other clients when the user connects.
+ */
+function nodejs_send_content_channel_token($channel, $notify_on_disconnect = FALSE, $user_data = FALSE) {
+  $message = (object) array(
+    'token' => nodejs_generate_content_token(),
+    'channel' => $channel,
+    'notifyOnDisconnect' => $notify_on_disconnect,
+    'userData' => $user_data,
+  );
+
+  // Http request went ok, process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->sendContentToken($message)) {
+    if ($node_response->status == 'success') {
+      nodejs_get_nodejs()->enqueueContentToken($channel, $message->token);
+
+      $node_response->token = $message->token;
+      return $node_response;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error sending content channel token for channel "%channel". Node.js server response: %error', array('%channel' => $channel, '%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Get a list of users in a content channel.
+ *
+ * @param mixed $channel
+ */
+function nodejs_get_content_channel_users($channel) {
+  $message = (object) array('channel' => $channel);
+
+  // Http request went ok, process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->getContentTokenUsers($message)) {
+    if (isset($node_response->error)) {
+      \Drupal::logger('nodejs')->error(t('Error getting content channel users for channel "%channel" on the Node.js server. Server response: %error', array('%channel' => $channel, '%error' => $node_response->error)));
+      return FALSE;
+    }
+    else {
+      return array(
+        'uids' => !empty($node_response->users->uids) ? $node_response->users->uids : array(),
+        'authTokens' => !empty($node_response->users->authTokens) ? $node_response->users->authTokens : array(),
+      );
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Kick a user from the node.js server.
+ *
+ * @param mixed $uid
+ * @return boolean
+ *   TRUE if the user was kicked, FALSE otherwise.
+ */
+function nodejs_kick_user($uid) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->kickUser($uid)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error kicking uid "%uid" from the Node.js server. Server response: %error', array('%uid' => $uid, '%error' => $node_response->error)));
+
+      return FALSE;
+    }
+  }
+  // Http request failed, hence channel couldn't be added.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Logout any sockets associated with the given token from the node.js server.
+ *
+ * @param mixed $token
+ * @return boolean
+ *   TRUE if the user was logged out, FALSE otherwise.
+ */
+function nodejs_logout_user($token) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->logoutUser($token)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error logging out token "%token" from the Node.js server. Server response: %error', array('%token' => $token, '%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed, hence channel couldn't be added.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Set the list of uids a user can see presence notifications for.
+ *
+ * @param $uid
+ * @param $uids
+ */
+function nodejs_set_user_presence_list($uid, array $uids) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->setUserPresenceList($uid, $uids)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error setting user presence list for uid "%uid" on the Node.js server. Server response: %error', array('%uid' => $uid, '%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed, hence channel couldn't be added.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Broadcast a message to all clients.
+ *
+ * @param string $subject
+ * @param string $body
+ */
+function nodejs_broadcast_message($subject, $body) {
+  $message = (object) array(
+    'broadcast' => TRUE,
+    'data' => (object) array(
+      'subject' => $subject,
+      'body' => $body,
+    ),
+    'channel' => 'nodejs_notify',
+  );
+  nodejs_enqueue_message($message);
+}
+
+/**
+ * Send a message to all users subscribed to a given channel.
+ */
+function nodejs_send_channel_message($channel, $subject, $body) {
+  $message = (object) array(
+    'data' => (object) array(
+      'subject' => $subject,
+      'body' => $body,
+    ),
+    'channel' => $channel,
+  );
+  nodejs_enqueue_message($message);
+}
+
+/**
+ * Send a message to given user.
+ *
+ * @param int $uid
+ * @param string $subject
+ * @param string $body
+ */
+function nodejs_send_user_message($uid, $subject, $body) {
+  $message = (object) array(
+    'data' => (object) array(
+      'subject' => $subject,
+      'body' => $body,
+    ),
+    'channel' => 'nodejs_user_' . $uid,
+    'callback' => 'nodejsNotify',
+  );
+  nodejs_enqueue_message($message);
+}
+
+/**
+ * Send a message to multiple users.
+ *
+ * @param string|array $uids
+ *   A list of uid seperated by comma (,) or an array of uids
+ * @param string $subject
+ * @param string $body
+ */
+function nodejs_send_user_message_multiple($uids, $subject, $body) {
+  if (!is_array($uids)) {
+    $uids = explode(',', $uids);
+  }
+  foreach ($uids as $uid) {
+    nodejs_send_user_message($uid, $subject, $body);
+  }
+}
+
+/**
+ * Send a message to users in a role.
+ *
+ * @param string $role_name
+ * @param string $subject
+ * @param string $body
+ */
+function nodejs_send_role_message($role_name, $subject, $body) {
+  $query = \Drupal::database()->select('users', 'u');
+  $query->join('users_roles', 'ur', 'ur.uid = u.uid');
+  $query->join('role', 'r', 'ur.rid = r.rid');
+  $uids = $query->fields('u',array('uid'))
+            ->condition('r.name', $role_name)
+            ->execute()
+            ->fetchCol();
+  nodejs_send_user_message_multiple($uids, $subject, $body);
+}
+
+/**
+ * Check if we should add the node.js js to the page.
+ *
+ * We check the url, and whether or not the admin has closed down access to
+ * auth users only.
+ */
+function nodejs_add_js_to_page_check() {
+  $account = \Drupal::currentUser();
+  $path = \Drupal::service('path_alias.manager')->getAliasByPath(Url::fromRoute('<current>')->toString());
+  $config_paths = \Drupal::config('nodejs.config')->get('pages');
+  $valid_page = \Drupal::service('path.matcher')->matchPath($path, $config_paths) ;
+
+  if (\Drupal::config('nodejs.config')->get('authenticated_users_only')) {
+    $valid_user = $account->id() > 0;
+  }
+  else {
+    $valid_user = TRUE;
+  }
+  return $valid_page && $valid_user;
+}
+
+/**
+ * Return the path to the socket.io client js.
+ */
+function nodejs_get_socketio_js_config($nodejs_config) {
+  $socket_io_config = \Drupal::config('nodejs.config')->get('socket_io');
+  if (!$socket_io_config['path']) {
+    $socket_io_config['path'] = $nodejs_config['client']['scheme'] . '://' . $nodejs_config['client']['host'] . ':'
+                              . $nodejs_config['client']['port'] . '/socket.io/socket.io.js';
+  }
+  return $socket_io_config;
+}
+
+/**
+ * Get a list of javascript handler files.
+ */
+function nodejs_get_js_handlers() {
+  $handlers = \Drupal::moduleHandler()->invokeAll('nodejs_handlers_info', $args = array());
+  \Drupal::moduleHandler()->alter('nodejs_js_handlers', $handlers);
+  return $handlers;
+}
+
+/**
+* Implements hook_js_settings_alter().
+*/
+function nodejs_js_settings_alter(array &$settings, AttachedAssetsInterface $assets) {
+  if (nodejs_add_js_to_page_check()) {
+    $nodejs_config = nodejs_get_config();
+
+    $settings['nodejs'] = [
+      'nodejs' => $nodejs_config['nodejs'],
+      'client' => $nodejs_config['client'],
+      'authToken' => nodejs_auth_get_token(\Drupal::service('session')),
+    ];
+
+    // Add generated content tokens.
+    $tokens = nodejs_get_nodejs()->getContentTokens();
+    foreach ($tokens as $channel => $token) {
+      $settings['nodejs']['contentTokens'][$channel] = $token;
+    }
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function nodejs_page_attachments_alter(array &$attachments) {
+  if (nodejs_add_js_to_page_check()) {
+    // Add Nodejs specific libraries.
+    $libraries = ['nodejs/socketio', 'nodejs/init'];
+
+    // Allow modules to add their own libraries.
+    foreach (nodejs_get_js_handlers() as $library) {
+      $libraries[] = $library;
+    }
+
+    foreach ($libraries as $library) {
+      if (!in_array($library, $attachments['#attached']['library'])) {
+        $attachments['#attached']['library'][] = $library;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_library_info_build().
+ */
+function nodejs_library_info_build() {
+  $nodejs_config = nodejs_get_config();
+  $socket_io_config = nodejs_get_socketio_js_config($nodejs_config);
+
+  // The socket.io js file needs to be added dynamically because the actual
+  // location depends on configuration.
+  $libraries['socketio'] = [
+    'js' => [
+      $socket_io_config['path'] => ['type' => $socket_io_config['type']],
+    ],
+  ];
+
+  return $libraries;
+}
+
+/**
+ * Add a channel to the Node.js server.
+ *
+ * @param channel
+ * @return boolean
+ */
+function nodejs_add_channel($channel) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->addChannel($channel)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error adding channel to the Node.js server. Server response: %error', array('%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed, hence channel couldn't be added.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Checks whether a channel exists on the Node.js server.
+ *
+ * @param channel
+ * @return boolean
+ *  TRUE if the specified channel exists on the Node.js server, FALSE otherwise.
+ */
+function nodejs_check_channel($channel) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->checkChannel($channel)) {
+    if ($node_response->status == 'success') {
+      return $node_response->result;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error checking channel on the Node.js server. Server response: %error', array('%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Remove a channel from the Node.js server.
+ *
+ * @param channel
+ * @return boolean
+ */
+function nodejs_remove_channel($channel) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->removeChannel($channel)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      \Drupal::logger('nodejs')->error(t('Error removing channel from the Node.js server. Server response: %error', array('%error' => $node_response->error)));
+      return FALSE;
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Enqueue a message for sending at the end of the request.
+ *
+ * @param StdClass $message
+ */
+function nodejs_enqueue_message(StdClass $message) {
+  $message->broadcast = isset($message->broadcast) ? $message->broadcast : FALSE;
+  nodejs_get_nodejs()->enqueueMessage($message);
+}
+
+/**
+ * Send a message immediately.
+ *
+ * @param StdClass $message
+ */
+function nodejs_send_message(StdClass $message) {
+  $message->broadcast = isset($message->broadcast) ? $message->broadcast : FALSE;
+  return nodejs_get_nodejs()->sendMessage($message);
+}
+
+/**
+ * Implements hook_nodejs_user_channels().
+ */
+function nodejs_nodejs_user_channels($account) {
+  if (\Drupal::config('nodejs.config')->get('enable_userchannel') && $account->uid) {
+    return array('nodejs_user_' . $account->uid);
+  }
+  return array();
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function nodejs_user_logout($account) {
+  if (isset($_SESSION['nodejs_config']['authToken'])) {
+    nodejs_logout_user($_SESSION['nodejs_config']['authToken']);
+  }
+}
+
+/**
+ * Check if the given service key is valid.
+ */
+function nodejs_is_valid_service_key($service_key) {
+  return $service_key == \Drupal::config('nodejs.config')->get('service_key');
+}
+
+/**
+ * Checks the given key to see if it matches a valid session.
+ */
+function nodejs_auth_check($message) {
+  $nodejs_auth_check_callback = \Drupal::config('nodejs.config')->get('auth_check_callback');
+  if (!function_exists($nodejs_auth_check_callback)) {
+    throw new Exception("No nodejs_auth_check callback found - looked for '$nodejs_auth_check_callback'.");
+  }
+
+  $uid = $nodejs_auth_check_callback($message['authToken']);
+  $account = $uid > 0 ? \Drupal::service('entity_type.manager')->getStorage('user')->load($uid) : new AnonymousUserSession();
+
+  $auth_user = new stdClass();
+  $auth_user->uid = $account->id();
+  $auth_user->authToken = $message['authToken'];
+  $auth_user->nodejsValidAuthToken = $uid !== FALSE;
+  $auth_user->clientId = $message['clientId'];
+
+  if ($auth_user->nodejsValidAuthToken) {
+    // Get the list of channels I have access to.
+    $auth_user->channels = array();
+    foreach (\Drupal::moduleHandler()->getImplementations('nodejs_user_channels') as $module) {
+      $function = $module . '_nodejs_user_channels';
+      foreach ($function($auth_user) as $channel) {
+        $auth_user->channels[] = $channel;
+      }
+    }
+
+    // Get the list of users who can see presence notifications about me.
+    $auth_user->presenceUids = array_unique(\Drupal::moduleHandler()->invokeAll('nodejs_user_presence_list', [$auth_user]));
+
+    \Drupal::moduleHandler()->alter('nodejs_auth_user', $auth_user);
+    if ($auth_user->uid) {
+      nodejs_user_set_online($auth_user->uid);
+    }
+    $auth_user->contentTokens = isset($message['contentTokens']) ? $message['contentTokens'] : array();
+  }
+
+  return $auth_user;
+}
+
+/**
+ * Default Node.js auth check callback implementation.
+ */
+function nodejs_auth_check_callback($auth_token) {
+  return \Drupal::database()->query("SELECT uid FROM {sessions} WHERE MD5(sid) = :auth_key", array(':auth_key' => $auth_token))->fetchField();
+}
+
+/**
+ * Get an auth token for the current user.
+ */
+function nodejs_auth_get_token(SessionInterface $session) {
+  $nodejs_auth_get_token_callback = \Drupal::config('nodejs.config')->get('auth_get_token_callback');
+  if (!function_exists($nodejs_auth_get_token_callback)) {
+    throw new Exception("Cannot proceed without a valid nodejs_auth_get_token callback - looked for '$nodejs_auth_get_token_callback'.");
+  }
+  return $nodejs_auth_get_token_callback($session);
+}
+
+/**
+ * Default nodejs_auth_get_token() implementation.
+ */
+function nodejs_auth_get_token_callback(SessionInterface $session) {
+  // The session id stored in the database is hashed. Use the same to generate
+  // the token.
+  return md5(Crypt::hashBase64($session->getId()));
+}
+
+/**
+ * Set the user as online.
+ *
+ * @param $uid
+ */
+function nodejs_user_set_online($uid) {
+  try {
+    \Drupal::database()->query('INSERT INTO {nodejs_presence} (uid, login_time) VALUES (:uid, :login_time)', array(':uid' => $uid, ':login_time' => time()));
+  }
+  catch (Exception $e) { }
+}
+
+/**
+ * Set the user as offline.
+ *
+ * @param $uid
+ */
+function nodejs_user_set_offline($uid) {
+  try {
+    \Drupal::database()->query('DELETE FROM {nodejs_presence} WHERE uid = :uid', array(':uid' => $uid));
+  }
+  catch (Exception $e) { }
+}
+
+/**
+ * Get nodejs server config.
+ *
+ * @return array
+ */
+function nodejs_get_config() {
+  return \Drupal::config('nodejs.config')->get();
+}
+
+/**
+ * Get the URL of a Node.js callback.
+ *
+ * @param array $config
+ *   The result of nodejs_get_config().
+ * @param string $callback
+ *   The path to call on Node.js server (without leading /).
+ * @return string
+ */
+function nodejs_get_url($config, $callback = '') {
+  return $config['nodejs']['scheme'] . '://' . $config['nodejs']['host'] . ':' . $config['nodejs']['port'] . '/' . $callback;
+}
+
+/**
+ * Remove a user from a channel.
+ *
+ * @param mixed $uid
+ * @param mixed $channel
+ * @return boolean
+ */
+function nodejs_remove_user_from_channel($uid, $channel) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->removeUserFromChannel($uid, $channel)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      $params = array(
+        '%uid' => $uid,
+        '%channel' => $channel,
+        '%error' => $node_response->error,
+      );
+      \Drupal::logger('nodejs')->error(t('Error removing user with uid: %uid from channel %channel on the Node.js server. Server response: %error', $params));
+      return FALSE;
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Add a user to a channel.
+ *
+ * @param mixed $uid
+ * @param mixed $channel
+ * @return boolean
+ */
+function nodejs_add_user_to_channel($uid, $channel) {
+  // Http request went ok. Process Node.js server response.
+  if ($node_response = nodejs_get_nodejs()->addUserToChannel($uid, $channel)) {
+    if ($node_response->status == 'success') {
+      return TRUE;
+    }
+    else {
+      $params = array(
+        '%uid' => $uid,
+        '%channel' => $channel,
+        '%error' => $node_response->error,
+      );
+      \Drupal::logger('nodejs')->error(t('Error adding user with uid: %uid to channel %channel on the Node.js server. Server response: %error', $params));
+      return FALSE;
+    }
+  }
+  // Http request failed.
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Get the client socket id associated with this request.
+ */
+function nodejs_get_client_socket_id() {
+  $client_socket_id = isset($_POST['nodejs_client_socket_id']) ? $_POST['nodejs_client_socket_id'] : '';
+  return preg_match('/^[0-9a-z_-]+$/i', $client_socket_id) ? $client_socket_id : '';
+}

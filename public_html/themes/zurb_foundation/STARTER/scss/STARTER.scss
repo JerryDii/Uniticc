@@ -1,0 +1,172 @@
+// =========
+// This file is a custom file that loads all files. Each non-base layer
+// can be disabled.
+//
+// Do not name this file "STARTER.scss". This file should be named
+// THEMENAME.scss.
+//
+// This application file (THEMENAME.scss) is where all the partials are
+// imported.
+//
+// Theme styles are categorized using SMACSS standards. They utilize
+// categorization of styles into various categories. Those categories are the
+// following:
+//
+// - Base: CSS reset/normalize plus HTML element styling.
+// - Layout: Macro arrangement of a web page, including any grid systems.
+// - Modules: Dictate minor layout modules or reusable elements.
+// - States: Describe the appearance of a module in various states.
+// - Theme: Specific customizations for your subtheme.
+// For more information about this new Drupal css file standard, please review
+// the following:
+// - https://drupal.org/node/1887922
+// - http://smacss.com/
+// =========
+
+// Make sure the charset is set appropriately
+@charset 'utf-8';
+
+// This is your _settings.scss file where you can override foundation variables.
+// http://foundation.zurb.com/sites/docs/sass.html#the-settings-file
+@import 'settings';
+
+// Core
+// The following imports bootstrap the theme.
+@import 'foundation';
+@import 'motion-ui';
+
+// Foundation Components / Partials
+// http://foundation.zurb.com/sites/docs/sass.html#adjusting-css-output
+//
+// Note: The following include statements import sass partials for corresponding
+// Foundation 6 features and components. If you do not need any of the features
+// listed below feel free to comment each line out and re-compile.
+//
+// We are using Foundation's Float Grid (Legacy) for layout as our default.
+// http://foundation.zurb.com/sites/docs/grid.html
+//
+// Why not use the new XY Grid? The XY Grid system is a major update that has new
+// markup requirements which would break other module integrations that currently
+// work with ZURB Foundation for Drupal. Because we don't like to introduce breaking
+// changes for websites we have elected to take this route for greater support.
+//
+// Note: This will likely change in future releases as the XY Grid becomes the
+// new standard.
+//
+// Still want to use the XY Grid? Uncomment the foundation-xy-grid-classes include
+// statement and recompile css.  You can now use the new XY Grid!
+//
+// http://foundation.zurb.com/sites/docs/xy-grid.html
+//
+// WARNING: Including the XY Grid and disabling Float Grid will require that base
+// theme provided template files be copied to your sub-theme and modified accordingly
+// to match XY Grid markup requirements.
+//
+@include foundation-global-styles;
+@include foundation-grid;
+//@include foundation-flex-grid;
+@include foundation-float-classes;
+//@include foundation-flex-classes;
+//@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-range-input;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+
+// Prototyping Utilities / Partials
+// http://foundation.zurb.com/sites/docs/prototyping-utilities.html
+//
+//@include foundation-prototype-typescale;
+//@include foundation-prototype-text-utilities;
+//@include foundation-prototype-text-transformation;
+//@include foundation-prototype-text-decoration;
+//@include foundation-prototype-font-styling;
+//@include foundation-prototype-list-style-type;
+//@include foundation-prototype-rounded;
+//@include foundation-prototype-bordered;
+//@include foundation-prototype-shadow;
+//@include foundation-prototype-arrow;
+//@include foundation-prototype-separator;
+//@include foundation-prototype-overflow;
+//@include foundation-prototype-display;
+//@include foundation-prototype-position;
+//@include foundation-prototype-border-box;
+//@include foundation-prototype-border-none;
+//@include foundation-prototype-sizing;
+//@include foundation-prototype-spacing;
+
+// Motion UI Components / Partials
+// http://foundation.zurb.com/sites/docs/motion-ui.html
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+// Our Custom Components / Partials
+//
+// Import our mixins early so they can be used by other partials.
+// Optional.
+//@import 'base/mixins';
+
+// Common file is where you place common utility classes to extend or
+// parametrics.
+// Optional.
+// @import 'base/common';
+
+// Drupal specific styles (to fix Drupalisms).
+@import 'base/drupal';
+
+// Styling for elements.
+// Optional.
+// @import 'base/elements';
+
+// Layout
+// Each section of the document has it's own partial seperated out to improve
+// developer experience. Additionally, grids can be declared in layouts as well.
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/aside';
+@import 'layout/footer';
+
+// Modules
+// @import 'modules/block';
+// @import 'modules/button';
+
+// States
+// @import 'states/collapse';
+
+// Themes
+// @import 'theme/button-light';
+
+// Older IE support
+// @import 'vendor/ie';

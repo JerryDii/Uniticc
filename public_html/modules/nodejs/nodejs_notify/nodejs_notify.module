@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+/**
+ * Implements hook_nodejs_handlers_info().
+ */
+function nodejs_notify_nodejs_handlers_info() {
+  return ['nodejs_notify/notify'];
+}
+
+/**
+ * Implements hook_js_settings_alter().
+ */
+function nodejs_notify_js_settings_alter(array &$settings, AttachedAssetsInterface $assets) {
+  $settings['nodejs_notify']['notification_time'] = \Drupal::config('nodejs_notify.settings')->get('notification_lifetime_seconds');
+}

@@ -1,0 +1,34 @@
+global:
+  version: VERSION
+  css:
+    base:
+      css/foundation-float.min.css: {}
+      css/motion-ui.min.css: {}
+      css/zurb_foundation.css: {}
+  js:
+    js/foundation.min.js: {}
+    js/foundation_init.js: {}
+    js/top_bar_active.js: {}
+    js/motion-ui.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+status_in_reveal:
+  version: VERSION
+  js:
+    js/status_in_reveal.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+alert_close:
+  version: VERSION
+  js:
+    js/alert_close.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once

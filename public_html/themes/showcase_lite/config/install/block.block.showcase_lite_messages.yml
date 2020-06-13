@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - showcase_lite
+_core:
+  default_config_hash: P7miB5tclKrZpMXOcxQy-8v1PwOmRd-c_4Q9r-wEhSk
+id: showcase_lite_messages
+theme: showcase_lite
+region: system_messages
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

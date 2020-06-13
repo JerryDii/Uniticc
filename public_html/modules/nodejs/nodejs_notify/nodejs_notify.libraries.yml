@@ -1,0 +1,19 @@
+jgrowl:
+  version: 1.4.3
+  js:
+    libraries/jgrowl/jquery.jgrowl.js: {}
+  css:
+    theme:
+      libraries/jgrowl/jquery.jgrowl.css: {}
+  dependencies:
+    - core/jquery
+
+notify:
+  js:
+    nodejs_notify.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - nodejs_notify/jgrowl
+
+

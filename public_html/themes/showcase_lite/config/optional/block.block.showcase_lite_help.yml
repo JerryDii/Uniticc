@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - showcase_lite
+_core:
+  default_config_hash: pNWHLidiaBqVzgTNrgp_brVkgOSpjJO5GJbHnOhiNGc
+id: showcase_lite_help
+theme: showcase_lite
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

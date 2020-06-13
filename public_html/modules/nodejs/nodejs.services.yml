@@ -1,0 +1,13 @@
+services:
+  nodejs.subscriber:
+    class: Drupal\nodejs\EventSubscriber\NodejsSubscriber
+    arguments: ['@nodejs.nodejs']
+    tags:
+      - {name: event_subscriber}
+  logger.channel.nodejs:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['nodejs']
+  nodejs.nodejs:
+    class: Drupal\nodejs\Nodejs
+    arguments: ['@http_client', '@logger.channel.nodejs', '@module_handler', '@config.factory', '@state']

@@ -1,0 +1,7 @@
+nodejs_config.builder:
+  path: '/admin/config/nodejs/builder'
+  defaults:
+    _form: '\Drupal\nodejs_config\Form\NodejsConfigSettingsForm'
+    _title: 'Node.js server configuration builder'
+  requirements:
+    _permission: 'administer site configuration'

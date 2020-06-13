@@ -1,0 +1,5 @@
+nodejs_watchdog:
+  js:
+    nodejs_watchdog.js: {}
+  dependencies:
+    - nodejs_ajax/nodejs_ajax

@@ -1,0 +1,14 @@
+js_suggestion: ''
+host: 'localhost'
+port: 8080
+scheme: 'http'
+key: '/path/to/key/file'
+cert: '/path/to/cert/file'
+publish_url: 'publish'
+write_channels: false
+write_clients: false
+backend_host: 'localhost'
+backend_port: 80
+backend_message_path: '/nodejs/message'
+debug: false
+extensions: ''

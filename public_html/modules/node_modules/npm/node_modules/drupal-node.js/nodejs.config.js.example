@@ -1,0 +1,82 @@
+/**
+ * The settings hash defines configuration settings for server.js, the server
+ * code executed by node. The available settings and their defaults are listed
+ * below.
+ *
+ * scheme: 'http' or 'https'. This defines whether the node server should
+ * contact the Drupal site using http or https. If https is used, the key and
+ * cert must be set to valid files. Defaults to 'http'.
+ *
+ * host: Specify the host name or IP address that the node server should listen
+ * on. Leave blank to listen for any host name. Otherwise, the server will only
+ * respond to names that match the IP address given (or resolved from the given
+ * name). Defaults to 'localhost'.
+ *
+ * serviceKey: An arbitrary string used as a secret between the node.js server
+ * and the Drupal site.
+ *
+ * debug: Whether to write a bunch of debug information to the console. false
+ * by default.
+ *
+ * baseAuthPath: base path for all requests from the backend. This is used to
+ * set the authentication call for all requests from the backend. Defaults to
+ * '/nodejs/'.
+ *
+ * sslKeyPath: File system path to a key used for https communication with
+ * the server and clients.
+ *
+ * sslCertPath: File system path to a certificate used for https communication
+ * with the server and clients.
+ *
+ * sslCAPath: File system path to a file containing trusted certificates. (Optional)
+ *
+ * sslPassPhrase: SSL passphrase, will be passed in the passphrase key to the
+ * https server if set.
+ *
+ * backend: An object with the following properties:
+ *
+ *  -- port: TCP port of the server running the Drupal site. Defaults to '80'.
+ *
+ *  -- host: Host name of the Drupal site. Defaults to 'localhost'.
+ *
+ *  -- messagePath: http path on which the Drupal node.js module listens for
+ *  messages from the Node.js server process. Defaults to 'nodejs/message'.
+ *
+ *  -- basePath: the base path of your backend site, defaults to '/'.
+ *
+ *  -- scheme: either 'http' or 'https', defaults to 'http'.
+ *
+ *  -- httpAuth: a username and password in the form 'username:password'
+ *
+ *  -- strictSSL: boolean, whether to be strict with SSL cert, default false.
+ *
+ * extensions: An array of names of node.js modules that should be loaded as
+ * extensions to the node.js server.
+ *
+ * port: Specify the TCP port that the node server should listen on. Defaults
+ * to '8080'.
+ *
+ * socketOptions: An object with properties to configure the Socket.io
+ * instance. See the Socket.io documentation for a list of valid values:
+ *   https://socket.io/docs/server-api/#new-Server-httpServer-options
+ */
+settings = {
+  scheme: 'http',
+  port: 8080,
+  host: 'localhost',
+  serviceKey: '',
+  backend: {
+    port: 80,
+    host: 'drupalhost',
+    scheme: 'http',
+    basePath: '',
+    messagePath: '/nodejs/message'
+  },
+  debug: false,
+  sslKeyPath: '',
+  sslCertPath: '',
+  sslCAPath: '',
+  baseAuthPath: '/nodejs/',
+  extensions: [],
+  socketOptions: {}
+};

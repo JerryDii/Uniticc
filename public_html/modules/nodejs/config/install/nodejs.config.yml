@@ -1,0 +1,19 @@
+service_key: '__FIXME__'
+log_http_errors: true
+auth_get_token_callback: 'nodejs_auth_get_token_callback'
+auth_check_callback: 'nodejs_auth_check_callback'
+enable_userchannel: true
+pages: '*'
+authenticated_users_only: false
+nodejs:
+  scheme: 'http'
+  host: 'localhost'
+  port: 8080
+client:
+  scheme: 'http'
+  host: 'localhost'
+  port: 8080
+socket_io:
+  path: 'http://localhost:8080/socket.io/socket.io.js'
+  type: 'external'
+

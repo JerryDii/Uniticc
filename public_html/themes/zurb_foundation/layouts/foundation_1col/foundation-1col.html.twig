@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Template for a 1 column layout.
+ *
+#}
+<div {{ attributes.setAttribute('id', settings.css_id).addClass('row', 'foundation-1col', settings.css_classes) }}>
+  <div class="medium-12 columns">
+    {{ content.middle }}
+  </div>
+</div>

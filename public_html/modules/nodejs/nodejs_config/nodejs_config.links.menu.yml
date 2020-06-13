@@ -1,0 +1,6 @@
+nodejs_config.builder:
+  title: Configuration builder
+  description: 'Build a configuration file for the Node.js server.'
+  parent: system.admin_config_nodejs
+  route_name: nodejs_config.builder
+  weight: 100

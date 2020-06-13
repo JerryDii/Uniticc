@@ -1,0 +1,5 @@
+send nodejs broadcast:
+  title: 'Send system-wide broadcasts notification'
+administer nodejs notify:
+  title: 'Administer Nodejs notify settings'
+  restrict access: true

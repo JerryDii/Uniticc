@@ -1,0 +1,17 @@
+# Schema for the configuration files of the nodejs module.
+nodejs.config:
+  type: mapping
+  label: 'Nodejs config'
+  mapping:
+    nodejs_server_scheme:
+      type: string
+      label: 'Protocol used by Node.js server'
+    nodejs_server_host:
+      type: string
+      label: 'Node.js server host'
+    nodejs_server_port:
+      type: string
+      label: 'Node.js server port'
+    nodejs_pages:
+      type: string
+      label: 'Pages on which to enable nodejs'

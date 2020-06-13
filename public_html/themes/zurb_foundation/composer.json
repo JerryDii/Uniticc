@@ -1,0 +1,25 @@
+{
+  "name": "drupal/zurb_foundation",
+  "type": "drupal-theme",
+  "description": "Base Drupal theme based on Zurb Foundation 6.x.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/zurb_foundation",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Kevin Quillen (kevinquillen)",
+      "homepage": "https://www.drupal.org/u/kevinquillen",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Samuel Mortensen (samuelmortenson)",
+      "homepage": "https://www.drupal.org/u/samuelmortenson",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/zurb_foundation",
+    "source": "http://cgit.drupalcode.org/zurb_foundation"
+  }
+}

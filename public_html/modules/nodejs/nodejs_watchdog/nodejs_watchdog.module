@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function nodejs_watchdog_page_attachments_alter(array &$attachments) {
+  $route_name = \Drupal::service('current_route_match')->getRouteName();
+
+  if ($route_name == 'dblog.overview') {
+    nodejs_send_content_channel_token('watchdog_dblog');
+    $attachments['#attached']['library'][] = 'nodejs_watchdog/nodejs_watchdog';
+  }
+}

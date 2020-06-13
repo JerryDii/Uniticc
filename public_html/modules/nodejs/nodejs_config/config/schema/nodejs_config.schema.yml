@@ -1,0 +1,47 @@
+nodejs_config.settings:
+  type: mapping
+  label: 'Nodejs configuration builder settings'
+  mapping:
+    js_suggestion:
+      type: string
+      label: 'Suggested configuration'
+    host:
+      type: string
+      label: 'Server host'
+    port:
+      type: string
+      label: 'Server port'
+    scheme:
+      type: string
+      label: 'Server scheme'
+    key:
+      type: string
+      label: 'SSL key file'
+    cert:
+      type: string
+      label: 'SSL certificate file'
+    publish_url:
+      type: string
+      label: 'Publish URL'
+    write_channels:
+      type: boolean
+      label: 'Client can write to channels'
+    write_clients:
+      type: boolean
+      label: 'Client can write to clients'
+    backend_host:
+      type: string
+      label: 'Backend host'
+    backend_port:
+      type: string
+      label: 'Backend port'
+    backend_message_path:
+      type: string
+      label: 'Backend message path'
+    debug:
+      type: boolean
+      label: 'Debug'
+    extensions:
+      type: string
+      label: 'Extensions'
+
