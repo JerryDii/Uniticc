@@ -1,0 +1,89 @@
+/* fonts */
+@font-face {
+    font-family: circular; 
+    src: url(/fonts/circular.ttf) format("truetype"); 
+}
+
+@font-face {
+    font-family: circular-light;
+    src: url(/fonts/circular-light.ttf) format("truetype");
+}
+
+/* website colours (other than white (#FFFFFF) and black (#000000)) */
+:root {
+    --blue: #59C9FF; /* for important text, headings, and button backgrounds */
+    --dark-grey: #121212; /* background and text colour if background is light */
+    --grey: #2B2B2B;
+}
+
+body {
+    margin: 0;
+    font-family: circular-light, helvetica, sans-serif, arial;
+    color: #ffffff;
+    background-color: var(--dark-grey);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+p {
+   color: #ffffff;
+}
+
+a {
+   color: #ffffff;
+}
+
+a:hover {
+   color: var(--blue);
+   text-decoration: none;
+}
+
+/* landing section */
+#landing {
+    display: flex;
+    flex-direction: column;
+    background-image: url("/images/home/landing-section-bg.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+#landing h1 {
+    font-family: circular, helvetica, sans-serif, arial;
+    text-align: center;
+    margin-top: 35vh;
+    font-size: 50px;
+}
+
+#landing h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.learn-more-button {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: var(--blue);
+    border-radius: 20px;
+    padding: 15px;
+    width: 200px;
+}
+
+.learn-more-text{
+    font-family: circular, helvetica, sans-serif, arial;
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.learn-more-text:hover {
+    color: #ffffff;
+}
