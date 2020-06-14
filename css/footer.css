@@ -1,0 +1,58 @@
+body {
+  background-color: white;
+}
+
+footer {
+  background-color: var(--dark-grey);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "logo links email"
+    "copyright links social";
+  justify-items: center;
+  padding: 70px 0;
+}
+
+footer .logo {
+  grid-area: logo;
+  width: 200px;
+  transform: translate(-45px, 0);
+}
+
+footer .copyright-notice {
+  grid-area: copyright;
+  font-size: 1.2em;
+}
+
+#footer-links {
+  grid-area: links;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer-links a {
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 1px;
+}
+
+#footer-email {
+  grid-area: email;
+  font-size: 1.5em;
+}
+
+#footer-email a {
+  text-decoration: none;
+}
+
+footer .social-icons {
+  grid-area: social;
+  display: flex;
+}
+
+footer .social-icons img {
+  width: 40px;
+  padding: 0 22px;
+}
