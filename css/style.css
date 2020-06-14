@@ -57,7 +57,8 @@ a:hover {
   flex-direction: column;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     /* linear-gradient is to dim the background image */
-      url("/images/home/landing-section-bg.jpg");
+      url("/images/home/particles-hero-section.png"),
+    url("/images/home/landing-section-bg.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
