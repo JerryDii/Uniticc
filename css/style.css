@@ -106,19 +106,18 @@ a:hover {
     ),
     url("/images/background.png");
   background-size: cover;
+  height: 100vh;
 }
 
 #problem #problem-text {
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 #problem #problem-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
   font-size: 70px;
   color: var(--blue);
-  margin-top: 20vh;
 }
 
 #problem #problem-text h2 {
