@@ -128,3 +128,71 @@ a:hover {
   width: 30vw;
   height: 30vw;
 }
+
+/* Solution Section */
+#solution {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+      rgba(43, 43, 43, 0.8),
+      rgba(43, 43, 43, 0.8)
+    ),
+    url("/images/home/particles-overlay.png"), url("/images/background.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+#solution #solution-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+#solution #solution-text h1 {
+  font-family: circular, helvetica, sans-serif, arial;
+  font-size: 70px;
+  text-align: right;
+  color: var(--blue);
+}
+
+#solution #solution-text h2 {
+  font-size: 50px;
+}
+
+#solution img {
+  width: 35vw;
+}
+
+/* Answer Section */
+#answer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+      rgba(43, 43, 43, 0.8),
+      rgba(43, 43, 43, 0.8)
+    ),
+    url("/images/home/particles-overlay.png"), url("/images/background.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+#answer #answer-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#answer #answer-text h1 {
+  font-family: circular, helvetica, sans-serif, arial;
+  font-size: 70px;
+  color: var(--blue);
+}
+
+#answer #answer-text h2 {
+  font-size: 50px;
+}
+
+#answer img {
+  width: 50vw;
+}
