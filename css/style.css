@@ -116,7 +116,7 @@ a:hover {
 
 #problem #problem-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 70px;
+  font-size: 60px;
   color: var(--blue);
 }
 
@@ -126,7 +126,6 @@ a:hover {
 
 #problem img {
   width: 30vw;
-  height: 30vw;
 }
 
 /* Solution Section */
@@ -151,7 +150,7 @@ a:hover {
 
 #solution #solution-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 70px;
+  font-size: 60px;
   text-align: right;
   color: var(--blue);
 }
@@ -185,7 +184,7 @@ a:hover {
 
 #answer #answer-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 70px;
+  font-size: 60px;
   color: var(--blue);
 }
 
