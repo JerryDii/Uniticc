@@ -59,6 +59,7 @@ a:hover {
     /* linear-gradient is to dim the background image */
       url("/images/home/landing-section-bg.jpg");
   background-size: cover;
+  background-position: center;
   height: 100vh;
 }
 
