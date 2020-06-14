@@ -60,6 +60,7 @@ a:hover {
       url("/images/home/particles-hero-section.png"),
     url("/images/home/landing-section-bg.jpg");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   height: 100vh;
 }
