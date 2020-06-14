@@ -16,13 +16,16 @@
   --grey: #2b2b2b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: circular-light, helvetica, sans-serif, arial;
   color: #ffffff;
   background-color: var(--dark-grey);
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 h1,
