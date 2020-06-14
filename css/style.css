@@ -200,3 +200,38 @@ a:hover {
 #answer img {
   width: 18vw;
 }
+
+/* How It Works Section */
+#how-it-works {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+      rgba(43, 43, 43, 0.8),
+      rgba(43, 43, 43, 0.8)
+    ),
+    url("/images/home/particles-overlay.png"), url("/images/background.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+#how-it-works #how-it-works-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+#how-it-works #how-it-works-text h1 {
+  font-family: circular, helvetica, sans-serif, arial;
+  font-size: 3.5em;
+  text-align: right;
+  color: var(--blue);
+}
+
+#how-it-works #how-it-works-text h2 {
+  font-size: 2em;
+}
+
+#how-it-works img {
+  width: 30vw;
+}
