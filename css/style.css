@@ -4,11 +4,6 @@
     src: url(/fonts/circular.ttf) format("truetype"); 
 }
 
-@font-face {
-    font-family: circular-light;
-    src: url(/fonts/circular-light.ttf) format("truetype");
-}
-
 /* website colours (other than white (#FFFFFF) and black (#000000)) */
 :root {
     --blue: #59C9FF; /* for important text, headings, and button backgrounds */
@@ -18,7 +13,7 @@
 
 body {
     margin: 0;
-    font-family: circular-light, helvetica, sans-serif, arial;
+    font-family: helvetica, sans-serif, arial;
     color: #ffffff;
     background-color: var(--dark-grey);
     overflow-x: hidden;
