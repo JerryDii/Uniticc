@@ -116,12 +116,12 @@ a:hover {
 
 #problem #problem-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 60px;
+  font-size: 3.5em;
   color: var(--blue);
 }
 
 #problem #problem-text h2 {
-  font-size: 50px;
+  font-size: 2em;
 }
 
 #problem img {
@@ -150,13 +150,13 @@ a:hover {
 
 #solution #solution-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 60px;
+  font-size: 3.5em;
   text-align: right;
   color: var(--blue);
 }
 
 #solution #solution-text h2 {
-  font-size: 50px;
+  font-size: 2em;
 }
 
 #solution img {
@@ -184,12 +184,12 @@ a:hover {
 
 #answer #answer-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 60px;
+  font-size: 3.5em;
   color: var(--blue);
 }
 
 #answer #answer-text h2 {
-  font-size: 50px;
+  font-size: 2.5em;
 }
 
 #answer img {
