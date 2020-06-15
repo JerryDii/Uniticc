@@ -263,3 +263,33 @@ a:hover {
   text-align: center;
   font-size: 2.5vh;
 }
+
+#stay-updated #email-field {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  padding: 20px;
+  width: 250px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 1.2em;
+}
+
+#stay-updated #email-field::placeholder {
+  color: white;
+  opacity: 70%;
+}
+
+#stay-updated #sign-up-button {
+  background-color: var(--blue);
+  color: white;
+  padding: 21px;
+  margin-left: 10px;
+  width: 150px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2em;
+}
+
+#stay-updated #sign-up-button:hover {
+  cursor: pointer;
+}
