@@ -6,9 +6,8 @@
     <title>Unitic</title>
 
     <!--style.css-->
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
-
   <body>
     <!--Navigation Bar-->
 
@@ -121,5 +120,16 @@
     </main>
 
     <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+      window.onload = function(){
+          $.get("footer.html", function(data){
+              $("#footer").html(data);
+          })
+      }
+    </script>
+    
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>
 </html>
