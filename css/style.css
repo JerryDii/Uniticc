@@ -254,8 +254,8 @@ a:hover {
 }
 
 #stay-updated h1 {
-  margin-top: 4%;
-  font-size: 4.8vh;
+  margin-top: 3%;
+  font-size: 3em;
   color: var(--blue);
 }
 
@@ -268,11 +268,12 @@ a:hover {
 #stay-updated #email-field {
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  padding: 20px;
+  padding: 2.5vh;
   width: 250px;
   border: 2px solid white;
-  border-radius: 20px;
-  font-size: 1.2em;
+  border-radius: 10px;
+  font-size: 0.9em;
+  text-align: center;
 }
 
 #stay-updated #email-field::placeholder {
@@ -281,16 +282,19 @@ a:hover {
 }
 
 #stay-updated #sign-up-button {
+  font-family: circular, helvetica, sans-serif, arial;
+  font-weight: 700;
   background-color: var(--blue);
-  color: white;
-  padding: 21px;
+  color: var(--grey);
+  padding: 2.5vh;
   margin-left: 10px;
   width: 150px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 1.2em;
 }
 
 #stay-updated #sign-up-button:hover {
   cursor: pointer;
+  color: #ffffff;
 }
