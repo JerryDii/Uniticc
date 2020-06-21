@@ -1,3 +1,13 @@
+
+
+.nav-links-desktop {
+  font-size: 1em;
+}
+
+.nav-links-desktop a {
+  text-decoration: none;
+}
+
 footer {
   background-color: var(--dark-grey);
   display: grid;
