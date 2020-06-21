@@ -247,7 +247,8 @@ a:hover {
       rgba(21, 21, 21, 0.6)
     ),
     url("/images/home/abstract-bg.jpg");
-  background-position: top;
+  background-position: center;
+  background-attachment: fixed;
   background-size: cover;
   height: 43vh;
 }
