@@ -260,7 +260,7 @@ a:hover {
 }
 
 #stay-updated p {
-  margin-top: -1%;
+  margin-top: -2%;
   text-align: center;
   font-size: 2.5vh;
 }
@@ -268,7 +268,7 @@ a:hover {
 #stay-updated #email-field {
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  padding: 2.5vh;
+  padding: 2.6vh;
   width: 250px;
   border: 2px solid white;
   border-radius: 10px;
