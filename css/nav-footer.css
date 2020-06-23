@@ -8,11 +8,12 @@
 
 #logo {
   width: 150px;
-  transform: translate(45px, 0);
+  transform: translate(40px, 0);
 }
 
 .nav-links-desktop {
   font-size: 1.3em;
+  transform: translate(-20px, 0);
 }
 .nav-links-desktop a {
   text-decoration: none;
