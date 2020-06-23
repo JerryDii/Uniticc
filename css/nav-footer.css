@@ -1,13 +1,26 @@
+/* nav */
+.nav-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3%;
+}
 
+#logo {
+  width: 150px;
+  transform: translate(45px, 0);
+}
 
 .nav-links-desktop {
-  font-size: 1em;
+  font-size: 1.3em;
 }
-
 .nav-links-desktop a {
   text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
+/* footer */
 footer {
   background-color: var(--dark-grey);
   display: grid;
@@ -22,12 +35,12 @@ footer {
 footer .logo {
   grid-area: logo;
   width: 200px;
-  transform: translate(-45px, 0);
 }
 
 footer .copyright-notice {
   grid-area: copyright;
   font-size: 1.2em;
+  margin-left: 90px;
 }
 
 #footer-links {

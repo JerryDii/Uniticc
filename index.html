@@ -7,13 +7,26 @@
 
     <!--style.css-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!--Load in nav and footer-->
+    <script>
+      window.onload = function(){
+          $.get("footer.html", function(data){
+              $("#footer").html(data);
+          })
+          $.get("nav.html", function(data){
+              $("#nav").html(data);
+          })
+      }
+    </script>
   </head>
   <body>
-    <!--Navigation Bar-->
-
     <main>
       <!--Hero Section-->
       <section id="hero">
+       <!--Navigation Bar-->
+        <div id="nav"></div>
+        
         <h1>
           Step Into The Future<br />of
           <span style="color: var(--blue);">Tourette Treatments</span>
@@ -121,13 +134,6 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    <script>
-      window.onload = function(){
-          $.get("footer.html", function(data){
-              $("#footer").html(data);
-          })
-      }
-    </script>
     
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
