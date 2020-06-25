@@ -127,7 +127,7 @@ a:hover {
 }
 
 #problem #problem-text h2 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 #problem img {
@@ -162,7 +162,7 @@ a:hover {
 }
 
 #solution #solution-text h2 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 #solution img {
@@ -195,7 +195,7 @@ a:hover {
 }
 
 #answer #answer-text h2 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 #answer img {
