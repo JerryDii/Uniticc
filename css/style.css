@@ -225,7 +225,7 @@ a:hover {
 }
 
 #stay-updated p {
-  margin-top: -2%linear-gradient(45deg, red, blue);
+  margin-top: -2%;
   text-align: center;
   font-size: 2.5vh;
 }
