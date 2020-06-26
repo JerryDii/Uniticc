@@ -58,9 +58,10 @@ a:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     /* linear-gradient is to dim the background image */
       url("/images/home/particles-hero-section.png"),
-    url("/images/home/landing-section-bg.jpg");
+    url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
 }
@@ -250,7 +251,7 @@ a:hover {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  height: 45vh;
+  height: 40vh;
 }
 
 #stay-updated h1 {
