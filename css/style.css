@@ -29,13 +29,16 @@ body {
 }
 
 h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
   color: #ffffff;
   font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
 }
 
 p {
@@ -215,7 +218,7 @@ a:hover {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  height: 40vh;
+  height: 365px;
 }
 
 #stay-updated h1 {
@@ -225,9 +228,9 @@ a:hover {
 }
 
 #stay-updated p {
-  margin-top: -2%;
+  margin-top: -1.5%;
   text-align: center;
-  font-size: 2.5vh;
+  font-size: 1.5em;
 }
 
 #stay-updated #email-field {
