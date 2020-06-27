@@ -134,6 +134,7 @@ a:hover {
 
 #problem img {
   width: 30vw;
+  animation: 2s ease-out slide-from-right;
 }
 
 /* Solution Section */
@@ -164,6 +165,7 @@ a:hover {
 
 #solution img {
   width: 35vw;
+  animation: 2s ease-out slide-from-left;
 }
 
 /* Answer Section */
@@ -192,6 +194,7 @@ a:hover {
 
 #answer img {
   width: 30vw;
+  animation: 2s ease-out slide-from-right;
 }
 
 /* Stay Updated Section */
@@ -254,4 +257,18 @@ a:hover {
 #stay-updated #sign-up-button:hover {
   cursor: pointer;
   color: #ffffff;
+}
+
+/* Animations */
+
+@keyframes slide-from-right {
+  from {
+    transform: translate(400px, 0);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translate(-400px, 0);
+  }
 }
