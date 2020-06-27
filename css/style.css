@@ -37,7 +37,12 @@ h6 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 4em;
+}
+
 h2 {
+  font-size: 2em;
   font-weight: 500;
 }
 
@@ -125,12 +130,7 @@ a:hover {
 
 #problem #problem-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 3.5em;
   color: var(--blue);
-}
-
-#problem #problem-text h2 {
-  font-size: 1.5em;
 }
 
 #problem img {
@@ -159,13 +159,8 @@ a:hover {
 
 #solution #solution-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 3.5em;
   text-align: right;
   color: var(--blue);
-}
-
-#solution #solution-text h2 {
-  font-size: 1.5em;
 }
 
 #solution img {
@@ -193,12 +188,7 @@ a:hover {
 
 #answer #answer-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
-  font-size: 3.5em;
   color: var(--blue);
-}
-
-#answer #answer-text h2 {
-  font-size: 1.5em;
 }
 
 #answer img {
