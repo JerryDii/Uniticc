@@ -76,8 +76,7 @@ a:hover {
 #hero h1 {
   font-family: circular, helvetica, sans-serif, arial;
   text-align: center;
-  margin-top: 5vh;
-  font-size: 3.5em;
+  margin-top: 100px;
 }
 
 #hero h2 {
