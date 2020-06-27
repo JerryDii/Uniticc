@@ -55,9 +55,8 @@ a:hover {
 #hero {
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    /* linear-gradient is to dim the background image */
-      url("/images/home/particles-hero-section.png"),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/home/particles-hero-section.png"),
     url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -95,7 +94,7 @@ a:hover {
   text-decoration: none;
   color: var(--grey);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .learn-more-text:hover {
