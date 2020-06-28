@@ -1,5 +1,5 @@
 /* nav */
-.nav-desktop {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,6 +19,16 @@
   text-decoration: none;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.nav-links-desktop a:hover {
+  color: var(--blue);
+}
+
+@media only screen and (max-width: 750px) {
+.nav-links-desktop {
+  display: none;
+  }
 }
 
 /* footer */
