@@ -10,12 +10,29 @@
         <a href="/index.html">
             <img id="logo" src="/images/unitic.png" alt="Unitic Logo">
         </a>
-    <div class="nav-links-desktop nav-links-mobile">
+    <img class="nav-mobile-icon" src="images/nav-mobile.svg">
+    <div class="nav-links-desktop">
         <a href="/index.html">Home</a>
         <a href="#">Our Platform</a>
         <a href="#">Resources</a>
         <a href="#">Contact</a>
     </div>
+    <div class="nav-links-mobile nav-links-mobile-show">
+      <a href="/index.html">Home</a>
+      <a href="#">Our Platform</a>
+      <a href="#">Resources</a>
+      <a href="#">Contact</a>
+    </div>
 </nav>
+<script>
+  function classToggle() {
+  const divs = document.querySelectorAll('.nav-links-mobile')
+  divs.forEach(div => div.classList.toggle('nav-links-mobile-show'));
+}
+document.querySelector('.nav-mobile-icon')
+  .addEventListener('click', classToggle);
+</script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
