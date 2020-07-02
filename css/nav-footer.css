@@ -30,7 +30,7 @@ nav {
   width: 50px;
 }
 
-.nav-links-mobile {
+.nav-links-mobile, .nav-links-mobile-show {
   display: none;
 }
 
@@ -43,7 +43,7 @@ nav {
     "empty nav-links";
 }
 
-.nav-links-desktop, .nav-links-mobile-show {
+.nav-links-desktop {
   display: none;
 }
 
