@@ -59,6 +59,12 @@ a:hover {
   text-decoration: none;
 }
 
+/* Shared rules */
+.image-box {
+  background-color: var(--grey);
+  box-shadow: 25px 25px 0 0 var(--blue);
+}
+
 /* hero section */
 #hero {
   display: flex;
@@ -135,6 +141,7 @@ a:hover {
 #problem img {
   width: 25vw;
   animation: 2s ease-out slide-from-right;
+  padding: 70px;
 }
 
 /* Solution Section */
@@ -163,9 +170,14 @@ a:hover {
   color: var(--blue);
 }
 
+.image-box {
+  box-shadow: -25px 25px 0 0 var(--blue);
+}
+
 #solution img {
   width: 30vw;
   animation: 2s ease-out slide-from-left;
+  padding: 120px 50px;
 }
 
 /* Answer Section */
@@ -195,6 +207,7 @@ a:hover {
 #answer img {
   width: 28vw;
   animation: 2s ease-out slide-from-right;
+  padding: 120px 60px;
 }
 
 /* Stay Updated Section */
