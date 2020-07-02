@@ -6,27 +6,27 @@
     <title>Unitic</title>
 
     <!--style.css-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
     <!--Load in nav and footer-->
     <script>
-      window.onload = function(){
-          $.get("nav.html", function(data){
-              $("#nav").html(data);
-          })
-          $.get("footer.html", function(data){
-              $("#footer").html(data);
-          })
-      }
+      window.onload = function () {
+        $.get("nav.html", function (data) {
+          $("#nav").html(data);
+        });
+        $.get("footer.html", function (data) {
+          $("#footer").html(data);
+        });
+      };
     </script>
   </head>
   <body>
     <main>
       <!--Hero Section-->
       <section id="hero">
-       <!--Navigation Bar-->
+        <!--Navigation Bar-->
         <div id="nav"></div>
-        
+
         <h1>
           Step Into The Future<br />of
           <span style="color: var(--blue);">Tourette Treatments</span>
@@ -72,7 +72,10 @@
             at
             <span style="color: var(--blue);">the click of a<br />button</span>.
           </h2>
-          <h2>We understand the stress<br>connected with tics and<br>the traditional route for<br>therapy.</h2>
+          <h2>
+            We understand the stress<br />connected with tics and<br />the
+            traditional route for<br />therapy.
+          </h2>
         </div>
       </section>
 
@@ -81,17 +84,20 @@
         <div id="answer-text">
           <h1>The Answer</h1>
           <h2>
-            In order to provide tailored treatments<br> for our users, data is an important part<br>of our platform. 
+            In order to provide tailored treatments<br />
+            for our users, data is an important part<br />of our platform.
           </h2>
           <h2>
-            The more <span style="color: var(--blue);">input our users </span
-            >provide us,<br>the <span style="color: var(--blue);">more accurate and better </span>our<br>
-            platform will become. This will allow our <br>users to recieve the best treatment from us.
+            The more
+            <span style="color: var(--blue);">input our users </span>provide
+            us,<br />the
+            <span style="color: var(--blue);">more accurate and better </span
+            >our<br />
+            platform will become. This will allow our <br />users to recieve the
+            best treatment from us.
           </h2>
         </div>
-        <img
-          src="/images/home/machine.png"
-          alt="Machine">
+        <img src="/images/home/machine.png" alt="Machine" />
       </section>
 
       <!-- How It Works Section -->
@@ -120,7 +126,8 @@
         <p>
           Here at Unitic, we are doing our best to provide the most accurate
           platform possible.<br />We’re doing this by collecting data and
-          optimizing our system. We will be releasing<br> our platform as soon as possible!
+          optimizing our system. We will be releasing<br />
+          our platform as soon as possible!
         </p>
         <form action="">
           <input
@@ -136,7 +143,7 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    
+
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </body>

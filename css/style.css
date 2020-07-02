@@ -133,7 +133,7 @@ a:hover {
 }
 
 #problem img {
-  width: 30vw;
+  width: 25vw;
   animation: 2s ease-out slide-from-right;
 }
 
@@ -164,7 +164,7 @@ a:hover {
 }
 
 #solution img {
-  width: 35vw;
+  width: 30vw;
   animation: 2s ease-out slide-from-left;
 }
 
@@ -193,7 +193,7 @@ a:hover {
 }
 
 #answer img {
-  width: 30vw;
+  width: 28vw;
   animation: 2s ease-out slide-from-right;
 }
 
