@@ -210,6 +210,13 @@ a:hover {
   padding: 120px 60px;
 }
 
+/* Carousel */
+.carousel.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Stay Updated Section */
 #stay-updated {
   display: flex;
@@ -233,7 +240,7 @@ a:hover {
 }
 
 #stay-updated p {
-  margin-top: -1.5%;
+  /* margin-top: -1.5%; */
   text-align: center;
   font-size: 1.5em;
 }
