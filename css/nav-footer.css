@@ -89,7 +89,7 @@ nav {
 footer {
   background-color: var(--dark-grey);
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%; 
+  grid-template-columns: 1fr 1fr 1fr; 
   grid-template-areas:
     "logo links email"
     "copyright links social";
