@@ -62,11 +62,14 @@ nav {
 }
 
 .nav-links-mobile-show {
-  font-size: 1.3em;
+  font-size: 1.2em;
   display: grid;
   grid-area: nav-links;
   margin-left: auto;
-  transform: translate(-20px, 0);
+  transform: translate(-12px, 0);
+  z-index: 1;
+  margin-bottom: -60%;
+  margin-top: -10%;
 }
 
 .nav-links-mobile-show a{

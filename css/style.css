@@ -59,10 +59,42 @@ a:hover {
   text-decoration: none;
 }
 
-/* Shared rules */
+@media only screen and (max-width: 2400px) {
+  h1 {
+    font-size: 3.5em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }  
+}
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 3.2em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 750px) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+}
+
+/* Shared rules (for problem and answer) */
 .image-box {
   background-color: var(--grey);
   box-shadow: 25px 25px 0 0 var(--blue);
+}
+
+@media only screen and (max-width: 750px) {
+  .image-box {
+    box-shadow: -25px 25px 0 0 var(--blue);
+  }
 }
 
 /* hero section */
@@ -83,12 +115,18 @@ a:hover {
   font-family: circular, helvetica, sans-serif, arial;
   text-align: center;
   margin-top: 90px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #hero h2 {
   text-align: center;
   font-size: 1.2em;
   font-weight: 550;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .learn-more-button {
@@ -114,6 +152,37 @@ a:hover {
   color: #ffffff;
 }
 
+@media only screen and (max-width: 2400px) {
+  #hero h1 {
+    margin-top: 4%;
+  }
+  #hero h2 {
+    margin-top: -10px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #hero {
+    height: 110vh;
+  }
+  #hero h1 {
+    margin-top: 9%;
+    width: 80%;
+  }
+  #hero h2 {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #hero h1 {
+    margin-top: 10%;
+  }
+  #hero h2 {
+    font-size: 1em;
+  }
+}
+
 /* Problem section */
 #problem {
   display: flex;
@@ -128,21 +197,44 @@ a:hover {
   height: 100vh;
 }
 
-#problem #problem-text {
+#problem-text {
   display: flex;
   flex-direction: column;
 }
 
-#problem #problem-text h1 {
+#problem-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
   color: var(--blue);
+  text-align: left;
 }
+
 
 #problem img {
   width: 25vw;
   animation: 2s ease-out slide-from-right;
   padding: 70px;
 }
+
+@media only screen and (max-width: 900px) {
+  #problem img {
+    padding: 40px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #problem {
+    flex-direction: column;
+  }
+  #problem img {
+    animation: 2s ease-out slide-from-left;
+  }
+}
+
+/* Carousel */
+/* .carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} *
 
 /* Solution Section */
 #solution {
@@ -158,19 +250,19 @@ a:hover {
   height: 100vh;
 }
 
-#solution #solution-text {
+#solution-text {
   display: flex;
   flex-direction: column;
   text-align: right;
 }
 
-#solution #solution-text h1 {
+#solution-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
   text-align: right;
   color: var(--blue);
 }
 
-.image-box {
+#solution .image-box {
   box-shadow: -25px 25px 0 0 var(--blue);
 }
 
@@ -178,6 +270,40 @@ a:hover {
   width: 30vw;
   animation: 2s ease-out slide-from-left;
   padding: 120px 50px;
+}
+
+.image-box-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  #solution img {
+    padding: 60px 30px;
+  }
+  #solution .image-box {
+    box-shadow: -25px 25px 0 0 var(--blue);
+  }
+}
+@media only screen and (max-width: 750px) {
+  #solution {
+    flex-direction: column;
+  }
+  #solution-text {
+    margin-top: 3%;
+    text-align: left;
+  }
+  #solution-text h1 {
+    text-align: left;
+  }
+  #solution-text h2:last-child {
+    margin-bottom: 15%;
+  }
+  .image-box-desktop {
+    display: none;
+  }
+  .image-box-mobile {
+    display: flex;
+  }
 }
 
 /* Answer Section */
@@ -194,12 +320,12 @@ a:hover {
   height: 100vh;
 }
 
-#answer #answer-text {
+#answer-text {
   display: flex;
   flex-direction: column;
 }
 
-#answer #answer-text h1 {
+#answer-text h1 {
   font-family: circular, helvetica, sans-serif, arial;
   color: var(--blue);
 }
@@ -210,11 +336,25 @@ a:hover {
   padding: 120px 60px;
 }
 
-/* Carousel */
-.carousel.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media only screen and (max-width: 900px) {
+  #answer img {
+    padding: 60px 30px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  #answer {
+    flex-direction: column;
+    height: 125vh;
+  }
+  #answer-text {
+    text-align: left;
+  }
+  #answer-text h1 {
+    text-align: left;
+  }
+  #answer img {
+    animation: 2s ease-out slide-from-left;
+  }
 }
 
 /* Stay Updated Section */
@@ -243,6 +383,7 @@ a:hover {
   /* margin-top: -1.5%; */
   text-align: center;
   font-size: 1.5em;
+  width: 75%;
 }
 
 #stay-updated #email-field {
@@ -279,6 +420,32 @@ a:hover {
   color: #ffffff;
 }
 
+@media only screen and (max-width: 2400px) { 
+  #stay-updated {
+    height: 330px;
+  }
+  #stay-updated p {
+    margin-top: -1.5%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #stay-updated h1 {
+    font-size: 2.8em;
+  }
+  #stay-updated p {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #stay-updated {
+    height: 300px;
+  }
+  #stay-updated p{
+    font-size: 1em;
+  }
+}
 /* Animations */
 
 @keyframes slide-from-right {
@@ -291,4 +458,4 @@ a:hover {
   from {
     transform: translate(-400px, 0);
   }
-}
+} 
