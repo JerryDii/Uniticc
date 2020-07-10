@@ -176,10 +176,16 @@ a:hover {
 
 @media only screen and (max-width: 750px) {
   #hero h1 {
-    margin-top: 10%;
+    margin-top: 20%;
   }
   #hero h2 {
     font-size: 1em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #hero h1 {
+    margin-top: 40%;
   }
 }
 
@@ -453,6 +459,22 @@ a:hover {
     font-size: 1em;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  #stay-updated p {
+    font-size: 0.8em;
+  }
+  #stay-updated #email-field {
+    width: 120px;
+    font-size: 0.7em;
+    padding: 2.3vh;
+  }
+  #stay-updated #sign-up-button {
+    font-size: 1em;
+    padding: 2.3vh;
+  }
+}
+
 /* Animations */
 
 @keyframes slide-from-right {
