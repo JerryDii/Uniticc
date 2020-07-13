@@ -229,18 +229,91 @@ a:hover {
 @media only screen and (max-width: 750px) {
   #problem {
     flex-direction: column;
+    padding-bottom: 10%;
   }
   #problem img {
     animation: 2s ease-out slide-from-left;
   }
 }
 
-/* Carousel */
-/* .carousel {
+/* slideshow */
+.swiper-container {
+  height: 100vh;
+}
+
+.slideshow-1, .slideshow-2, .slideshow-3 {
+  background-size: cover;
+  background-position: center;
+}
+
+.slideshow-1 {
+  background-image: linear-gradient(
+      rgba(21, 21, 21, 0.185),
+      rgba(21, 21, 21, 0.185)
+    ), url("/images/home/slideshow/clouds.jpg");
+}
+
+.slideshow-2 {
+  background-image: linear-gradient(
+      rgba(21, 21, 21, 0.185),
+      rgba(21, 21, 21, 0.185)
+    ), url("/images/home/slideshow/mountain.jpg");
+}
+
+.slideshow-3 {
+  background-image: linear-gradient(
+    rgba(21, 21, 21, 0.185),
+    rgba(21, 21, 21, 0.185)
+  ), url("/images/home/slideshow/forest.jpg");
+}
+
+#slideshow-1-content, #slideshow-2-content, #slideshow-3-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-} *
+  text-align: center;
+}
+
+.slideshow-3 img {
+  width: 200px;
+  z-index: 1;
+}
+
+#slideshow-3-content {
+  transform: translate(0, 220px);
+}
+
+#slideshow-1-content h1, #slideshow-2-content h1 {
+  font-family: circular, helvetica, sans-serif, arial;
+  text-align: center;
+  margin-top: 220px;
+  color: var(--blue);
+  font-size: 4.5em;
+}
+
+#slideshow-1-content h1 {
+  margin-bottom: -100px;
+}
+
+#slideshow-1-content h2, #slideshow-2-content h2, #slideshow-3-content h2{
+  font-size: 1.3em;
+  padding: 0 20px 0 20px;
+}
+
+#slideshow-2-content h2 {
+  margin-top: -10px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ffffff;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 750px) {
+  #slideshow-1-content h2, #slideshow-2-content h2, #slideshow-3-content h2{
+    font-size: 1.1em;
+  }
+}
 
 /* Solution Section */
 #solution {
