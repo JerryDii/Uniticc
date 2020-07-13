@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unitic</title>
-  
+
+    <!--fix glitch on load-->
+    <link rel="stylesheet" href="css/preload.css">
+
     <!--swiper (for slideshow)-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -12,7 +15,7 @@
     <!--style.css-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-    <!--Load in nav and footer-->
+    <!--load in nav and footer-->
     <script>
       window.onload = function () {
         $.get("nav.html", function (data) {

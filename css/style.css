@@ -89,6 +89,8 @@ a:hover {
 .image-box {
   background-color: var(--grey);
   box-shadow: 25px 25px 0 0 var(--blue);
+  opacity: 1;
+  animation: 4s fade-in;
 }
 
 @media only screen and (max-width: 750px) {
@@ -208,6 +210,8 @@ a:hover {
 #problem-text {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  animation: 4s fade-in;
 }
 
 #problem-text h1 {
@@ -215,7 +219,6 @@ a:hover {
   color: var(--blue);
   text-align: left;
 }
-
 
 #problem img {
   width: 25vw;
@@ -334,6 +337,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   text-align: right;
+  opacity: 1;
+  animation: 4s fade-in;
 }
 
 #solution-text h1 {
@@ -344,6 +349,8 @@ a:hover {
 
 #solution .image-box {
   box-shadow: -25px 25px 0 0 var(--blue);
+  opacity: 1;
+  animation: 4s fade-in;
 }
 
 #solution img {
@@ -403,6 +410,8 @@ a:hover {
 #answer-text {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+  animation: 4s fade-in;
 }
 
 #answer-text h1 {
@@ -562,3 +571,9 @@ a:hover {
     transform: translate(-400px, 0);
   }
 } 
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
