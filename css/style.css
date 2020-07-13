@@ -101,6 +101,8 @@ a:hover {
 #hero {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("/images/home/particles-hero-section.png"),
     url("/images/home/hero-section-bg2.jpg");
@@ -108,7 +110,7 @@ a:hover {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  height: 110vh;
 }
 
 #hero h1 {
@@ -161,7 +163,7 @@ a:hover {
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 976px) {
   #hero {
     height: 110vh;
   }
@@ -276,7 +278,6 @@ a:hover {
 
 .slideshow-3 img {
   width: 200px;
-  z-index: 1;
 }
 
 #slideshow-3-content {

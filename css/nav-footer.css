@@ -4,6 +4,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 3%;
+  position: fixed;
+  width: 93vw;
+  z-index: 1;
 }
 
 #logo {
@@ -15,6 +18,7 @@ nav {
   font-size: 1.3em;
   transform: translate(-20px, 0);
 }
+
 .nav-links-desktop a {
   text-decoration: none;
   padding-left: 10px;
