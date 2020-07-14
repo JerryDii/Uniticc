@@ -15,6 +15,9 @@
     <!--style.css-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
+    <!-- Animations -->
+    <script src="js/animations.js"></script>
+
     <!--load in nav and footer-->
     <script>
       window.onload = function () {
@@ -51,7 +54,7 @@
 
       <!-- The Problem Section -->
       <section id="problem">
-        <div id="problem-text">
+        <div id="problem-text animate-on-scroll">
           <h1>The Problem</h1>
           <h2>
             The current state of tic and Tourette<br />treatment is
@@ -66,45 +69,45 @@
           </h2>
         </div>
         <div class="image-box">
-          <img src="/images/home/medicine.png" alt="Medicine" />
+          <img class="animate-on-scroll" src="/images/home/medicine.png" alt="Medicine" />
         </div>
       </section>
 
-    <!-- Slideshow -->
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide slideshow-1">
-        <div id="slideshow-1-content">
-        <h1>58.8%<h1>
-        <h2>of Tourette patients to have found significantly improved in tic severity after CBIT therapy.</h2>
+      <!-- Slideshow -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide slideshow-1">
+          <div id="slideshow-1-content">
+          <h1>58.8%<h1>
+          <h2>of Tourette patients to have found significantly improved in tic severity after CBIT therapy.</h2>
+          </div>
+        </div>
+        <div class="swiper-slide slideshow-2">
+          <div id="slideshow-2-content">
+          <h1>$304</h1>
+          <h2>Average cost of 1 in-person Tourette therapy session.</h2>
+          </div>
+        </div>
+        <div class="swiper-slide slideshow-3">
+          <div id="slideshow-3-content">
+          <img src="images/unitic.png" alt="Unitic">
+          <br>
+          <h2>The same effectiveness for a tenth of the price.</h2>
+          </div>
         </div>
       </div>
-      <div class="swiper-slide slideshow-2">
-        <div id="slideshow-2-content">
-        <h1>$304</h1>
-        <h2>Average cost of 1 in-person Tourette therapy session.</h2>
-        </div>
-      </div>
-      <div class="swiper-slide slideshow-3">
-        <div id="slideshow-3-content">
-        <img src="images/unitic.png" alt="Unitic">
-        <br>
-        <h2>The same effectiveness for a tenth of the price.</h2>
-        </div>
-      </div>
-    </div>
-    <!-- Buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    </div> 
+      <!-- Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      </div> 
 
       <!-- The Solution Section -->
       <section id="solution">
         <div class="image-box image-box-desktop">
           <img src="/images/home/onlinetherapy.png" alt="Therapy"/>
         </div>
-        <div id="solution-text">
+        <div id="solution-text animate-on-scroll">
           <h1>The Solution</h1>
           <h2>
             We want to create a future where tic <br>treatment can be accessed<br>
@@ -117,12 +120,12 @@
           </h2>
         </div>
         <div class="image-box image-box-mobile">
-          <img src="/images/home/onlinetherapy.png" alt="Therapy"/>
+          <img class="animate-on-scroll" src="/images/home/onlinetherapy.png" alt="Therapy"/>
       </section>
 
       <!-- The Answer Section -->
       <section id="answer">
-        <div id="answer-text">
+        <div id="answer-text animate-on-scroll">
           <h1>The Answer</h1>
           <h2>
             In order to provide tailored<br />treatments for our users, data<br />is
@@ -140,7 +143,7 @@
           </h2>
         </div>
         <div class="image-box">
-          <img src="/images/home/machine.png" alt="Machine" />
+          <img class="animate-on-scroll" src="/images/home/machine.png" alt="Machine" />
         </div>
       </section>
 
