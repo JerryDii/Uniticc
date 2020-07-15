@@ -3,7 +3,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5% 3% 0 3%;
+  padding: 1.7% 2% 0 2%;
   position: fixed;
   width: 100vw;
   z-index: 10;
@@ -14,7 +14,7 @@ nav {
 }
 
 #logo {
-  width: 140px;
+  width: 110px;
   transform: translate(40px, 0);
   margin-bottom: 15px;
 }
@@ -60,14 +60,14 @@ nav {
   #logo {
     grid-area: logo;
     transform: translate(20px, 0);
-    width: 140px;
+    width: 100px;
   }
 
   .nav-mobile-icon {
     display: grid;
     grid-area: nav-icon;
     margin-left: auto;
-    transform: translate(-90px, 0);
+    transform: translate(-40px, 0);
     cursor: pointer;
   }
 
@@ -76,7 +76,7 @@ nav {
     display: grid;
     grid-area: nav-links;
     margin-left: auto;
-    transform: translate(-48px, 0);
+    transform: translate(-22px, 0);
     z-index: 1;
     margin-bottom: -60%;
     margin-top: -10%;
