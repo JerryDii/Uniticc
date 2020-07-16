@@ -14,13 +14,13 @@ nav {
 }
 
 #logo {
-  width: 110px;
+  width: 100px;
   transform: translate(40px, 0);
   margin-bottom: 15px;
 }
 
 .nav-links-desktop {
-  font-size: 1.3em;
+  font-size: 1.2em;
   transform: translate(-90px, 0);
 }
 
@@ -72,7 +72,7 @@ nav {
   }
 
   .nav-links-mobile-show {
-    font-size: 1.2em;
+    font-size: 1.1em;
     display: grid;
     grid-area: nav-links;
     margin-left: auto;

@@ -105,7 +105,6 @@ a:hover {
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/images/home/particles-hero-section.png"),
     url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -198,10 +197,8 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
   background-image: linear-gradient(
-      rgba(43, 43, 43, 0.8),
-      rgba(43, 43, 43, 0.8)
-    ),
-    url("/images/background.png");
+      rgba(18,18,18),
+      rgba(18,18,18));
   background-size: cover;
   height: 100vh;
 }
@@ -253,24 +250,24 @@ a:hover {
 
 .slideshow-1 {
   background-image: linear-gradient(
-      rgba(21, 21, 21, 0.185),
-      rgba(21, 21, 21, 0.185)
+      rgba(21, 21, 21, 0.281),
+      rgba(21, 21, 21, 0.281)
     ),
     url("/images/home/slideshow/clouds.jpg");
 }
 
 .slideshow-2 {
   background-image: linear-gradient(
-      rgba(21, 21, 21, 0.185),
-      rgba(21, 21, 21, 0.185)
+      rgba(21, 21, 21, 0.281),
+      rgba(21, 21, 21, 0.281)
     ),
     url("/images/home/slideshow/mountain.jpg");
 }
 
 .slideshow-3 {
   background-image: linear-gradient(
-      rgba(21, 21, 21, 0.185),
-      rgba(21, 21, 21, 0.185)
+      rgba(21, 21, 21, 0.281),
+      rgba(21, 21, 21, 0.281)
     ),
     url("/images/home/slideshow/forest.jpg");
 }
@@ -336,10 +333,10 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
   background-image: linear-gradient(
-      rgba(43, 43, 43, 0.8),
-      rgba(43, 43, 43, 0.8)
+      rgba(18,18,18),
+      rgba(18, 18, 18, 0.733)
     ),
-    url("/images/home/particles-overlay.png"), url("/images/background.png");
+    url("/images/home/particles-overlay.png");
   background-size: cover;
   height: 100vh;
 }
@@ -408,10 +405,10 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
   background-image: linear-gradient(
-      rgba(43, 43, 43, 0.8),
-      rgba(43, 43, 43, 0.8)
+      rgba(18, 18, 18, 0.733),
+      rgba(18, 18, 18, 0.541)
     ),
-    url("/images/home/particles-overlay.png"), url("/images/background.png");
+    url("/images/home/particles-overlay.png");
   background-size: cover;
   height: 100vh;
 }
