@@ -47,6 +47,7 @@ nav {
 @media only screen and (max-width: 750px) {
   nav {
     display: grid;
+    padding: 1% 2% -1% 2%;
     grid-template-columns: 50% 50%;
     grid-template-areas:
       "logo nav-icon"
