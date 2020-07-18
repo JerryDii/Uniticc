@@ -106,6 +106,7 @@ a:hover {
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("/images/home/particles-overlay.png"),
     url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
