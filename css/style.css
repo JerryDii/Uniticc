@@ -85,6 +85,7 @@ a:hover {
   box-shadow: 25px 25px 0 0 var(--blue);
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
 }
 
 @media only screen and (max-width: 750px) {
@@ -199,6 +200,7 @@ a:hover {
   flex-direction: column;
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
 }
 
 #problem-text h1 {
@@ -210,6 +212,7 @@ a:hover {
   width: 25vw;
   animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
+  -moz-animation: 2s ease-out slide-from-right;
   padding: 70px;
 }
 
@@ -225,7 +228,8 @@ a:hover {
   }
   #problem img {
     animation: 2s ease-out slide-from-left;
-    -webkit-animation: 2s ease-out slide-from-right;
+    -webkit-animation: 2s ease-out slide-from-left;
+    -moz-animation: 2s ease-out slide-from-left;
   }
 }
 
@@ -334,6 +338,7 @@ a:hover {
   text-align: right;
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
 }
 
 #solution-text h1 {
@@ -345,12 +350,14 @@ a:hover {
   box-shadow: -25px 25px 0 0 var(--blue);
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
 }
 
 #solution img {
   width: 30vw;
   animation: 2s ease-out slide-from-left;
   -webkit-animation: 2s ease-out slide-from-left;
+  -moz-animation: 2s ease-out slide-from-left;
   padding: 120px 50px;
 }
 
@@ -407,6 +414,7 @@ a:hover {
   flex-direction: column;
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
+  -moz-animation: fade-in 2s;
 }
 
 #answer-text h1 {
@@ -418,6 +426,7 @@ a:hover {
   padding: 120px 60px;
   animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
+  -moz-animation: 2s ease-out slide-from-right;
   transform: translate(0, 0);
 }
 
@@ -443,6 +452,7 @@ a:hover {
   #answer img {
     animation: 2s ease-out slide-from-left;
     -webkit-animation: 2s ease-out slide-from-left;
+    -moz-animation: 2s ease-out slide-from-left;
   }
 }
 
@@ -594,6 +604,27 @@ a:hover {
 }
 
 @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes slide-from-right {
+  from {
+    transform: translate(400px, 0);
+  }
+}
+
+@-moz-keyframes slide-from-left {
+  from {
+    transform: translate(-400px, 0);
+  }
+}
+
+@-moz-keyframes fade-in {
   0% {
     opacity: 0;
   }
