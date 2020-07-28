@@ -14,13 +14,10 @@ Router.get("/matching", (req, res) => {
 });
 
 Router.post("/dashboard/profile", (req, res) => {
-  const { areas } = req.body; //Collect necessary profile qualities from POST request
-  console.log(areas)
-  res.send(areas);
+  const { selectedAreas, allAreas } = req.body; 
+  console.log(selectedAreas, allAreas);
+  res.sendStatus(200);
 });
-
-
-
 
 
 

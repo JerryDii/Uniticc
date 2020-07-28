@@ -387,19 +387,20 @@
             //location.assign("dashboard.html");
             
             reqBody = {
-            selectedAreas: groupAreas
-            
+            selectedAreas: groupAreas,
+            allAreas: groupPolys
+        
            };
-          const rawResponse = fetch("/dashboard/profile", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(reqBody),
-          })
-          .then((response) => console.log('hel'))
+           const rawResponse = fetch("/dashboard/profile", {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(reqBody),
+            }).then(console.log(reqBody));
 
-          console.log(reqBody.selectedAreas);
+          console.log('completed');
 
             
           }

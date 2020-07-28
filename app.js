@@ -1,5 +1,7 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+var bodyParser = require('body-parser')
+
 const app = express();
 
 // allows us to use ejs
@@ -8,7 +10,12 @@ app.set("view engine", "ejs");
 
 
 // allows us to parse data with req.body. ...
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 
 //folder of statics
 app.use(express.static("dashboard-styling"));
