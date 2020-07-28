@@ -1,13 +1,5 @@
-/* fonts */
-@font-face {
-  font-family: circular;
-  src: url(/fonts/circular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: circular-light;
-  src: url(/fonts/circular-light.ttf) format("truetype");
-}
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* website colours (other than white (#FFFFFF) and black (#000000)) */
 :root {
@@ -22,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  font-family: circular-light, helvetica, sans-serif, arial;
+  font-family: 'Roboto', helvetica, sans-serif, arial;
   color: #ffffff;
   background-color: var(--dark-grey);
   overflow-x: hidden;
@@ -35,6 +27,7 @@ h5,
 h6 {
   color: #ffffff;
   font-weight: 700;
+  font-family: helvetica, sans-serif, arial;
 }
 
 h1 {
@@ -43,7 +36,7 @@ h1 {
 
 h2 {
   font-size: 2em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 p {
@@ -52,6 +45,7 @@ p {
 
 a {
   color: #ffffff;
+  font-weight: 400;
 }
 
 a:hover {
@@ -59,12 +53,12 @@ a:hover {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 2400px) {
+@media only screen and (max-width: 1900px) {
   h1 {
     font-size: 3.5em;
   }
   h2 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -73,7 +67,7 @@ a:hover {
     font-size: 3.2em;
   }
   h2 {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -81,7 +75,7 @@ a:hover {
     font-size: 3em;
   }
   h2 {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 
@@ -116,7 +110,6 @@ a:hover {
 }
 
 #hero h1 {
-  font-family: circular, helvetica, sans-serif, arial;
   text-align: center;
   margin-top: 90px;
   width: 60%;
@@ -126,8 +119,7 @@ a:hover {
 
 #hero h2 {
   text-align: center;
-  font-size: 1.2em;
-  font-weight: 550;
+  font-weight: 450;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -145,7 +137,6 @@ a:hover {
 }
 
 .learn-more-text {
-  font-family: circular, helvetica, sans-serif, arial;
   text-decoration: none;
   color: var(--grey);
   font-size: 20px;
@@ -156,12 +147,13 @@ a:hover {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 2400px) {
+@media only screen and (max-width: 1900px) {
   #hero h1 {
     margin-top: 4%;
   }
   #hero h2 {
     margin-top: -10px;
+    width: 55%;
   }
 }
 
@@ -181,9 +173,6 @@ a:hover {
 @media only screen and (max-width: 750px) {
   #hero h1 {
     margin-top: 20%;
-  }
-  #hero h2 {
-    font-size: 1em;
   }
 }
 
@@ -213,7 +202,6 @@ a:hover {
 }
 
 #problem-text h1 {
-  font-family: circular, helvetica, sans-serif, arial;
   color: var(--blue);
   text-align: left;
 }
@@ -290,27 +278,29 @@ a:hover {
   width: 200px;
 }
 
+#slideshow-1-content, 
+#slideshow-2-content {
+  transform: translate(0, 30vh);
+}
+
 #slideshow-3-content {
-  transform: translate(0, 220px);
+  transform: translate(0, 37vh);
 }
 
 #slideshow-1-content h1,
 #slideshow-2-content h1 {
-  font-family: circular, helvetica, sans-serif, arial;
   text-align: center;
-  margin-top: 220px;
   color: var(--blue);
   font-size: 4.5em;
 }
 
 #slideshow-1-content h1 {
-  margin-bottom: -100px;
+  margin-bottom: 14px;
 }
 
 #slideshow-1-content h2,
 #slideshow-2-content h2,
 #slideshow-3-content h2 {
-  font-size: 1.3em;
   padding: 0 20px 0 20px;
 }
 
@@ -322,14 +312,6 @@ a:hover {
 .swiper-button-next {
   color: #ffffff;
   opacity: 0.4;
-}
-
-@media only screen and (max-width: 750px) {
-  #slideshow-1-content h2,
-  #slideshow-2-content h2,
-  #slideshow-3-content h2 {
-    font-size: 1.1em;
-  }
 }
 
 /* Solution Section */
@@ -355,7 +337,6 @@ a:hover {
 }
 
 #solution-text h1 {
-  font-family: circular, helvetica, sans-serif, arial;
   text-align: right;
   color: var(--blue);
 }
@@ -429,7 +410,6 @@ a:hover {
 }
 
 #answer-text h1 {
-  font-family: circular, helvetica, sans-serif, arial;
   color: var(--blue);
 }
 
@@ -483,26 +463,27 @@ a:hover {
 }
 
 #stay-updated h1 {
-  margin-top: 3%;
-  font-size: 3em;
   color: var(--blue);
 }
 
 #stay-updated p {
-  /* margin-top: -1.5%; */
+  margin-top: -1.5%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.8em;
   width: 75%;
+}
+
+#stay-updated #email-field, #stay-updated #sign-up-button {
+  font-size: 1.4em;
 }
 
 #stay-updated #email-field {
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  padding: 2.6vh;
+  padding: 2.4vh;
   width: 250px;
   border: 2px solid white;
   border-radius: 10px;
-  font-size: 0.9em;
   text-align: center;
 }
 
@@ -512,16 +493,15 @@ a:hover {
 }
 
 #stay-updated #sign-up-button {
-  font-family: circular, helvetica, sans-serif, arial;
+  font-family: 'Roboto', helvetica, sans-serif, arial;
   font-weight: 700;
   background-color: var(--blue);
   color: var(--grey);
-  padding: 2.5vh;
+  padding: 2.3vh;
   margin-left: 10px;
   width: 150px;
   border: none;
   border-radius: 10px;
-  font-size: 1.2em;
 }
 
 #stay-updated #sign-up-button:hover {
@@ -529,12 +509,19 @@ a:hover {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 2400px) {
+@media only screen and (max-width: 1900px) {
   #stay-updated {
     height: 330px;
   }
+  #stay-updated {
+    margin-top: 4%;
+  }
   #stay-updated p {
     margin-top: -1.5%;
+    font-size: 1.2em;
+  }
+  #stay-updated #email-field, #stay-updated #sign-up-button{
+    font-size: 1em;
   }
 }
 
@@ -542,12 +529,8 @@ a:hover {
   #stay-updated {
     height: 320px;
   }
-  #stay-updated h1 {
-    margin-top: 4%;
-    font-size: 2.8em;
-  }
   #stay-updated p {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 
