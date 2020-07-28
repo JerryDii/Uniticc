@@ -1,6 +1,19 @@
 const express = require("express");
+const mysql = require("mysql");
 const expressLayouts = require("express-ejs-layouts");
 var bodyParser = require('body-parser')
+
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "u440403356_SSHzV",
+    password: "YMfr6W0GOG",
+    database: "u440403356_7IhnA"
+});
+
+connection.connect((err) => {
+    if (err) throw err;
+    console.log("Connected!");
+});
 
 const app = express();
 
