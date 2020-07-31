@@ -1,5 +1,5 @@
 /* font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* website colours (other than white (#FFFFFF) and black (#000000)) */
 :root {
@@ -14,7 +14,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', helvetica, sans-serif, arial;
+  font-family: "Roboto", helvetica, sans-serif, arial;
   color: #ffffff;
   background-color: var(--dark-grey);
   overflow-x: hidden;
@@ -188,9 +188,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-image: linear-gradient(
-      rgba(18,18,18),
-      rgba(18,18,18));
+  background-image: linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18));
   background-size: cover;
   height: 100vh;
 }
@@ -282,9 +280,9 @@ a:hover {
   width: 200px;
 }
 
-#slideshow-1-content, 
+#slideshow-1-content,
 #slideshow-2-content {
-  transform: translate(0, 30vh);
+  transform: translate(0, 36vh);
 }
 
 #slideshow-3-content {
@@ -323,10 +321,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-image: linear-gradient(
-      rgba(18,18,18),
-      rgba(18, 18, 18, 0.733)
-    ),
+  background-image: linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18, 0.733)),
     url("/images/home/particles-overlay.png");
   background-size: cover;
   height: 100vh;
@@ -483,7 +478,8 @@ a:hover {
   width: 75%;
 }
 
-#stay-updated #email-field, #stay-updated #sign-up-button {
+#stay-updated #email-field,
+#stay-updated #sign-up-button {
   font-size: 1.4em;
 }
 
@@ -503,7 +499,7 @@ a:hover {
 }
 
 #stay-updated #sign-up-button {
-  font-family: 'Roboto', helvetica, sans-serif, arial;
+  font-family: "Roboto", helvetica, sans-serif, arial;
   font-weight: 700;
   background-color: var(--blue);
   color: var(--grey);
@@ -530,7 +526,8 @@ a:hover {
     margin-top: -1.5%;
     font-size: 1.2em;
   }
-  #stay-updated #email-field, #stay-updated #sign-up-button{
+  #stay-updated #email-field,
+  #stay-updated #sign-up-button {
     font-size: 1em;
   }
 }
