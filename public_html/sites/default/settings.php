@@ -770,3 +770,5 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_KW81wBuRdS_1wGRQcq6iPn6-iaf8yG2iZF0lAaab3my31yYIS8FYeDqJC8wIlFt3ZyhSV3qzUQ/sync';
+
+$conf['nodejs_service_key'] = 'fblXMijAF1pAHD7s3HPm';
