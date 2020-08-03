@@ -10,10 +10,9 @@ window.onload = function () {
 
 // swiper.js 
 var mySwiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
+    observer: true, 
+    observeParents: true,
     loop: true,
-  
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
