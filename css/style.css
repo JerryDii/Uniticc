@@ -122,6 +122,7 @@ a:hover {
   text-align: center;
   font-weight: 450;
   width: 50%;
+  margin-top: -10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -153,7 +154,6 @@ a:hover {
     margin-top: 4%;
   }
   #hero h2 {
-    margin-top: -10px;
     width: 55%;
   }
 }
@@ -313,6 +313,13 @@ a:hover {
 .swiper-button-next {
   color: #ffffff;
   opacity: 0.4;
+}
+
+@media only screen and (max-width: 1900px) {
+  #slideshow-1-content,
+  #slideshow-2-content {
+  transform: translate(0, 34vh);
+}
 }
 
 /* Solution Section */
