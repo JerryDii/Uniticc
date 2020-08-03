@@ -26,8 +26,9 @@ nav {
 
 .nav-links-desktop a {
   text-decoration: none;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 17px;
+  padding-right: 17px;
+  font-weight: 500;
 }
 
 .nav-links-desktop a:hover {
