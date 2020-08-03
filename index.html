@@ -11,19 +11,6 @@
 
     <!--style.css-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-
-    <!--load in nav and footer-->
-    <script>
-      window.onload = function () {
-        $.get("nav.html", function (data) {
-          $("#nav").html(data);
-        });
-        $.get("footer.html", function (data) {
-          $("#footer").html(data);
-        });
-      };
-    </script>
-
   </head>
   <body>
     <main>   
@@ -31,7 +18,8 @@
       <div id="nav"></div>  
 
       <!--Hero Section-->
-      <section id="hero">        
+      <section id="hero"> 
+        <div id="hero-particles"></div>
         <h1>
           Step Into The Future of
           <span style="color: var(--blue);">Tourette Treatments</span>
@@ -164,12 +152,15 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <!--swiper.js-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- custom.js -->
     <script src="js/custom.js"></script>

@@ -101,7 +101,6 @@ a:hover {
   justify-content: center;
   align-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/images/home/particles-overlay.png"),
     url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -110,12 +109,22 @@ a:hover {
   height: 110vh;
 }
 
+#hero-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 #hero h1 {
   text-align: center;
   margin-top: 90px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 }
 
 #hero h2 {
@@ -125,6 +134,7 @@ a:hover {
   margin-top: -10px;
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 }
 
 .learn-more-button {
@@ -136,6 +146,7 @@ a:hover {
   border-radius: 10px;
   padding: 15px;
   width: 200px;
+  z-index: 1;
 }
 
 .learn-more-text {

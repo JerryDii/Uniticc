@@ -1,3 +1,13 @@
+// load in nav and footer
+window.onload = function () {
+  $.get("nav.html", function (data) {
+    $("#nav").html(data);
+  });
+  $.get("footer.html", function (data) {
+    $("#footer").html(data);
+  });
+};
+
 // swiper.js 
 var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
@@ -11,3 +21,8 @@ var mySwiper = new Swiper('.swiper-container', {
     },
 
   })
+
+// particlesJS.load(@dom-id, @path-json, @callback (optional)); 
+particlesJS.load('hero-particles', 'js/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});
