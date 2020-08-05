@@ -255,30 +255,6 @@ a:hover {
   background-position: center;
 }
 
-.slideshow-1 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/clouds.jpg");
-}
-
-.slideshow-2 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/mountain.jpg");
-}
-
-.slideshow-3 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/forest.jpg");
-}
-
 #slideshow-1-content,
 #slideshow-2-content,
 #slideshow-3-content {

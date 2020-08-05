@@ -55,7 +55,7 @@
       </section>
 
       <!-- Facts Slideshow -->
-      <div class="swiper-container">
+      <div class="swiper-container" id="facts">
         <div class="swiper-wrapper">
         <!-- Slides -->
         <div class="swiper-slide slideshow-1">
@@ -163,20 +163,8 @@
 
     <!-- custom.js -->
     <script src="js/custom.js"></script>
-	<script>
-		$(function() {
-			// Get width of hero section
-			var heroWidth = $("#hero")[0].offsetWidth;
-			
-			// Apply different sizes of background images based on width at page load
-			if (heroWidth > 1920) $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-3840.jpg")');
-			else if (heroWidth > 1600) $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-1920.jpg")');
-			else if (heroWidth > 1366) $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-1600.jpg")');
-			else if (heroWidth > 1024) $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-1366.jpg")');
-			else if (heroWidth > 768) $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-1024.jpg")');
-			else $("#hero").css('background-image', 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("/images/home/hero-section-bg2-768.jpg")');
-			
-		});
-	</script>
+	
+	<!-- JS alternative to srcset -->
+	<script src="js/imageResize.js"></script>
   </body>
 </html>
