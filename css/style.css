@@ -100,8 +100,6 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("/images/home/hero-section-bg2.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -255,30 +253,6 @@ a:hover {
 .slideshow-3 {
   background-size: cover;
   background-position: center;
-}
-
-.slideshow-1 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/clouds.jpg");
-}
-
-.slideshow-2 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/mountain.jpg");
-}
-
-.slideshow-3 {
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.281),
-      rgba(21, 21, 21, 0.281)
-    ),
-    url("/images/home/slideshow/forest.jpg");
 }
 
 #slideshow-1-content,
