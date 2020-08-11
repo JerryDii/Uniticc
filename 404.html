@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unitic</title>
+  
+    <!--404.css-->
+    <link rel="stylesheet" href="css/404.css" type="text/css"/>
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+  </head>
+  <body>
+    <!--https://www.figma.com/proto/O57MZNAIBgtiu1eXNMXFgM/Unitic-404-Page?node-id=1%3A2&viewport=282%2C158%2C0.27846968173980713&scaling=min-zoom-->
+    <main>   
+      <!--Navigation Bar-->
+      <div id="nav"></div>
+      
+      <div id="centerMain">
+        <div>
+          <div id="center-main-heading">
+            <h1>404</h1>
+            <h3>Page not found!</h3>
+          </div>
+          <div id="center-main-description">
+            <p>Sorry, this page doesn't exist. Go back or head to our home page.</p>
+            <a href="/">Back To Homepage</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- nav.js -->
+    <script src="js/nav.js"></script>
+	
+	<script>
+    function res() {
+        if ($("#centerMain")[0].offsetWidth < 1590) {
+            $("#centerMain").css("height", "auto")
+                            .css("backgroundSize", "1600px")
+                            .css("paddingBottom", "60px");
+        } else {
+            $("#centerMain").css("height", "0")
+                            .css("backgroundSize", "100%")
+                            .css("paddingBottom", "44.75%");
+        }
+    }
+    window.addEventListener("resize", () => res());
+    $(() => res());
+    </script>
+  </body>
+</html>
