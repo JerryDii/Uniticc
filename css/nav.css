@@ -8,8 +8,8 @@ nav {
   width: 100vw;
   z-index: 10;
   background-image: linear-gradient(
-    rgba(21, 21, 21, 0.8),
-    rgba(21, 21, 21, 0.6)
+    rgba(21, 21, 21, 0.507),
+    rgba(21, 21, 21, 0.116)
   );
 }
 
@@ -20,7 +20,7 @@ nav {
 }
 
 .nav-links-desktop {
-  font-size: 1.2em;
+  font-size: 1.1em;
   transform: translate(-90px, 0);
 }
 
@@ -28,7 +28,7 @@ nav {
   text-decoration: none;
   padding-left: 17px;
   padding-right: 17px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .nav-links-desktop a:hover {
