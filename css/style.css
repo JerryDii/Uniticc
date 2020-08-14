@@ -606,8 +606,8 @@ a:hover {
 #center-main-description > p {
     font-size: 1.8em;
     color: #7f7f7f;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
     margin-bottom: 100px;
 }
 
@@ -621,6 +621,78 @@ a:hover {
     padding: 30px 40px 30px 40px;
     border: none;
     border-radius: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+    #center-main-heading > h1 {
+        font-size: 11.6em;
+    }
+
+    #center-main-heading > h3 {
+        font-size: 2.9em;
+    }
+
+    #center-main-description > p {
+        font-size: 1.9em;
+    }
+
+    #center-main-description > a {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #center-main-heading > h1 {
+        font-size: 11.2em;
+    }
+
+    #center-main-heading > h3 {
+        font-size: 2.8em;
+    }
+
+    #center-main-description > p {
+        font-size: 1.8em;
+    }
+
+    #center-main-description > a {
+        font-size: 1.9em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #center-main-heading > h1 {
+        font-size: 10.6em;
+    }
+
+    #center-main-heading > h3 {
+        font-size: 2.6em;
+    }
+
+    #center-main-description > p {
+        font-size: 1.6em;
+    }
+
+    #center-main-description > a {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #center-main-heading > h1 {
+        font-size: 10em;
+    }
+
+    #center-main-heading > h3 {
+        font-size: 2.4em;
+    }
+
+    #center-main-description > p {
+        font-size: 1.4em;
+    }
+
+    #center-main-description > a {
+        font-size: 1.4em;
+    }
 }
 
 #center-main-description > a:hover {
