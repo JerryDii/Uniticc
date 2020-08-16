@@ -621,44 +621,42 @@ a:hover {
     text-decoration: none;
     background-color: var(--blue);
     color: var(--grey);
-    padding: 30px 40px 30px 40px;
+    padding: 25px 35px 25px 35px;
     border: none;
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 1024px) {
-    #center-main-heading > h1 {
-        font-size: 11.6em;
-    }
-
-    #center-main-heading > h3 {
-        font-size: 2.9em;
-    }
-
-    #center-main-description > p {
-        font-size: 1.9em;
-    }
-
-    #center-main-description > a {
-        font-size: 2em;
-    }
+@media only screen and (max-width: 1500px) {
+  #center-main-heading h1 {
+    font-size: 11em;
+  }
+  #center-main-heading h3 {
+    font-size: 2.8em;
+  }
+  #center-main-description p {
+    font-size: 1.5em;
+  }
+  #center-main-description a {
+    font-size: 1.6em;
+    width: 200px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
     #center-main-heading > h1 {
-        font-size: 11.2em;
+        font-size: 10.9em;
     }
 
     #center-main-heading > h3 {
-        font-size: 2.8em;
+        font-size: 2.7em;
     }
 
     #center-main-description > p {
-        font-size: 1.8em;
+        font-size: 1.4em;
     }
 
     #center-main-description > a {
-        font-size: 1.9em;
+        font-size: 1.5em;
     }
 }
 
@@ -672,11 +670,11 @@ a:hover {
     }
 
     #center-main-description > p {
-        font-size: 1.6em;
+        font-size: 1.3em;
     }
 
     #center-main-description > a {
-        font-size: 1.8em;
+        font-size: 1.4em;
     }
 }
 
@@ -690,11 +688,11 @@ a:hover {
     }
 
     #center-main-description > p {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
     #center-main-description > a {
-        font-size: 1.4em;
+        font-size: 1.3em;
     }
 }
 
