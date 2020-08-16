@@ -510,6 +510,9 @@ a:hover {
   width: 150px;
   border: none;
   border-radius: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 #stay-updated #sign-up-button:hover {
