@@ -544,6 +544,9 @@ a:hover {
   #stay-updated p {
     font-size: 1.1em;
   }
+  #stay-updated #email-field {
+    font-size: 0.9em;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -560,12 +563,12 @@ a:hover {
     background-attachment: scroll;
   }
   #stay-updated p {
-    font-size: 0.8em;
+    font-size: 0.9em;
     margin-top: -7%;
   }
   #stay-updated #email-field {
     width: 120px;
-    font-size: 0.7em;
+    font-size: 0.8em;
     padding: 2.3vh;
   }
   #stay-updated #sign-up-button {
