@@ -156,20 +156,22 @@ footer .social-icons img {
 }
 
 @media only screen and (max-width: 1900px) {
-  #footer-links a {
+  #footer-email, #footer-links a {
     font-size: 1.3em;
   }
-  #footer-email {
-    grid-area: email;
-    font-size: 1.3em;
+  footer .social-icons img {
+    width: 30px;
   }
 }
   @media only screen and (max-width: 900px) {
+  #footer-email, #footer-links a {
+    font-size: 1em;
+  }
   footer .logo {
     width: 120px;
   }
   footer .copyright-notice {
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
 }
 
