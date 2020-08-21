@@ -25,6 +25,8 @@ $(() => {
 
 //Lazy loaded images go here
 window.onload = function() {
+    $("#solution").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18, 0.733)), url("/images/home/particles-overlay.png")');
+    $("#answer").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18, 0.733), rgba(18, 18, 18, 0.541)), url("/images/home/particles-overlay.png")');
     imageResize($("#facts")[0].offsetWidth, ".slideshow-2", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/mountain");
     imageResize($("#facts")[0].offsetWidth, ".slideshow-3", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/forest");
 }
