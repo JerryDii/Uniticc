@@ -14,13 +14,17 @@ function imageResize(width, cssSelector, linearGradient, baseURL) {
 	else $(cssSelector).css('background-image', 'linear-gradient(' + linearGradient + '), url("' + baseURL + '-768.jpg")');
 }
 
-// Important that this happens after nav and footer, since navigation is higher priority
-$(function() {
+// This should trigger after nav and footer load.
+$(() => {
     imageResize($("#hero")[0].offsetWidth, "#hero", "rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)", "/images/home/hero-section-bg2");
     
     imageResize($("#facts")[0].offsetWidth, ".slideshow-1", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/clouds");
-    imageResize($("#facts")[0].offsetWidth, ".slideshow-2", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/mountain");
-    imageResize($("#facts")[0].offsetWidth, ".slideshow-3", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/forest");
     
     imageResize($("#stay-updated")[0].offsetWidth, "#stay-updated", "rgba(21, 21, 21, 0.6), rgba(21, 21, 21, 0.6)", "/images/home/abstract-bg");
 });
+
+//Lazy loaded images go here
+window.onload = function() {
+    imageResize($("#facts")[0].offsetWidth, ".slideshow-2", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/mountain");
+    imageResize($("#facts")[0].offsetWidth, ".slideshow-3", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/images/home/slideshow/forest");
+}
