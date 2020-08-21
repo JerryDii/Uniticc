@@ -113,6 +113,16 @@ a:hover {
     font-size: 0.8em;
   }
 }
+
+/* removes default styling for input */
+input {
+  border: 0;
+  outline: 0;
+}
+input:focus {
+  outline: none;
+}
+
 /* Shared rules (for problem and answer) */
 .image-box {
   background-color: var(--grey);
@@ -500,7 +510,7 @@ a:hover {
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
-  height: 365px;
+  height: 370px;
 }
 
 #stay-updated h1 {
@@ -513,6 +523,12 @@ a:hover {
   width: 75%;
 }
 
+#sign-up-button-bg {
+  background-color: var(--grey);
+  border-radius: 10px;
+  width: 400px;
+}
+
 #stay-updated #email-field,
 #stay-updated #sign-up-button {
   font-size: 1.4em;
@@ -521,11 +537,9 @@ a:hover {
 #stay-updated #email-field {
   background-color: rgba(0, 0, 0, 0);
   color: white;
-  padding: 2.4vh;
-  width: 250px;
-  border: 2px solid white;
-  border-radius: 10px;
-  text-align: center;
+  padding: 6%;
+  width: 48%;
+  text-align: left;
 }
 
 #stay-updated #email-field::placeholder {
@@ -538,10 +552,9 @@ a:hover {
   font-weight: 700;
   background-color: var(--blue);
   color: var(--grey);
-  padding: 2.3vh;
-  margin-left: 10px;
-  width: 150px;
-  border: none;
+  padding: 3%;
+  transform: translate(15px, 0);
+  width: 31%;
   border-radius: 10px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -573,8 +586,11 @@ a:hover {
   #stay-updated {
     height: 320px;
   }
-  #stay-updated #email-field {
+  #stay-updated #email-field, #stay-updated #sign-up-button {
     font-size: 0.9em;
+  }
+  #sign-up-button-bg {
+    width: 300px;
   }
 }
 
@@ -589,16 +605,16 @@ a:hover {
     background-attachment: scroll;
   }
   #stay-updated p {
-    margin-top: -7%;
+    margin-top: -3%;
   }
-  #stay-updated #email-field {
-    width: 120px;
-    font-size: 0.8em;
-    padding: 2.3vh;
+}
+
+@media only screen and (max-width: 300px) {
+  #sign-up-button-bg {
+    width: 250px;
   }
-  #stay-updated #sign-up-button {
-    font-size: 1em;
-    padding: 2.3vh;
+  #stay-updated #email-field, #stay-updated #sign-up-button {
+    font-size: 0.7em;
   }
 }
 
