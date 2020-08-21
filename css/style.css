@@ -366,8 +366,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-image: linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18, 0.733)),
-    url("/images/home/particles-overlay.png");
   background-size: cover;
   height: 100vh;
 }
@@ -440,11 +438,6 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-image: linear-gradient(
-      rgba(18, 18, 18, 0.733),
-      rgba(18, 18, 18, 0.541)
-    ),
-    url("/images/home/particles-overlay.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -502,11 +495,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: linear-gradient(
-      rgba(21, 21, 21, 0.6),
-      rgba(21, 21, 21, 0.6)
-    ),
-    url("/images/home/abstract-bg.jpg");
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -748,7 +736,7 @@ input:focus {
 }
 
 /* Animations */
-
+/*
 @keyframes slide-from-right {
   from {
     transform: translate(400px, 0);
@@ -811,3 +799,4 @@ input:focus {
     opacity: 1;
   }
 }
+*/
