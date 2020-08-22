@@ -313,14 +313,14 @@ input:focus {
 } 
 
 #slideshow-3-content {
-  transform: translate(0, 31vh); 
+  transform: translate(0, 30vh); 
 } 
 
 #slideshow-3-content img {
   width: 255px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 
 #slideshow-1-content h1,
