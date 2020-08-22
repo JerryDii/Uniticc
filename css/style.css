@@ -201,7 +201,7 @@ input:focus {
   color: var(--grey);
   font-weight: 600;
   line-height: 55px;
-  padding: 0px 63.7px;
+  padding: 0px 63px;
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -287,7 +287,7 @@ input:focus {
 @media only screen and (max-width: 750px) {
   #problem {
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-bottom: 20%;
   }
 
@@ -368,6 +368,7 @@ input:focus {
   align-items: center;
   justify-content: space-evenly;
   background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
