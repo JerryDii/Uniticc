@@ -55,6 +55,10 @@ a:hover {
   text-decoration: none;
 }
 
+span {
+  color: var(--blue);
+}
+
 @media only screen and (max-width: 1900px) {
   h1 {
     font-size: 3.5em;
@@ -283,8 +287,14 @@ input:focus {
 @media only screen and (max-width: 750px) {
   #problem {
     flex-direction: column;
-    padding-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 20%;
   }
+
+  #problem-text p:last-child {
+    margin-bottom: 5%;
+  }
+
   #problem img {
     animation: 2s ease-out slide-from-left;
     -webkit-animation: 2s ease-out slide-from-left;
@@ -405,16 +415,16 @@ input:focus {
 @media only screen and (max-width: 750px) {
   #solution {
     flex-direction: column;
+    margin-top: 5%;
   }
   #solution-text {
-    margin-top: 10%;
     text-align: left;
   }
   #solution-text h1 {
     text-align: left;
   }
-  #solution-text h2:last-child {
-    margin-bottom: 15%;
+  #solution-text p:last-child {
+    margin-bottom: 10%;
   }
   .image-box-desktop {
     display: none;
@@ -463,6 +473,7 @@ input:focus {
 @media only screen and (max-width: 750px) {
   #answer {
     flex-direction: column;
+    margin-top: 5%;
     height: 140vh;
   }
   #answer-text {
@@ -471,8 +482,8 @@ input:focus {
   #answer-text h1 {
     text-align: left;
   }
-  #answer-text h2:last-child {
-    margin-bottom: -10%;
+  #answer-text p:last-child {
+    margin-bottom: -15%;
   }
   #answer img {
     animation: 2s ease-out slide-from-left;
