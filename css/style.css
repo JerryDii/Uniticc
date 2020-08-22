@@ -186,16 +186,21 @@ input:focus {
   text-align: center;
   background-color: var(--blue);
   border-radius: 10px;
-  padding: 15px;
-  width: 200px;
+  width: 230px;
+  height: 55px;
   z-index: 1;
 }
 
 .learn-more-text {
   text-decoration: none;
-  color: var(--grey);
   font-size: 20px;
+  color: var(--grey);
   font-weight: 600;
+  line-height: 55px;
+  padding: 0px 63.7px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .learn-more-text:hover {
