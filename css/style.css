@@ -43,6 +43,7 @@ h2 {
 p {
   color: #ffffff;
   font-size: 1.8em;
+  line-height: 1.4em;
 }
 
 a {
@@ -64,10 +65,22 @@ span {
     font-size: 3.5em;
   }
   h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
   p {
     font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  h1 {
+    font-size: 3.3em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  p {
+    font-size: 1.1em;
   }
 }
 
@@ -78,10 +91,8 @@ span {
   h2 {
     font-size: 1.2em;
   }
-  p {
-    font-size: 1.1em;
-  }
 }
+
 @media only screen and (max-width: 750px) {
   h1 {
     font-size: 3em;
@@ -278,7 +289,11 @@ input:focus {
   -moz-animation: 2s ease-out slide-from-right;
   padding: 70px;
 }
-
+@media only screen and (max-width: 1900px) {
+  #problem img {
+    padding: 55px;
+  }
+}
 @media only screen and (max-width: 900px) {
   #problem img {
     padding: 40px;
@@ -404,15 +419,18 @@ input:focus {
 .image-box-mobile {
   display: none;
 }
+@media only screen and (max-width: 1900px) {
+  #solution img {
+    padding: 80px 20px;
+  }
+}
 
 @media only screen and (max-width: 900px) {
   #solution img {
-    padding: 60px 30px;
-  }
-  #solution .image-box {
-    box-shadow: -25px 25px 0 0 var(--blue);
+    padding: 55px 20px;
   }
 }
+
 @media only screen and (max-width: 750px) {
   #solution {
     flex-direction: column;
@@ -465,7 +483,11 @@ input:focus {
   -moz-animation: 2s ease-out slide-from-right;
   transform: translate(0, 0);
 }
-
+@media only screen and (max-width: 1900px) {
+  #answer img {
+    padding: 100px 30px;
+  }
+}
 @media only screen and (max-width: 900px) {
   #answer img {
     padding: 60px 30px;
