@@ -129,13 +129,9 @@ span {
   }
 }
 
-/* removes default styling for input */
+/* removes border for input */
 input {
   border: 0;
-  outline: 0;
-}
-input:focus {
-  outline: none;
 }
 
 /* Shared rules (for problem and answer) */
