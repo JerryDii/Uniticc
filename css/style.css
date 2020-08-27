@@ -42,7 +42,7 @@ h2 {
 
 p {
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: 1.7em;
   line-height: 1.4em;
 }
 
@@ -80,7 +80,7 @@ span {
     font-size: 1.3em;
   }
   p {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 
@@ -91,6 +91,9 @@ span {
   h2 {
     font-size: 1.2em;
   }
+  p {
+    font-size: 0.9em;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -100,9 +103,6 @@ span {
   h2 {
     font-size: 1.1em;
   }
-  p {
-    font-size: 1em;
-  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -111,9 +111,6 @@ span {
   }
   h2 {
     font-size: 1em;
-  }
-  p {
-    font-size: 0.9em;
   }
 }
 
@@ -287,12 +284,14 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #problem img {
-    padding: 55px;
+    width: 24vw;
+    padding: 50px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1500px) {
   #problem img {
-    padding: 40px;
+    width: 23vw;
+    padding: 20px;
   }
 }
 @media only screen and (max-width: 750px) {
@@ -417,12 +416,14 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #solution img {
-    padding: 75px 20px;
+    width: 27vw;
+    padding: 75px 25px;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1500px) {
   #solution img {
+    width: 24vw;
     padding: 55px 20px;
   }
 }
@@ -481,12 +482,13 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #answer img {
-    padding: 100px 30px;
+    padding: 100px 25px;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1500px) {
   #answer img {
-    padding: 60px 30px;
+    width: 26vw;
+    padding: 60px 20px;
   }
 }
 @media only screen and (max-width: 750px) {
