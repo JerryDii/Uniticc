@@ -35,6 +35,16 @@
       document
         .querySelector(".nav-mobile-icon")
         .addEventListener("click", classToggle);
+
+      // add background to nav bar if more than 80px down page and remove background if not.
+      $(document).on("scroll", function () {
+        if ($(document).scrollTop () > 80) {
+          $("nav").addClass("nav-bg");
+        }
+        else {
+          $("nav").removeClass("nav-bg");
+        }
+      });
     </script>
 
     <!-- jquery -->

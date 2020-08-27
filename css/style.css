@@ -417,7 +417,7 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #solution img {
-    padding: 80px 20px;
+    padding: 75px 20px;
   }
 }
 
@@ -770,15 +770,6 @@ input {
   }
 }
 
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @-webkit-keyframes slide-from-right {
   from {
     transform: translate(400px, 0);
@@ -791,15 +782,6 @@ input {
   }
 }
 
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @-moz-keyframes slide-from-right {
   from {
     transform: translate(400px, 0);
@@ -809,6 +791,23 @@ input {
 @-moz-keyframes slide-from-left {
   from {
     transform: translate(-400px, 0);
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

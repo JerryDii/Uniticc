@@ -8,10 +8,12 @@ nav {
   top: 0px;
   width: 100vw;
   z-index: 10;
+}
+
+.nav-bg {
   background-image: linear-gradient(
-    rgba(21, 21, 21, 0.507),
-    rgba(21, 21, 21, 0.116)
-  );
+    rgba(27, 27, 27, 0.473),
+    rgba(27, 27, 27, 0.473));
 }
 
 #logo {
