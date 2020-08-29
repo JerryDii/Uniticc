@@ -14,6 +14,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
   font-family: "Roboto", helvetica, sans-serif, arial;
   color: #ffffff;
   background-color: var(--dark-grey);
@@ -96,6 +97,18 @@ span {
   }
 }
 
+/* @media only screen and (max-width: 823px) and (orientation: landscape) {
+  h1 {
+    font-size: 2.3em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+} */
+
 @media only screen and (max-width: 750px) {
   h1 {
     font-size: 3em;
@@ -140,7 +153,7 @@ input {
   -moz-animation: fade-in 2s;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) and (orientation: portrait) {
   .image-box {
     box-shadow: -25px 25px 0 0 var(--blue);
   }
@@ -170,7 +183,6 @@ input {
 
 #hero h1 {
   text-align: center;
-  margin-top: 90px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -181,14 +193,14 @@ input {
   text-align: center;
   font-weight: 450;
   width: 50%;
-  margin-top: -10px;
+  margin-top: -1%;
   margin-left: auto;
   margin-right: auto;
   z-index: 1;
 }
 
 .learn-more-button {
-  margin-top: 40px;
+  margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -216,11 +228,8 @@ input {
 }
 
 @media only screen and (max-width: 1900px) {
-  #hero h1 {
-    margin-top: 4%;
-  }
   #hero h2 {
-    width: 55%;
+    width: 60%;
   }
 }
 
@@ -229,7 +238,6 @@ input {
     height: 110vh;
   }
   #hero h1 {
-    margin-top: 9%;
     width: 80%;
   }
   #hero h2 {
@@ -237,19 +245,28 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #hero {
+    background-attachment: scroll;
+  }
+
   #hero h1 {
-    margin-top: 20%;
+    width: 90%;
+  }
+  #hero h2 {
+    margin-top: -5%;
+  }
+  .learn-more-button {
+    margin-top: -1%;
+  }
+  #hero h1, #hero h2, .learn-more-button, .learn-more-text {
+    transform: scale(0.75);
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) and (orientation: landscape) {
   #hero {
-    height: 100vh;
     background-attachment: scroll;
-  }
-  #hero h1 {
-    margin-top: 12%;
   }
 }
 
@@ -259,7 +276,7 @@ input {
   align-items: center;
   justify-content: space-evenly;
   background-size: cover;
-  height: 100vh;
+  height: 105vh;
 }
 
 #problem-text {
@@ -267,12 +284,16 @@ input {
   flex-direction: column;
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
-  -moz-animation: fade-in 2s;
+  -moz-animation: fade-in 2s; 
 }
 
 #problem-text h1 {
   color: var(--blue);
   text-align: left;
+}
+
+#problem-text p {
+  width: 330px;
 }
 
 #problem img {
@@ -294,15 +315,27 @@ input {
     padding: 20px;
   }
 }
-@media only screen and (max-width: 750px) {
+
+@media only screen and (max-width: 823px) and (orientation: landscape) {
+  #problem {
+    height: 110vh;
+    transform: scale(0.85);
+  }
+}
+@media only screen and (max-width: 750px) and (orientation: portrait) {
   #problem {
     flex-direction: column;
     margin-top: 10%;
     margin-bottom: 20%;
   }
-
+  #problem img {
+    width: 110px;
+  }
+  #problem-text p {
+    width: 280px;
+  }
   #problem-text p:last-child {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
 
   #problem img {
@@ -311,7 +344,15 @@ input {
     -moz-animation: 2s ease-out slide-from-left;
   }
 }
-
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #problem {
+    transform: scale(0.65);
+  }
+  #problem p {
+    width: 410px;
+    margin-right: 10px;
+  }
+}
 /* facts slideshow */
 .swiper-container {
   height: 90vh;
@@ -372,14 +413,41 @@ input {
   }
 }
 
+@media only screen and (max-width: 823px) and (orientation: landscape) {
+  #slideshow-1-content, #slideshow-2-content {
+    transform: translate(0, 27vh);
+  }
+  
+  #slideshow-3-content {
+    transform: translate(0, 29vh); 
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #slideshow-1-content, #slideshow-2-content {
+    transform: scale(0.8) translate(0, 24vh); 
+  }
+  #slideshow-3-content {
+    transform: scale(0.8) translate(0, 22vh);
+  }
+  #slideshow-1-content h1, #slideshow-2-content h1 {
+    font-size: 60px;
+  }
+  #slideshow-3-content img {
+    transform: scale(0.9);
+  }
+}
 /* Solution Section */
 #solution {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+#solution-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #solution-text {
@@ -396,14 +464,18 @@ input {
   color: var(--blue);
 }
 
-#solution .image-box {
+#solution-text p {
+  width: 330px;
+}
+
+#solution-content .image-box {
   box-shadow: -25px 25px 0 0 var(--blue);
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
   -moz-animation: fade-in 2s;
 }
 
-#solution img {
+#solution-content img {
   width: 30vw;
   animation: 2s ease-out slide-from-left;
   -webkit-animation: 2s ease-out slide-from-left;
@@ -415,29 +487,49 @@ input {
   display: none;
 }
 @media only screen and (max-width: 1900px) {
-  #solution img {
+  #solution-content img {
     width: 27vw;
     padding: 75px 25px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
-  #solution img {
+  #solution-content img {
     width: 24vw;
     padding: 55px 20px;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 823px) and (orientation: landscape) {
   #solution {
+    height: 110vh;
+  }
+  #solution-content {
+    margin-top: -3%;
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: portrait) {
+  #solution {
+    height: 120vh;
+  }
+  #solution-content {
     flex-direction: column;
     margin-top: 5%;
+  }
+  #solution-content img {
+    width: 120px;
+    padding: 30px 10px;
   }
   #solution-text {
     text-align: left;
   }
   #solution-text h1 {
     text-align: left;
+  }
+  #solution-text p {
+    width: 250px;
   }
   #solution-text p:last-child {
     margin-bottom: 10%;
@@ -450,14 +542,27 @@ input {
   }
 }
 
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #solution-content {
+    transform: scale(0.65);
+  }
+  #solution-content p {
+    width: 410px;
+    margin-left: 10px;
+  }
+}
+
 /* Answer Section */
 #answer {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+#answer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #answer-text {
@@ -472,7 +577,11 @@ input {
   color: var(--blue);
 }
 
-#answer img {
+#answer-text p {
+  width: 330px;
+}
+
+#answer-content img {
   width: 28vw;
   padding: 120px 60px;
   animation: 2s ease-out slide-from-right;
@@ -481,21 +590,38 @@ input {
   transform: translate(0, 0);
 }
 @media only screen and (max-width: 1900px) {
-  #answer img {
+  #answer-content img {
     padding: 100px 25px;
   }
 }
 @media only screen and (max-width: 1500px) {
-  #answer img {
+  #answer-content img {
     width: 26vw;
     padding: 60px 20px;
   }
 }
-@media only screen and (max-width: 750px) {
+
+@media only screen and (max-width: 823px) and (orientation: landscape) {
   #answer {
-    flex-direction: column;
+    height: 110vh;
+  }
+  #answer-content {
+    margin-top: -10%;
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: portrait) {
+  #answer {
     margin-top: 5%;
-    height: 140vh;
+    height: 135vh;
+  }
+  #answer-content {
+    flex-direction: column;
+  }
+  #answer-content img {
+    width: 120px;
+    padding: 30px 10px;
   }
   #answer-text {
     text-align: left;
@@ -503,25 +629,39 @@ input {
   #answer-text h1 {
     text-align: left;
   }
-  #answer-text p:last-child {
-    margin-bottom: -15%;
+  #answer-text p {
+    width: 285px;
   }
-  #answer img {
+  #answer-text p:last-child {
+    margin-bottom: 10%;
+  }
+  #answer-content img {
     animation: 2s ease-out slide-from-left;
     -webkit-animation: 2s ease-out slide-from-left;
     -moz-animation: 2s ease-out slide-from-left;
   }
 }
-
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #answer-content {
+    transform: scale(0.65);
+  }
+  #answer-content p {
+    width: 410px;
+    margin-right: 10px;
+  }
+}
 /* Stay Updated Section */
 #stay-updated {
+  background-attachment: fixed;
+  background-size: cover;
+  height: 370px;
+}
+
+#stay-updated-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 370px;
 }
 
 #stay-updated h1 {
@@ -605,9 +745,28 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 823px) and (orientation: landscape) {
+  #stay-updated {
+    background-attachment: scroll;
+    height: 250px;
+  }
+  #stay-updated-content {
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: portrait) {
   #stay-updated {
     height: 300px;
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  #stay-updated {
+    height: 200px;
+  }
+  #stay-updated-content {
+    transform: scale(0.65) translate(0, -50px);
   }
 }
 

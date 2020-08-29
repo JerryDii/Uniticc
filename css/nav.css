@@ -12,8 +12,8 @@ nav {
 
 .nav-bg {
   background-image: linear-gradient(
-    rgba(27, 27, 27, 0.473),
-    rgba(27, 27, 27, 0.473));
+    rgba(46, 46, 46, 0.473),
+    rgba(27, 27, 27, 0.685));
 }
 
 #logo {
@@ -40,7 +40,7 @@ nav {
 
 .nav-mobile-icon {
   display: none;
-  width: 50px;
+  width: 40px;
 }
 
 .nav-links-mobile,
@@ -65,7 +65,7 @@ nav {
   #logo {
     grid-area: logo;
     transform: translate(20px, 0);
-    width: 100px;
+    width: 80px;
   }
 
   .nav-mobile-icon {
@@ -109,7 +109,7 @@ footer {
     "logo links email"
     "copyright links social";
   justify-items: center;
-  padding: 65px 0;
+  padding: 3% 0;
 }
 
 footer .logo {
@@ -120,8 +120,8 @@ footer .logo {
 
 footer .copyright-notice {
   grid-area: copyright;
-  font-size: 1.2em;
-  transform: translate(24%, 0);
+  font-size: 1em;
+  transform: translate(22%, 0);
 }
 
 #footer-links {
@@ -173,11 +173,26 @@ footer .social-icons img {
     width: 120px;
   }
   footer .copyright-notice {
-    font-size: 0.9em;
+    font-size: 0.6em;
+    transform: translate(9%, 0);
+  }
+  footer .social-icons img {
+    width: 20px;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 823px) and (orientation: landscape) {
+  footer {
+    transform: scale(0.85);
+  }
+}
+
+@media only screen and (max-width: 750px) and (orientation: landscape) {
+  footer {
+    transform: scale(0.65);
+  }
+}
+@media only screen and (max-width: 700px) and (orientation: portrait) {
   footer {
     display: flex;
     flex-direction: column;
