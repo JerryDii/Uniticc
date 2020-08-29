@@ -247,9 +247,12 @@ input {
 
 @media only screen and (max-width: 750px) and (orientation: landscape) {
   #hero {
+    height: auto;
     background-attachment: scroll;
   }
-
+  #hero-particles {
+    height: 30%;
+  }
   #hero h1 {
     width: 90%;
   }
@@ -258,6 +261,7 @@ input {
   }
   .learn-more-button {
     margin-top: -1%;
+    margin-bottom: 10px;
   }
   #hero h1, #hero h2, .learn-more-button, .learn-more-text {
     transform: scale(0.75);
@@ -276,7 +280,8 @@ input {
   align-items: center;
   justify-content: space-evenly;
   background-size: cover;
-  height: 105vh;
+  height: auto;
+  padding: 30px;
 }
 
 #problem-text {
@@ -292,12 +297,12 @@ input {
   text-align: left;
 }
 
-#problem-text p {
-  width: 330px;
+#problem-text p{
+  width: 30vw;
 }
 
 #problem img {
-  width: 25vw;
+  width: 20vw;
   animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
   -moz-animation: 2s ease-out slide-from-right;
@@ -305,20 +310,21 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #problem img {
-    width: 24vw;
     padding: 50px;
   }
 }
 @media only screen and (max-width: 1500px) {
   #problem img {
-    width: 23vw;
     padding: 20px;
   }
 }
-
+@media only screen and (max-width: 1050px) {
+  #problem p {
+    width: 40vw;
+  }
+}
 @media only screen and (max-width: 823px) and (orientation: landscape) {
   #problem {
-    height: 110vh;
     transform: scale(0.85);
   }
 }
@@ -332,7 +338,7 @@ input {
     width: 110px;
   }
   #problem-text p {
-    width: 280px;
+    width: 70vw;
   }
   #problem-text p:last-child {
     margin-bottom: 10%;
@@ -345,10 +351,7 @@ input {
   }
 }
 @media only screen and (max-width: 750px) and (orientation: landscape) {
-  #problem {
-    transform: scale(0.65);
-  }
-  #problem p {
+  #problem-text p {
     width: 410px;
     margin-right: 10px;
   }
@@ -437,17 +440,20 @@ input {
     transform: scale(0.9);
   }
 }
+
 /* Solution Section */
 #solution {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
+  padding: 10px;
 }
 
 #solution-content {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-top: 50px;
 }
 
 #solution-text {
@@ -465,7 +471,7 @@ input {
 }
 
 #solution-text p {
-  width: 330px;
+  width: 30vw;
 }
 
 #solution-content .image-box {
@@ -476,7 +482,7 @@ input {
 }
 
 #solution-content img {
-  width: 30vw;
+  width: 20vw;
   animation: 2s ease-out slide-from-left;
   -webkit-animation: 2s ease-out slide-from-left;
   -moz-animation: 2s ease-out slide-from-left;
@@ -488,32 +494,27 @@ input {
 }
 @media only screen and (max-width: 1900px) {
   #solution-content img {
-    width: 27vw;
     padding: 75px 25px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
   #solution-content img {
-    width: 24vw;
     padding: 55px 20px;
   }
 }
-
-@media only screen and (max-width: 823px) and (orientation: landscape) {
-  #solution {
-    height: 110vh;
+@media only screen and (max-width: 1050px) {
+  #solution-content p {
+    width: 40vw;
   }
+}
+@media only screen and (max-width: 823px) and (orientation: landscape) {
   #solution-content {
-    margin-top: -3%;
     transform: scale(0.85);
   }
 }
 
 @media only screen and (max-width: 750px) and (orientation: portrait) {
-  #solution {
-    height: 120vh;
-  }
   #solution-content {
     flex-direction: column;
     margin-top: 5%;
@@ -529,7 +530,7 @@ input {
     text-align: left;
   }
   #solution-text p {
-    width: 250px;
+    width: 70vw;
   }
   #solution-text p:last-child {
     margin-bottom: 10%;
@@ -543,9 +544,6 @@ input {
 }
 
 @media only screen and (max-width: 750px) and (orientation: landscape) {
-  #solution-content {
-    transform: scale(0.65);
-  }
   #solution-content p {
     width: 410px;
     margin-left: 10px;
@@ -556,13 +554,16 @@ input {
 #answer {
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
+  padding: 10px;
 }
 
 #answer-content {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 #answer-text {
@@ -578,11 +579,11 @@ input {
 }
 
 #answer-text p {
-  width: 330px;
+  width: 30vw;
 }
 
 #answer-content img {
-  width: 28vw;
+  width: 20vw;
   padding: 120px 60px;
   animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
@@ -596,17 +597,16 @@ input {
 }
 @media only screen and (max-width: 1500px) {
   #answer-content img {
-    width: 26vw;
     padding: 60px 20px;
   }
 }
-
-@media only screen and (max-width: 823px) and (orientation: landscape) {
-  #answer {
-    height: 110vh;
+@media only screen and (max-width: 1050px) {
+  #answer-content p {
+    width: 40vw;
   }
+}
+@media only screen and (max-width: 823px) and (orientation: landscape) {
   #answer-content {
-    margin-top: -10%;
     transform: scale(0.85);
   }
 }
@@ -614,7 +614,7 @@ input {
 @media only screen and (max-width: 750px) and (orientation: portrait) {
   #answer {
     margin-top: 5%;
-    height: 135vh;
+    height: auto;
   }
   #answer-content {
     flex-direction: column;
@@ -630,7 +630,7 @@ input {
     text-align: left;
   }
   #answer-text p {
-    width: 285px;
+    width: 230px;
   }
   #answer-text p:last-child {
     margin-bottom: 10%;
@@ -642,9 +642,6 @@ input {
   }
 }
 @media only screen and (max-width: 750px) and (orientation: landscape) {
-  #answer-content {
-    transform: scale(0.65);
-  }
   #answer-content p {
     width: 410px;
     margin-right: 10px;
@@ -654,7 +651,7 @@ input {
 #stay-updated {
   background-attachment: fixed;
   background-size: cover;
-  height: 370px;
+  height: auto;
 }
 
 #stay-updated-content {
@@ -662,6 +659,7 @@ input {
   flex-direction: column;
   align-items: center;
   background-position: center;
+  transform: translate(0, -20px);
 }
 
 #stay-updated h1 {
@@ -719,9 +717,6 @@ input {
 
 @media only screen and (max-width: 1900px) {
   #stay-updated {
-    height: 330px;
-  }
-  #stay-updated {
     margin-top: 4%;
   }
   #stay-updated p {
@@ -734,9 +729,6 @@ input {
 }
 
 @media only screen and (max-width: 900px) {
-  #stay-updated {
-    height: 320px;
-  }
   #stay-updated #email-field, #stay-updated #sign-up-button {
     font-size: 0.9em;
   }
@@ -748,25 +740,15 @@ input {
 @media only screen and (max-width: 823px) and (orientation: landscape) {
   #stay-updated {
     background-attachment: scroll;
-    height: 250px;
   }
   #stay-updated-content {
-    transform: scale(0.85);
-  }
-}
-
-@media only screen and (max-width: 750px) and (orientation: portrait) {
-  #stay-updated {
-    height: 300px;
+    transform: scale(0.85) translate(0, -35px);
   }
 }
 
 @media only screen and (max-width: 750px) and (orientation: landscape) {
   #stay-updated {
     height: 200px;
-  }
-  #stay-updated-content {
-    transform: scale(0.65) translate(0, -50px);
   }
 }
 
