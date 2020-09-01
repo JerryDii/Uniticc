@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>Unitic</title>
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    
+    <!--nav.css-->
+    <link rel="stylesheet" href="css/nav.css" type="text/css"/>
+  </head>
+  <body>
+    <main>
+      <!--Navigation Bar-->
+      <div id="nav"></div>
+      
+      <a id="main-content" tabindex="-1"></a>
+      
+      <div id="center-main">
+        <div id="center-main-heading">
+          <h1>404</h1>
+          <h3>Page not found!</h3>
+        </div>
+        <div id="center-main-description">
+          <p>Sorry, this page doesn't exist. Go back or head to our home page.</p>
+          <a href="/">Back To Homepage</a>
+        </div>
+      </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- nav.js -->
+    <script src="js/nav.js"></script>
+    
+    <script>
+    function res() {
+        if ($("#center-main")[0].offsetWidth < 1590) {
+            $("#center-main").css("height", "auto")
+                             .css("backgroundSize", "1590px")
+                             .css("paddingBottom", "90px");
+        } else {
+            $("#center-main").css("height", "0")
+                             .css("backgroundSize", "100%")
+                             .css("paddingBottom", "44.75%");
+        }
+    }
+    window.addEventListener("resize", () => res());
+    $(() => res());
+    </script>
+  </body>
+</html>

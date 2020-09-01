@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" />
+    <title>Unitic</title>
+  
+    <!--swiper (for slideshow)-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!--style.css-->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    
+    <!--nav.css-->
+    <link rel="stylesheet" href="css/nav.css" type="text/css"/>
+  </head>
+  <body>
+    <main>
+      <!--Navigation Bar-->
+      <div id="nav"></div>
+      
+      <a id="main-content" tabindex="-1"></a>
+
+      <!--Hero Section-->
+      <section id="hero"> 
+        <div id="hero-particles"></div> 
+        <h1>
+          Step Into The Future of
+          <span>Tourette Treatments</span>
+        </h1>
+        <h2>
+          Machine-optimized and personalized therapy available right at your
+          fingertips because why should you have to wait for a special
+          diagnosis?
+        </h2>
+        <div class="learn-more-button">
+          <a href="#problem" class="learn-more-text">Learn More</a>
+        </div>
+      </section>
+
+      <!-- The Problem Section -->
+      <section id="problem">
+        <div id="problem-text">
+          <h1>The Problem</h1>
+          <p>Tourette syndrome is a disorder that causes repetitive movements, or
+            unwanted sounds in the patient that cannot be controlled by normal means.
+            These repetitive movements are called tics. Tics cause <span>extreme discomfort</span>
+            in addition to <span>social stigma</span>.</p>
+          <p> 
+            Unfortunately, the current state of tic disorder and Tourette treatment is
+            <span>abysmal</span>.
+          </p>
+          <p>
+            <span>Sky-high</span> therapy fees, critical lack of therapists, ineffective medication not to mention the horrible <span>side effects</span> that come with it. All of that needs to <span>change</span>. 
+          </p>
+        </div>
+        <div class="image-box">
+          <img src="/images/home/medicine.png" alt="Medicine" />
+        </div>
+      </section>
+
+      <!-- Facts Slideshow -->
+      <div class="swiper-container" id="facts">
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide slideshow-1">
+          <div id="slideshow-1-content">
+          <h1>58.8%</h1>
+          <h2>of Tourette patients to have found significantly improved in tic severity after CBIT therapy.</h2>
+          </div>
+        </div>
+        <div class="swiper-slide slideshow-2">
+          <div id="slideshow-2-content">
+          <h1>$304</h1>
+          <h2>Average cost of 1 in-person Tourette therapy session.</h2>
+          </div>
+        </div>
+        <div class="swiper-slide slideshow-3">
+          <div id="slideshow-3-content">
+          <img src="images/unitic.png" alt="Unitic">
+          <h2>The same effectiveness for a tenth of the price.</h2>
+          </div>
+        </div>
+      </div>
+      <!-- Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      </div> 
+
+      <!-- The Solution Section -->
+      <section id="solution">
+        <div id="solution-content">
+        <div class="image-box image-box-desktop">
+          <img src="/images/home/onlinetherapy.png" alt="Therapy"/>
+        </div>
+        <div id="solution-text">
+          <h1>The Solution</h1>
+          <p>We want to create a future where Tourette 
+            treatment can be accessed at the <span>push of 
+           a button</span>. We understand the <span>stress</span> 
+            connected with tics and the traditional route 
+            for treatment, whether that be therapy 
+            or medication. We will <span>ensure </span>that you will
+            never have to go through that kind of stress again.</p>
+          <p><span>Unitic</span> is our solution built specifically for you.
+          <span>Accessible</span>, <span>affordable</span>, and <span>effective</span>,
+          an online treatment platform built to your every need.</p>
+        </div>
+        <div class="image-box image-box-mobile">
+          <img src="/images/home/onlinetherapy.png" alt="Therapy"/>
+        </div> 
+      </div>
+      </section>
+
+      <!-- The Answer Section -->
+      <section id="answer">
+        <div id="answer-content">
+        <div id="answer-text">
+          <h1>The Answer</h1>
+          <p>
+            Unitic provides a fully <span>automated</span> and 
+            <span>specialized</span> Tourette and Tic disorder
+            treatment platform. Depending on your
+            input, our platform will create a CBIT
+            therapy plan made for you, and only for <span>you</span>.
+            Once we know which therapy plan suits you, 
+            CBIT therapy will be administered through a
+            state-of-the-art treatment interface.
+          </p>
+           <p> 
+            In order to provide tailored treatments for
+            our users, data is an important part of our
+            platform. The more input our users provide
+            us, the more accurate and better our platform
+            will become, allowing our users to receive
+            the best treatment from us.
+          </p>
+        </div>
+        <div class="image-box">
+          <img src="/images/home/machine.png" alt="Machine" />
+        </div>
+      </div>
+      </section>
+      
+      <!-- Stay Updated Section -->
+      <section id="stay-updated">
+        <div id="stay-updated-content">
+        <h1>Stay Updated</h1>
+        <p>
+          Here at Unitic, we are doing our best to provide the most accurate
+          platform possible. We will be releasing our platform as soon as possible!
+        </p>
+        <div id="sign-up-button-bg">
+        <form action="">
+          <input
+            id="email-field"
+            type="email"
+            name="email"
+            placeholder="Your Email Address"
+            required
+          />
+          <input id="sign-up-button" type="submit" value="Sign Up!" />
+        </form>
+        </div>
+      </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- nav.js -->
+    <script src="js/nav.js"></script>
+
+    <!-- custom.js -->
+    <script src="js/custom.js"></script>
+    
+    <!-- JS alternative to srcset -->
+    <script src="js/imageResize.js"></script>
+  </body>
+</html>
