@@ -18,7 +18,6 @@ body {
   font-family: "Roboto", helvetica, sans-serif, arial;
   color: #ffffff;
   background-color: var(--dark-grey);
-  overflow: hidden;
   overflow-x: hidden;
   /* animation: fade-in 2s; */
 }

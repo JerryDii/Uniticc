@@ -16,7 +16,7 @@
     <!--nav.css-->
     <link rel="stylesheet" href="/sites/default/files/css/nav.css" type="text/css"/>
   </head>
-  <body onload="loadingFunc()">
+  <body style="overflow: hidden;">
     <main>
       <!--Navigation Bar-->
       <div id="nav"></div>
@@ -197,8 +197,8 @@
     <!-- preloader JS -->
     <script>
       $(window).on('load', function() { // makes sure the whole site is loaded 
-      $('#preloader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-      $('body').css({'overflow':'visible'});
+        $('#preloader-wrapper').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+        $('body').css('overflow', '');
       })
     </script>
   </body>
