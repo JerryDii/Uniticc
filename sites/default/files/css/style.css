@@ -920,7 +920,7 @@ input {
 }
 #preloader-image {
   width: 16%;
-  top: 50%;
+  top: 52%;
   margin-top: -8%;
   left: 50%;
   margin-left: -8%;
@@ -929,16 +929,12 @@ input {
 @media only screen and (max-width: 768px) {
   #preloader-animation {
     width: 153.59px;
-    top: 50%;
     margin-top: -76.795px;
-    left: 50%;
     margin-left: -76.795px;
   }
   #preloader-image {
     width: 122.88px;
-    top: 50%;
     margin-top: -61.44px;
-    left: 50%;
     margin-left: -61.44px;
   }
 }
