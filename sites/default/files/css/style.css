@@ -97,19 +97,7 @@ span {
   }
 }
 
-/* @media only screen and (max-width: 823px) and (orientation: landscape) {
-  h1 {
-    font-size: 2.3em;
-  }
-  h2 {
-    font-size: 1em;
-  }
-  p {
-    font-size: 0.8em;
-  }
-} */
-
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 768px) {
   h1 {
     font-size: 3em;
   }
@@ -153,7 +141,7 @@ input {
   -moz-animation: fade-in 2s;
 }
 
-@media only screen and (max-width: 750px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   .image-box {
     box-shadow: -25px 25px 0 0 var(--blue);
   }
@@ -245,7 +233,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #hero {
     height: auto;
     background-attachment: scroll;
@@ -328,7 +316,7 @@ input {
     transform: scale(0.85);
   }
 }
-@media only screen and (max-width: 750px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   #problem {
     flex-direction: column;
     margin-top: 10%;
@@ -350,7 +338,7 @@ input {
     -moz-animation: 2s ease-out slide-from-left;
   }
 }
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #problem-text p {
     width: 410px;
     margin-right: 10px;
@@ -426,7 +414,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #slideshow-1-content, #slideshow-2-content {
     transform: scale(0.8) translate(0, 24vh); 
   }
@@ -514,7 +502,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   #solution-content {
     flex-direction: column;
     margin-top: 5%;
@@ -543,7 +531,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #solution-content p {
     width: 410px;
     margin-left: 10px;
@@ -611,7 +599,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   #answer {
     margin-top: 5%;
     height: auto;
@@ -641,7 +629,7 @@ input {
     -moz-animation: 2s ease-out slide-from-left;
   }
 }
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #answer-content p {
     width: 410px;
     margin-right: 10px;
@@ -746,7 +734,7 @@ input {
   }
 }
 
-@media only screen and (max-width: 750px) and (orientation: landscape) {
+@media only screen and (max-width: 768px) and (orientation: landscape) {
   #stay-updated {
     height: 200px;
   }
