@@ -15,32 +15,104 @@
     <!-- Merge into style.css when done -->
     <style>
         #our-platform-main {
-          background-image: url(
-          "/sites/default/files/images/our-platform/Background-Wave.svg");
-          height: 1000px; /* temporary, placeholder until content goes in */
+          background-image: url("/sites/default/files/images/our-platform/Background-Wave.svg");
           padding-top: 160px;
+          background-repeat: no-repeat;
         }
-        
         #our-platform-main > h1 {
+          position: relative;
+          z-index: 1;
           text-align: center;
           width: 60%;
           margin-top: 0;
           margin-right: auto;
           margin-left: auto;
         }
+        /* Step One */
+        #step-one-bg {
+          position: relative;
+          background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-1-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+          height: 100vh;
+          top: -80vh;
+        }
+        #step-one-content {
+          position: relative;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 20px;
+          z-index: 1;
+        }
+        #step-one-heading-desktop {
+          width: 23%;
+        }
+        #step-one-heading-mobile {
+          display: none;
+        }
+        #step-one-column img, #step-one-column p {
+          width: 30vw;
+        }
+        #step-one-column img {
+          border-radius: 10px;
+        }
+        /* Step Two */
+
+        /* Step Three */
+
+        @media only screen and (max-width: 1024px) {
+          #our-platform-main {
+            background-image: none;
+          }
+          /* Step One */
+          #step-one-bg {
+            z-index: 0;
+          }
+          #step-one-heading-desktop {
+            width: 40%;
+          }
+        }   
+        @media only screen and (max-width: 768px) and (orientation: portrait) {
+          /* Step One */
+          #step-one-content {
+            flex-direction: column;
+          }
+          #step-one-heading-desktop {
+            display: none;
+          }
+          #step-one-heading-mobile {
+            display: block;
+            width: 60%;
+            margin-left: 30px;
+          }
+          #step-one-column img, #step-one-column p {
+            width: 50vw;
+          }
+        }
     </style>
   </head>
   <body>
       <!--Navigation Bar-->
       <div id="nav"></div>
-      
       <a id="main-content" tabindex="-1"></a>
+
     <main id="our-platform-main">
       <h1>Our Platform</h1>
       
       <!--Step One-->
       <section id="step-one">
-      
+        <div id="step-one-content">
+           <img id="step-one-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-1-Heading.svg" alt="Step One">
+           <img id="step-one-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
+          <div id="step-one-column">
+            <img src="/sites/default/files/images/our-platform/Step-1.png" alt="Face Selection">
+            <p><span>Input the location </span>of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
+          </div>
+        </div>
+        <div id="step-one-bg"></div>
       </section>
       
       <!--Step Two-->
