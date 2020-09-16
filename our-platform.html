@@ -14,6 +14,21 @@
     
     <!-- Merge into style.css when done -->
     <style>
+        .our-platform-heading-desktop {
+          width: 23%;
+        }
+        .our-platform-heading-mobile {
+          display: none;
+        }
+        .our-platform-column img, .our-platform-column p {
+          width: 30vw;
+        }
+        .our-platform-column img {
+          border-radius: 10px;
+        }
+        .our-platform-step {
+          position: relative;
+        }
         #our-platform-main {
           background-image: url("/sites/default/files/images/our-platform/Background-Wave.svg");
           padding-top: 160px;
@@ -30,13 +45,15 @@
         }
         /* Step One */
         #step-one-bg {
-          position: relative;
+          position: absolute;
           background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-1-bg.png");
           background-repeat: no-repeat;
           background-size: cover;
           z-index: -1;
           height: 100vh;
-          top: -80vh;
+          top: 0;
+          width: -moz-available;
+          width: -webkit-fill-available;
         }
         #step-one-content {
           position: relative;
@@ -47,23 +64,53 @@
           padding: 20px;
           z-index: 1;
         }
-        #step-one-heading-desktop {
-          width: 23%;
-        }
-        #step-one-heading-mobile {
-          display: none;
-        }
-        #step-one-column img, #step-one-column p {
-          width: 30vw;
-        }
-        #step-one-column img {
-          border-radius: 10px;
-        }
         /* Step Two */
-
+        #step-two-bg {
+          position: absolute;
+          background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-2-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+          height: 100vh;
+          top: 0;
+          width: -moz-available;
+          width: -webkit-fill-available;
+        }
+        #step-two-content {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 20px;
+          z-index: 1;
+        }
         /* Step Three */
-
+        #step-three-bg {
+          position: absolute;
+          background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-3-bg.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+          height: 100vh;
+          top: 0;
+          width: -moz-available;
+          width: -webkit-fill-available;
+        }
+        #step-three-content {
+          position: relative;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-evenly;
+          align-items: center;
+          padding: 20px;
+          z-index: 1;
+        }
+        
         @media only screen and (max-width: 1024px) {
+          .our-platform-heading-desktop {
+            width: 40%;
+          }
           #our-platform-main {
             background-image: none;
           }
@@ -71,25 +118,38 @@
           #step-one-bg {
             z-index: 0;
           }
-          #step-one-heading-desktop {
-            width: 40%;
+          /* Step Two */
+          #step-two-bg {
+            z-index: 0;
+          }
+          /* Step Three */
+          #step-three-bg {
+            z-index: 0;
           }
         }   
         @media only screen and (max-width: 768px) and (orientation: portrait) {
-          /* Step One */
-          #step-one-content {
-            flex-direction: column;
-          }
-          #step-one-heading-desktop {
+          .our-platform-heading-desktop {
             display: none;
           }
-          #step-one-heading-mobile {
+          .our-platform-heading-mobile {
             display: block;
             width: 60%;
             margin-left: 30px;
           }
-          #step-one-column img, #step-one-column p {
-            width: 50vw;
+          .our-platform-column img, .our-platform-column p {
+            width; 50vw;
+          }
+          /* Step One */
+          #step-one-content {
+            flex-direction: column;
+          }
+          /* Step Two */
+          #step-two-content {
+            flex-direction: column;
+          }
+          /* Step Three */
+          #step-three-content {
+            flex-direction: column;
           }
         }
     </style>
@@ -103,26 +163,42 @@
       <h1>Our Platform</h1>
       
       <!--Step One-->
-      <section id="step-one">
+      <section id="step-one" class="our-platform-step">
         <div id="step-one-content">
-           <img id="step-one-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-1-Heading.svg" alt="Step One">
-           <img id="step-one-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
-          <div id="step-one-column">
+           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-1-Heading.svg" alt="Step One">
+           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
+          <div class="our-platform-column">
             <img src="/sites/default/files/images/our-platform/Step-1.png" alt="Face Selection">
-            <p><span>Input the location </span>of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
+            <p><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
           </div>
         </div>
         <div id="step-one-bg"></div>
       </section>
       
       <!--Step Two-->
-      <section id="step-two">
-      
+      <section id="step-two" class="our-platform-step">
+        <div id="step-two-content">
+           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-2-Heading.svg" alt="Step One">
+           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-2-mobile-heading.svg" alt="Step One">
+          <div class="our-platform-column">
+            <img src="/sites/default/files/images/our-platform/Step-2.png" alt="Face Selection">
+            <p><span>Sit back and wait</span> as our algorithm compiles and optimizes <span>a therapy plan just for you</span> based on your unique input. Remember, out algorithm is always getting better with each user's input.</p>
+          </div>
+        </div>
+        <div id="step-two-bg"></div>
       </section>
       
       <!--Step Three-->
-      <section id="step-three">
-      
+      <section id="step-three" class="our-platform-step">
+        <div id="step-three-content">
+           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-3-Heading.svg" alt="Step One">
+           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-3-mobile-heading.svg" alt="Step One">
+          <div class="our-platform-column">
+            <img src="/sites/default/files/images/our-platform/Step-3.png" alt="Treatment UI">
+            <p>Enjoy <span>your fully optimized therapy plan</span>, specifically tailored to your use <span>for free</span> on behalf of Unitic. Access this <span>CBIT therapy</span> through the user dashboard, in which you can progress through unique therapy sessions to combat your tic.</p>
+          </div>
+        </div>
+        <div id="step-three-bg"></div>
       </section>
     </main>
     
