@@ -30,13 +30,10 @@
           position: relative;
         }
         #our-platform-main {
-          background-image: url("/sites/default/files/images/our-platform/Background-Wave.svg");
           padding-top: 160px;
           background-repeat: no-repeat;
         }
         #our-platform-main > h1 {
-          position: relative;
-          z-index: 1;
           text-align: center;
           width: 60%;
           margin-top: 0;
@@ -44,69 +41,46 @@
           margin-left: auto;
         }
         /* Step One */
-        #step-one-bg {
-          position: absolute;
+        #step-one {
           background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-1-bg.png");
           background-repeat: no-repeat;
           background-size: cover;
-          z-index: -1;
-          height: 100vh;
-          top: 0;
-          width: -moz-available;
-          width: -webkit-fill-available;
+          padding: 20px;
         }
         #step-one-content {
-          position: relative;
           display: flex;
           flex-direction: row-reverse;
           justify-content: space-evenly;
           align-items: center;
-          padding: 20px;
-          z-index: 1;
         }
         /* Step Two */
-        #step-two-bg {
-          position: absolute;
+        #step-two {
           background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-2-bg.png");
           background-repeat: no-repeat;
           background-size: cover;
-          z-index: -1;
-          height: 100vh;
-          top: 0;
-          width: -moz-available;
-          width: -webkit-fill-available;
+          padding: 20px;
         }
         #step-two-content {
-          position: relative;
           display: flex;
           flex-direction: row;
           justify-content: space-evenly;
           align-items: center;
-          padding: 20px;
-          z-index: 1;
+          padding: 50px;
         }
         /* Step Three */
-        #step-three-bg {
-          position: absolute;
+        #step-three {
           background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-3-bg.png");
           background-repeat: no-repeat;
           background-size: cover;
-          z-index: -1;
-          height: 100vh;
-          top: 0;
-          width: -moz-available;
-          width: -webkit-fill-available;
+          padding: 20px;
         }
         #step-three-content {
-          position: relative;
           display: flex;
           flex-direction: row-reverse;
           justify-content: space-evenly;
           align-items: center;
-          padding: 20px;
-          z-index: 1;
         }
-        
+
         @media only screen and (max-width: 1024px) {
           .our-platform-heading-desktop {
             width: 40%;
@@ -114,16 +88,8 @@
           #our-platform-main {
             background-image: none;
           }
-          /* Step One */
-          #step-one-bg {
-            z-index: 0;
-          }
-          /* Step Two */
-          #step-two-bg {
-            z-index: 0;
-          }
-          /* Step Three */
-          #step-three-bg {
+          /* Shared rules */
+          #step-one-bg, #step-two-bg, #step-three-bg {
             z-index: 0;
           }
         }   
@@ -133,22 +99,14 @@
           }
           .our-platform-heading-mobile {
             display: block;
-            width: 60%;
-            margin-left: 30px;
+            width: 50%;
+            margin-bottom: 10px;
           }
           .our-platform-column img, .our-platform-column p {
-            width; 50vw;
+            width: 50vw;
           }
-          /* Step One */
-          #step-one-content {
-            flex-direction: column;
-          }
-          /* Step Two */
-          #step-two-content {
-            flex-direction: column;
-          }
-          /* Step Three */
-          #step-three-content {
+          /* Shared Rules */
+          #step-one-content, #step-two-content, #step-three-content {
             flex-direction: column;
           }
         }
@@ -172,33 +130,30 @@
             <p><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
           </div>
         </div>
-        <div id="step-one-bg"></div>
       </section>
       
       <!--Step Two-->
       <section id="step-two" class="our-platform-step">
         <div id="step-two-content">
-           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-2-Heading.svg" alt="Step One">
-           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-2-mobile-heading.svg" alt="Step One">
+           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-2-Heading.svg" alt="Step Two">
+           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-2-mobile-heading.svg" alt="Step Two">
           <div class="our-platform-column">
-            <img src="/sites/default/files/images/our-platform/Step-2.png" alt="Face Selection">
-            <p><span>Sit back and wait</span> as our algorithm compiles and optimizes <span>a therapy plan just for you</span> based on your unique input. Remember, our algorithm is always getting better with each user's input.</p>
+            <img src="/sites/default/files/images/our-platform/Step-2.png" alt="Process">
+            <p><span>Sit back and wait</span> as our algorithm compiles and optimizes <span>a therapy plan just for you</span> based on your unique input. Remember, out algorithm is always getting better with each user's input.</p>
           </div>
         </div>
-        <div id="step-two-bg"></div>
       </section>
       
       <!--Step Three-->
       <section id="step-three" class="our-platform-step">
         <div id="step-three-content">
-           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-3-Heading.svg" alt="Step One">
-           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-3-mobile-heading.svg" alt="Step One">
+           <img class="our-platform-heading-desktop" src="/sites/default/files/images/our-platform/headings/Step-3-Heading.svg" alt="Step Three">
+           <img class="our-platform-heading-mobile" src="/sites/default/files/images/our-platform/headings/mobile/Step-3-mobile-heading.svg" alt="Step Three">
           <div class="our-platform-column">
             <img src="/sites/default/files/images/our-platform/Step-3.png" alt="Treatment UI">
             <p>Enjoy <span>your fully optimized therapy plan</span>, specifically tailored to your use <span>for free</span> on behalf of Unitic. Access this <span>CBIT therapy</span> through the user dashboard, in which you can progress through unique therapy sessions to combat your tic.</p>
           </div>
         </div>
-        <div id="step-three-bg"></div>
       </section>
     </main>
     
