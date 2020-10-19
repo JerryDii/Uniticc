@@ -151,7 +151,7 @@
            <img class="our-platform-heading-mobile fade-in-4-slide-up-2" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
           <div class="our-platform-column">
             <img class="our-platform-image fade-in-4-slide-up-2" src="/sites/default/files/images/our-platform/Step-1.png" alt="Face Selection">
-            <p class="fade-in-4"><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
+            <p class="fade-in-4-pre"><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
           </div>
         </div>
       </section>
@@ -194,13 +194,13 @@
   <script>
     $(window).scroll(() => {
       $('.fade-in-4-pre').each(function() {
-        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 300) {
+        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 200) {
           $(this).addClass("fade-in-4")
                  .removeClass("fade-in-4-pre");
         }
       });
       $('.fade-in-4-slide-up-2-pre').each(function() {
-        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 400) {
+        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 60) {
           $(this).addClass("fade-in-4-slide-up-2")
                  .removeClass("fade-in-4-slide-up-2-pre");
         }
