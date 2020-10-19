@@ -20,13 +20,13 @@
         .our-platform-heading-mobile {
           display: none;
         }
-        .fade-in-5-pre, .fade-in-5-slide-up-3-pre {
+        .fade-in-4-pre, .fade-in-4-slide-up-2-pre {
           visibility: hidden;
         }
-        .fade-in-5 {
+        .fade-in-4 {
           animation: fade-in 5s;
         }
-        .fade-in-5-slide-up-3 {
+        .fade-in-4-slide-up-2 {
           animation: slide-up 3s, fade-in 5s;
         }
         .our-platform-column img, .our-platform-column p {
@@ -147,11 +147,11 @@
       <!--Step One-->
       <section id="step-one" class="our-platform-step">
         <div id="step-one-content">
-           <img class="our-platform-heading-desktop fade-in-5-slide-up-3" src="/sites/default/files/images/our-platform/headings/Step-1-Heading.svg" alt="Step One">
-           <img class="our-platform-heading-mobile fade-in-5-slide-up-3" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
+           <img class="our-platform-heading-desktop fade-in-4-slide-up-2" src="/sites/default/files/images/our-platform/headings/Step-1-Heading.svg" alt="Step One">
+           <img class="our-platform-heading-mobile fade-in-4-slide-up-2" src="/sites/default/files/images/our-platform/headings/mobile/Step-1-mobile-heading.svg" alt="Step One">
           <div class="our-platform-column">
-            <img class="our-platform-image fade-in-5-slide-up-3" src="/sites/default/files/images/our-platform/Step-1.png" alt="Face Selection">
-            <p class="fade-in-5"><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
+            <img class="our-platform-image fade-in-4-slide-up-2" src="/sites/default/files/images/our-platform/Step-1.png" alt="Face Selection">
+            <p class="fade-in-4"><span>Input the location</span> of your specific tic, motor or vocal. Our algorithm will then scan, process, and match your data with our entire database to match you with the perfect therapy plan.</p>
           </div>
         </div>
       </section>
@@ -159,11 +159,11 @@
       <!--Step Two-->
       <section id="step-two" class="our-platform-step">
         <div id="step-two-content">
-           <img class="our-platform-heading-desktop fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/headings/Step-2-Heading.svg" alt="Step Two">
-           <img class="our-platform-heading-mobile fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/headings/mobile/Step-2-mobile-heading.svg" alt="Step Two">
+           <img class="our-platform-heading-desktop fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/headings/Step-2-Heading.svg" alt="Step Two">
+           <img class="our-platform-heading-mobile fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/headings/mobile/Step-2-mobile-heading.svg" alt="Step Two">
           <div class="our-platform-column">
-            <img class="our-platform-image fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/Step-2.png" alt="Process">
-            <p class="fade-in-5-pre"><span>Sit back and wait</span> as our algorithm compiles and optimizes <span>a therapy plan just for you</span> based on your unique input. Remember, out algorithm is always getting better with each user's input.</p>
+            <img class="our-platform-image fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/Step-2.png" alt="Process">
+            <p class="fade-in-4-pre"><span>Sit back and wait</span> as our algorithm compiles and optimizes <span>a therapy plan just for you</span> based on your unique input. Remember, out algorithm is always getting better with each user's input.</p>
           </div>
         </div>
       </section>
@@ -171,11 +171,11 @@
       <!--Step Three-->
       <section id="step-three" class="our-platform-step">
         <div id="step-three-content">
-           <img class="our-platform-heading-desktop fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/headings/Step-3-Heading.svg" alt="Step Three">
-           <img class="our-platform-heading-mobile fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/headings/mobile/Step-3-mobile-heading.svg" alt="Step Three">
+           <img class="our-platform-heading-desktop fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/headings/Step-3-Heading.svg" alt="Step Three">
+           <img class="our-platform-heading-mobile fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/headings/mobile/Step-3-mobile-heading.svg" alt="Step Three">
           <div class="our-platform-column">
-            <img class="our-platform-image fade-in-5-slide-up-3-pre" src="/sites/default/files/images/our-platform/Step-3.png" alt="Treatment UI">
-            <p class="fade-in-5-pre">Enjoy <span>your fully optimized therapy plan</span>, specifically tailored to your use <span>for free</span> on behalf of Unitic. Access this <span>CBIT therapy</span> through the user dashboard, in which you can progress through unique therapy sessions to combat your tic.</p>
+            <img class="our-platform-image fade-in-4-slide-up-2-pre" src="/sites/default/files/images/our-platform/Step-3.png" alt="Treatment UI">
+            <p class="fade-in-4-pre">Enjoy <span>your fully optimized therapy plan</span>, specifically tailored to your use <span>for free</span> on behalf of Unitic. Access this <span>CBIT therapy</span> through the user dashboard, in which you can progress through unique therapy sessions to combat your tic.</p>
           </div>
         </div>
       </section>
@@ -193,16 +193,16 @@
   </body>
   <script>
     $(window).scroll(() => {
-      $('.fade-in-5-pre').each(function() {
+      $('.fade-in-4-pre').each(function() {
         if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 300) {
-          $(this).addClass("fade-in-5")
-                 .removeClass("fade-in-5-pre");
+          $(this).addClass("fade-in-4")
+                 .removeClass("fade-in-4-pre");
         }
       });
-      $('.fade-in-5-slide-up-3-pre').each(function() {
-        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 300) {
-          $(this).addClass("fade-in-5-slide-up-3")
-                 .removeClass("fade-in-5-slide-up-3-pre");
+      $('.fade-in-4-slide-up-2-pre').each(function() {
+        if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 400) {
+          $(this).addClass("fade-in-4-slide-up-2")
+                 .removeClass("fade-in-4-slide-up-2-pre");
         }
       });
     });
