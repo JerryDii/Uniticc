@@ -136,9 +136,11 @@ input {
 .image-box {
   background-color: var(--grey);
   box-shadow: 25px 25px 0 0 var(--blue);
+  /*
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
   -moz-animation: fade-in 2s;
+  */
 }
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
@@ -275,9 +277,11 @@ input {
 #problem-text {
   display: flex;
   flex-direction: column;
+  /*
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
   -moz-animation: fade-in 2s; 
+  */
 }
 
 #problem-text h1 {
@@ -291,9 +295,11 @@ input {
 
 #problem img {
   width: 20vw;
+  /*
   animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
   -moz-animation: 2s ease-out slide-from-right;
+  */
   padding: 70px;
 }
 @media only screen and (max-width: 1900px) {
@@ -331,12 +337,13 @@ input {
   #problem-text p:last-child {
     margin-bottom: 10%;
   }
-
+  /*
   #problem img {
     animation: 2s ease-out slide-from-left;
     -webkit-animation: 2s ease-out slide-from-left;
     -moz-animation: 2s ease-out slide-from-left;
   }
+  */
 }
 @media only screen and (max-width: 768px) and (orientation: landscape) {
   #problem-text p {
@@ -448,9 +455,11 @@ input {
   display: flex;
   flex-direction: column;
   text-align: right;
+  /*
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
   -moz-animation: fade-in 2s;
+  */
 }
 
 #solution-text h1 {
@@ -464,16 +473,20 @@ input {
 
 #solution-content .image-box {
   box-shadow: -25px 25px 0 0 var(--blue);
+  /*
   animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
   -moz-animation: fade-in 2s;
+  */
 }
 
 #solution-content img {
   width: 20vw;
+  /* 
   animation: 2s ease-out slide-from-left;
   -webkit-animation: 2s ease-out slide-from-left;
-  -moz-animation: 2s ease-out slide-from-left;
+  -moz-animation: 2s ease-out slide-from-left; 
+  */
   padding: 120px 50px;
 }
 
@@ -557,9 +570,9 @@ input {
 #answer-text {
   display: flex;
   flex-direction: column;
-  animation: fade-in 2s;
+/*  animation: fade-in 2s;
   -webkit-animation: fade-in 2s;
-  -moz-animation: fade-in 2s;
+  -moz-animation: fade-in 2s; */
 }
 
 #answer-text h1 {
@@ -573,10 +586,9 @@ input {
 #answer-content img {
   width: 20vw;
   padding: 120px 60px;
-  animation: 2s ease-out slide-from-right;
+/*  animation: 2s ease-out slide-from-right;
   -webkit-animation: 2s ease-out slide-from-right;
-  -moz-animation: 2s ease-out slide-from-right;
-  transform: translate(0, 0);
+  -moz-animation: 2s ease-out slide-from-right; */
 }
 @media only screen and (max-width: 1900px) {
   #answer-content img {
@@ -623,11 +635,11 @@ input {
   #answer-text p:last-child {
     margin-bottom: 10%;
   }
-  #answer-content img {
+  /* #answer-content img {
     animation: 2s ease-out slide-from-left;
     -webkit-animation: 2s ease-out slide-from-left;
     -moz-animation: 2s ease-out slide-from-left;
-  }
+  } */
 }
 @media only screen and (max-width: 768px) and (orientation: landscape) {
   #answer-content p {
@@ -887,41 +899,131 @@ input {
     margin-top: 60px;
 }
 
+/* Our Platform Page */ 
+.our-platform-heading-desktop {
+  width: 23%;
+}
+.our-platform-heading-mobile {
+  display: none;
+}
+.fade-in-4-pre, .fade-in-4-slide-up-2-pre {
+  visibility: hidden;
+}
+.fade-in-4 {
+  animation: fade-in 4s;
+  -webkit-animation: fade-in 4s;
+  -moz-animation: fade-in 4s;
+}
+.fade-in-4-slide-up-2 {
+  animation: slide-up 2s, fade-in 4s;
+  -webkit-animation: slide-up 2s, fade-in 4s;
+  -moz-animation: slide-up 2s, fade-in 4s;
+}
+.our-platform-column img, .our-platform-column p {
+  width: 30vw;
+}
+.our-platform-column img {
+  border-radius: 10px;
+}
+.our-platform-step {
+  position: relative;
+}
+#our-platform-main {
+  padding-top: 160px;
+  background-repeat: no-repeat;
+}
+#our-platform-main > h1 {
+  text-align: center;
+  width: 60%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Step One */
+#step-one {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-1-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+#step-one-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* Step Two */
+#step-two {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-2-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+#step-two-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px;
+}
+/* Step Three */
+#step-three {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/our-platform/backgrounds/step-3-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+#step-three-content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .our-platform-heading-desktop {
+    width: 40%;
+  }
+  #our-platform-main {
+    background-image: none;
+  }
+  /* Shared rules */
+  #step-one-bg, #step-two-bg, #step-three-bg {
+    z-index: 0;
+  }
+}   
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .our-platform-heading-desktop {
+    display: none;
+  }
+  .our-platform-heading-mobile {
+    display: block;
+    width: 50vw;
+    margin-bottom: 10px;
+  }
+  .our-platform-column img, .our-platform-column p {
+    width: 50vw;
+  }
+  /* Shared Rules */
+  #step-one-content, #step-two-content, #step-three-content {
+    flex-direction: column;
+  }
+}
+
 /* Animations */
-/*
-@keyframes slide-from-right {
+@keyframes slide-up {
   from {
-    transform: translate(400px, 0);
+    transform: translate(0, 160px);
   }
 }
-
-@keyframes slide-from-left {
+@-webkit-keyframes slide-up {
   from {
-    transform: translate(-400px, 0);
+    transform: translate(0, 160px);
   }
 }
-
-@-webkit-keyframes slide-from-right {
+@-moz-keyframes slide-up {
   from {
-    transform: translate(400px, 0);
-  }
-}
-
-@-webkit-keyframes slide-from-left {
-  from {
-    transform: translate(-400px, 0);
-  }
-}
-
-@-moz-keyframes slide-from-right {
-  from {
-    transform: translate(400px, 0);
-  }
-}
-
-@-moz-keyframes slide-from-left {
-  from {
-    transform: translate(-400px, 0);
+    transform: translate(0, 160px);
   }
 }
 @keyframes fade-in {
@@ -932,7 +1034,6 @@ input {
     opacity: 1;
   }
 }
-
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -941,7 +1042,6 @@ input {
     opacity: 1;
   }
 }
-
 @-moz-keyframes fade-in {
   0% {
     opacity: 0;
