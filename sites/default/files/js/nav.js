@@ -6,4 +6,8 @@ $(function () {
     $.get("/sites/default/files/footer.html", function (data) {
         $("#footer").html(data);
     });
+
+    $(window).scroll(function(){
+        $("#nav").css("opacity", 4 - $(window).scrollTop() / 250);
+    });
 });
