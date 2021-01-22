@@ -25,8 +25,8 @@ $(() => {
 
 //Lazy loaded images go here
 window.onload = function() {
-    $("#solution").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18, 0.733)), url("/sites/default/files/images/home/particles-overlay.png")');
-    $("#answer").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18, 0.733), rgba(18, 18, 18, 0.541)), url("/sites/default/files/images/home/particles-overlay.png")');
+    /** $("#solution").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18), rgba(18, 18, 18, 0.733)), url("/sites/default/files/images/home/solution-bg.png")');
+    $("#answer").css("backgroundImage", 'linear-gradient(rgba(18, 18, 18, 0.733), rgba(18, 18, 18, 0.541)), url("/sites/default/files/images/home/answer-bg.png")'); */
     imageResize($("#facts")[0].offsetWidth, ".slideshow-2", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/sites/default/files/images/home/slideshow/mountain");
     imageResize($("#facts")[0].offsetWidth, ".slideshow-3", "rgba(21, 21, 21, 0.281), rgba(21, 21, 21, 0.281)", "/sites/default/files/images/home/slideshow/forest");
 }
