@@ -266,6 +266,7 @@ input {
 
 /* Problem section */
 #problem {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/home/problem-bg.png");
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -438,6 +439,7 @@ input {
 
 /* Solution Section */
 #solution {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/home/solution-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
@@ -553,6 +555,7 @@ input {
 
 /* Answer Section */
 #answer {
+  background-image: linear-gradient(rgb(18, 18, 18), rgba(0, 0, 0, 0), rgb(18, 18, 18)), url("/sites/default/files/images/home/answer-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
