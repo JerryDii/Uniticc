@@ -41,7 +41,7 @@
     <main>
       <!-- The Problem Section -->
       <section id="problem">
-        <div id="problem-text">
+        <div id="problem-text" class="fade-in-4-pre">
           <h1>The Problem</h1>
           <p>Tourette syndrome is a disorder that causes repetitive movements, or
             unwanted sounds in the patient that cannot be controlled by normal means.
@@ -55,7 +55,7 @@
             <span>Sky-high</span> therapy fees, critical lack of therapists, ineffective medication not to mention the horrible <span>side effects</span> that come with it. All of that needs to <span>change</span>. 
           </p>
         </div>
-        <div class="image-box">
+        <div class="image-box fade-in-4-slide-up-2-pre">
           <img src="/sites/default/files/images/home/medicine.png" alt="Medicine" />
         </div>
       </section>
@@ -91,10 +91,10 @@
       <!-- The Solution Section -->
       <section id="solution">
         <div id="solution-content">
-          <div class="image-box image-box-desktop">
+          <div class="image-box image-box-desktop fade-in-4-slide-up-2-pre">
             <img src="/sites/default/files/images/home/onlinetherapy.png" alt="Therapy"/>
           </div>
-          <div id="solution-text">
+          <div id="solution-text" class="fade-in-4-pre">
             <h1>The Solution</h1>
               <p>We want to create a future where Tourette 
               treatment can be accessed at the <span>push of 
@@ -107,7 +107,7 @@
               <span>Accessible</span>, <span>affordable</span>, and <span>effective</span>,
               an online treatment platform built to your every need.</p>
           </div>
-          <div class="image-box image-box-mobile">
+          <div class="image-box image-box-mobile fade-in-4-slide-up-2-pre">
             <img src="/sites/default/files/images/home/onlinetherapy.png" alt="Therapy"/>
           </div> 
         </div>
@@ -116,7 +116,7 @@
       <!-- The Answer Section -->
       <section id="answer">
         <div id="answer-content">
-        <div id="answer-text">
+        <div id="answer-text" class="fade-in-4-pre">
           <h1>The Answer</h1>
           <p>
             Unitic provides a fully <span>automated</span> and 
@@ -137,7 +137,7 @@
             the best treatment from us.
           </p>
         </div>
-        <div class="image-box">
+        <div class="image-box fade-in-4-slide-up-2-pre">
           <img src="/sites/default/files/images/home/machine.png" alt="Machine" />
         </div>
       </div>
@@ -188,5 +188,21 @@
     
     <!-- JS alternative to srcset -->
     <script src="/sites/default/files/js/imageResize.js"></script>
+    <script>
+      $(window).scroll(() => {
+        $('.fade-in-4-pre').each(function() {
+          if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 250) {
+            $(this).addClass("fade-in-4")
+                   .removeClass("fade-in-4-pre");
+          }
+        });
+        $('.fade-in-4-slide-up-2-pre').each(function() {
+          if ($(this).offset().top < $(window).scrollTop() + window.innerHeight - 290) {
+            $(this).addClass("fade-in-4-slide-up-2")
+                   .removeClass("fade-in-4-slide-up-2-pre");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
