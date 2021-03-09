@@ -1,0 +1,179 @@
+<html>
+    <body>
+
+        <link rel="stylesheet" src="Stylesheet.css"/> 
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        
+        <!--can download these at https://github.com/jamietre/ImageMapster-->
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/redist/when.js"></script> 
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/redist/when.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/core.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/graphics.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/mapimage.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/mapdata.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/areadata.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/areacorners.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/scale.js"></script>
+        <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/tooltip.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <h1>
+            
+    <img src="Abdomen.png" usemap="#image-map">
+
+    <button name="therapy" onclick="match()" type="button">Get results</button> <!--insert therapy page url into href-->
+
+    <map name="image-map">
+
+    <!--Right Abdomen--> 
+    <area class="area" data-num="1" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="160,46,164,319,77,44" shape="poly">
+    <area class="area" data-num="2" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="164,320,50,187,77,45" shape="poly">
+    <area class="area" data-num="3" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="50,187,77,44,52,38" shape="poly">
+    <area class="area" data-num="4" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="49,187,164,320,134,458" shape="poly">
+    <area class="area" data-num="5" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="49,187,134,458,31,328" shape="poly">
+    <area class="area" data-num="6" data-group="group_right_abdomen" target="" alt="" title="" href="#" coords="258,591,134,459,164,320" shape="poly">
+
+    <!--Left Abdomen--> 
+    <area class="area" data-num="7" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="258,591,353,319,382,458" shape="poly">
+    <area class="area" data-num="8" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="382,457,467,186,489,324" shape="poly">
+    <area class="area" data-num="9" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="353,317,467,187,382,458,361,359" shape="poly">
+    <area class="area" data-num="10" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="467,186,353,317,439,44" shape="poly">
+    <area class="area" data-num="11" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="357,47,353,318,439,44" shape="poly">
+    <area class="area" data-num="12" data-group="group_left_abdomen" target="" alt="" title="" href="#" coords="440,44,465,38,468,190" shape="poly">
+
+    <!--Centre Abdomen--> 
+    <area class="area" data-num="13" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="164,320,258,322,258,589" shape="poly">
+    <area class="area" data-num="14" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="258,589,353,319,259,322" shape="poly">
+    <area class="area" data-num="15" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="258,322,164,320,159,47" shape="poly">
+    <area class="area" data-num="16" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="353,319,259,322,356,47" shape="poly">
+    <area class="area" data-num="17" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="159,47,258,47,258,323" shape="poly">
+    <area class="area" data-num="18" data-group="group_centre_abdomen" target="" alt="" title="" href="#" coords="258,323,258,47,356,47" shape="poly">
+
+    </map>
+
+    <script>
+
+        const REQUIREMENT = 0.75;
+        var init = false;
+        var numGroups; //# of groups of polygons (i.e. left forehead)
+        var groupPolys = new Array(); //# of polygons in each group
+        var groupNames = new Array(); //names of each general area of the face
+    
+        var image = $('#face');
+        var imgElement = document.getElementById("face");
+      
+        image.mapster({
+          
+          clickNavigate: true,
+          mapKey: 'data-num',
+    
+          render_select: {
+            fillColor: '0099ff',
+            fillOpacity: 0.5,
+            stroke: true,
+            strokeColor: 'b3b3b3',
+            strokeWidth: 1,
+            fade: true,
+            fadeDuration: 300
+          },
+    
+          render_highlight: {
+            fade: true,
+            fadeDuration: 300
+          },
+    
+        });
+    
+        function initData() {
+    
+          var facemap = document.querySelector("[name='" + imgElement.getAttribute("usemap").substr(1) + "']"); //the image map that the face image uses
+          var areaList = Array.from(facemap.querySelectorAll("area")); //converting NodeList of area elements within facemap into an array
+    
+          for(i = 0; i < areaList.length; i++) {
+            if(!groupNames.includes(areaList[i].getAttribute("data-group"))) {
+              groupNames.push(areaList[i].getAttribute("data-group"));
+            }
+    
+            if(groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))]){
+              groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))] ++;
+            } else {
+              groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))] = 1;
+            }
+          }
+    
+          init = true;
+    
+        }
+        
+        function match() {
+    
+          if(!init) {
+            initData();
+          }
+          
+          numGroups = groupNames.length;
+          var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
+          var satisfied = false; //if the requirements have been met
+          var treatmentArea = "";
+          
+          for(i = 0; i < groupAreas.length; i++) { //initialize the counter
+            groupAreas[i] = 0;
+          }
+     
+          for(i = 0; i < image.mapster('get').split(',').length && image.mapster('get').split(',')[0]; i++) {
+            let group = "";
+            group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group");
+            groupAreas[groupNames.indexOf(group)]++; 
+          }
+           
+          for(i = 0; i < groupAreas.length && satisfied == false; i++) {
+            if((groupAreas[i] / groupPolys[i]) >= REQUIREMENT) { //check if at least 75% of the polygons in an area have been selected
+              satisfied = true;
+            } 
+          }
+          
+          if(!satisfied) {
+            swal("Alert!", "Select more regions to narrow down a specific treatment plan!", "error",  {
+            button: "Back!"})
+    
+          } else {
+            var indexOfMaxValue = groupAreas.reduce((iMax, x, i, array) => x > array[iMax] ? i : iMax, 0); // gets index of greatest value
+            treatmentArea = groupNames[indexOfMaxValue];
+    
+            swal("Awesome!", (() => {
+                var group = "";
+                var string = treatmentArea.split("_").slice(1);
+                for(i = 0; i < string.length; i++) {
+                  group = group.concat(string[i].concat((i == string.length - 1) ? ":" :" "));
+                }
+                return("Get therapy for the ".concat(group));
+              })(), 
+              "success", 
+              {
+                buttons: {
+                  reselect: {
+                  text: "Reselect Areas",
+                  value: null
+                  },
+                  proceed: {
+                    text: "Proceed!",
+                    value: "proceed"
+                  }
+                },
+            }).then((choice) => {
+              if(choice) {
+                //transition to dashboard
+                location.assign("dashboard.html");
+              }
+            });
+          
+          }
+    
+        }
+    
+      </script>
+
+        </h1>
+    </body>
+</html>
