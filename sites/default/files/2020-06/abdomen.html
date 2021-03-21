@@ -20,7 +20,7 @@
 
         <h1>
             
-    <img src="Abdomen.png" usemap="#image-map">
+    <img src="Abdomen.png" id="abdomen" usemap="#image-map">
 
     <button name="therapy" onclick="match()" type="button">Get results</button> <!--insert therapy page url into href-->
 
@@ -60,8 +60,8 @@
         var groupPolys = new Array(); //# of polygons in each group
         var groupNames = new Array(); //names of each general area of the face
     
-        var image = $('#face');
-        var imgElement = document.getElementById("face");
+        var image = $('#abdomen');
+        var imgElement = document.getElementById("abdomen");
       
         image.mapster({
           
