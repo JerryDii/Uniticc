@@ -1,0 +1,223 @@
+<html>
+
+<body>
+
+  <link rel="stylesheet" src="Stylesheet.css" />
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+
+  <!--can download these at https://github.com/jamietre/ImageMapster-->
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/redist/when.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/redist/when.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/core.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/graphics.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/mapimage.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/mapdata.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/areadata.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/areacorners.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/scale.js"></script>
+  <script type="text/javascript" src="/sites/default/files/2020-06/ImageMapster-master/src/tooltip.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <h1>
+
+    <img src="Left Leg.png" id="left-leg" usemap="#image-map">
+
+    <button name="therapy" onclick="match()" type="button">Get results</button>
+    <!--insert therapy page url into href-->
+    <map name="image-map">
+
+      <!--Thigh-->
+      <area class="area" data-num="1" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="9,191,123,140,216,93,235,122,181,0,172,4,97,96" shape="poly">
+      <area class="area" data-num="2" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="252,174,235,122,216,93,124,141,153,276,244,217,262,225" shape="poly">
+      <area class="area" data-num="3" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="123,140,9,191,9,233,25,285,45,356,56,317,153,276" shape="poly">
+      <area class="area" data-num="4" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="163,387,152,276,244,218,262,226,249,368,238,355" shape="poly">
+      <area class="area" data-num="5" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="45,358,56,317,151,277,163,387,88,396,75,443" shape="poly">
+      <area class="area" data-num="6" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="163,386,238,355,249,368,230,497,225,489,181,491" shape="poly">
+      <area class="area" data-num="7" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="75,443,88,397,163,387,181,492,128,486,120,528" shape="poly">
+      <area class="area" data-num="8" data-group="group_thigh" target="" alt="" title="" href="#"
+        coords="112,553,120,528,75,441,57,392,84,479" shape="poly">
+
+      <!--Knee-->
+      <area class="area" data-num="9" data-group="group_knee" target="" alt="" title="" href="#"
+        coords="112,553,118,526,123,619,111,654" shape="poly">
+      <area class="area" data-num="10" data-group="group_knee" target="" alt="" title="" href="#"
+        coords="128,485,135,580,123,616,118,529" shape="poly">
+      <area class="area" data-num="11" data-group="group_knee" target="" alt="" title="" href="#"
+        coords="135,580,128,485,179,492,197,574" shape="poly">
+      <area class="area" data-num="12" data-group="group_knee" target="" alt="" title="" href="#"
+        coords="179,491,226,489,254,570,197,573" shape="poly">
+
+      <!--Bottom leg-->
+      <area class="area" data-num="13" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="197,574,254,570,287,653,218,658" shape="poly">
+      <area class="area" data-num="14" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="197,574,219,659,133,673,134,581" shape="poly">
+      <area class="area" data-num="15" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="132,672,114,721,122,621,134,579" shape="poly">
+      <area class="area" data-num="16" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="122,622,111,651,111,758,114,716" shape="poly">
+      <area class="area" data-num="17" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="217,658,287,653,317,891,280,901" shape="poly">
+      <area class="area" data-num="18" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="134,674,216,659,280,902,202,895" shape="poly">
+      <area class="area" data-num="19" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="114,719,111,757,139,818" shape="poly">
+      <area class="area" data-num="20" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="117,722,132,674,202,894,164,935" shape="poly">
+      <area class="area" data-num="21" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="165,935,240,1142,248,1121,202,894" shape="poly">
+      <area class="area" data-num="22" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="202,894,280,902,289,1113,248,1122" shape="poly">
+      <area class="area" data-num="23" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="281,902,317,891,320,1100,289,1114" shape="poly">
+      <area class="area" data-num="24" data-group="group_bottom_leg" target="" alt="" title="" href="#"
+        coords="240,1143,233,1157,164,934,165,934" shape="poly">
+
+      <!--Foot-->
+      <area class="area" data-num="25" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="254,1161,240,1141,233,1156,239,1174" shape="poly">
+      <area class="area" data-num="26" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="253,1162,266,1144,248,1122,240,1142" shape="poly">
+      <area class="area" data-num="27" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="313,1167,264,1143,248,1123,287,1113,337,1138,298,1146" shape="poly">
+      <area class="area" data-num="28" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="337,1138,369,1124,320,1100,289,1114" shape="poly">
+      <area class="area" data-num="29" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="313,1167,298,1146,337,1137,369,1125,390,1171" shape="poly">
+      <area class="area" data-num="30" data-group="group_foot" target="" alt="" title="" href="#"
+        coords="240,1174,287,1170,306,1164,266,1143,254,1160" shape="poly">
+    </map>
+
+
+    <script>
+
+      const REQUIREMENT = 0.75;
+      var init = false;
+      var numGroups; //# of groups of polygons (i.e. left forehead)
+      var groupPolys = new Array(); //# of polygons in each group
+      var groupNames = new Array(); //names of each general area of the face
+
+      var image = $('#left-leg');
+      var imgElement = document.getElementById("left-leg");
+
+      image.mapster({
+
+        clickNavigate: true,
+        mapKey: 'data-num',
+
+        render_select: {
+          fillColor: '0099ff',
+          fillOpacity: 0.5,
+          stroke: true,
+          strokeColor: 'b3b3b3',
+          strokeWidth: 1,
+          fade: true,
+          fadeDuration: 300
+        },
+
+        render_highlight: {
+          fade: true,
+          fadeDuration: 300
+        },
+
+      });
+
+      function initData() {
+
+        var facemap = document.querySelector("[name='" + imgElement.getAttribute("usemap").substr(1) + "']"); //the image map that the face image uses
+        var areaList = Array.from(facemap.querySelectorAll("area")); //converting NodeList of area elements within facemap into an array
+
+        for (i = 0; i < areaList.length; i++) {
+          if (!groupNames.includes(areaList[i].getAttribute("data-group"))) {
+            groupNames.push(areaList[i].getAttribute("data-group"));
+          }
+
+          if (groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))]) {
+            groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))]++;
+          } else {
+            groupPolys[groupNames.indexOf(areaList[i].getAttribute("data-group"))] = 1;
+          }
+        }
+
+        init = true;
+
+      }
+
+      function match() {
+
+        if (!init) {
+          initData();
+        }
+
+        numGroups = groupNames.length;
+        var groupAreas = new Array(numGroups); //each index tracks # of polygons in each group that are selected (highlighted)
+        var satisfied = false; //if the requirements have been met
+        var treatmentArea = "";
+
+        for (i = 0; i < groupAreas.length; i++) { //initialize the counter
+          groupAreas[i] = 0;
+        }
+
+        for (i = 0; i < image.mapster('get').split(',').length && image.mapster('get').split(',')[0]; i++) {
+          let group = "";
+          group = document.querySelector("area[data-num=" + CSS.escape(image.mapster('get').split(',')[i]) + "]").getAttribute("data-group");
+          groupAreas[groupNames.indexOf(group)]++;
+        }
+
+        for (i = 0; i < groupAreas.length && satisfied == false; i++) {
+          if ((groupAreas[i] / groupPolys[i]) >= REQUIREMENT) { //check if at least 75% of the polygons in an area have been selected
+            satisfied = true;
+          }
+        }
+
+        if (!satisfied) {
+          swal("Alert!", "Select more regions to narrow down a specific treatment plan!", "error", {
+            button: "Back!"
+          })
+
+        } else {
+          var indexOfMaxValue = groupAreas.reduce((iMax, x, i, array) => x > array[iMax] ? i : iMax, 0); // gets index of greatest value
+          treatmentArea = groupNames[indexOfMaxValue];
+
+          swal("Awesome!", (() => {
+            var group = "";
+            var string = treatmentArea.split("_").slice(1);
+            for (i = 0; i < string.length; i++) {
+              group = group.concat(string[i].concat((i == string.length - 1) ? ":" : " "));
+            }
+            return ("Get therapy for the ".concat(group));
+          })(),
+            "success",
+            {
+              buttons: {
+                reselect: {
+                  text: "Reselect Areas",
+                  value: null
+                },
+                proceed: {
+                  text: "Proceed!",
+                  value: "proceed"
+                }
+              },
+            }).then((choice) => {
+              if (choice) {
+                //transition to dashboard
+                location.assign("dashboard.html");
+              }
+            });
+        }
+      }
+    </script>
+
+  </h1>
+</body>
+
+</html>
