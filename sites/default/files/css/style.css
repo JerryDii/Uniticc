@@ -1147,7 +1147,7 @@ input {
   display: inline-block;
   font-size: 1.3em;
   font-weight: 500;
-  margin-left: 40px;
+  margin: 0 0 0 40px;
 }
 #team-container > li .text-container > .title {
   color: #bfbebe;
