@@ -1121,13 +1121,51 @@ input {
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-gap: 2rem;
   list-style-type: none;
-  justify-content: center;
   padding: 0px;
   margin: auto 430px;
-  /* background-color: #fff; */
 }
 #team-container > li {
+  position: relative;
   background-color: #191926;
-  height: 440px;
   border-radius: 13px;
+  height: 440px;
+}
+#team-container > li > div {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--grey);
+  border-radius: 0px 0px 6px 6px;
+  height: 140px;
+  width: 100%;
+}
+#team-container > li .text-container {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#team-container > li .text-container > .name {
+  display: inline-block;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-left: 40px;
+}
+#team-container > li .text-container > .title {
+  color: #bfbebe;
+  display: inline-block;
+  font-size: 0.9em;
+  margin: 10px 0 0 40px;
+}
+#team-container > li .text-container > .square-decoration {
+  background-color: #c4c4c4;
+  height: 10px;
+  width: 10px;
+  margin: 10px 0 0 40px;
+}
+#team-container > li > .unitic {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 40px;
+  font-size: 1.3em;
+  font-weight: 300;
 }
