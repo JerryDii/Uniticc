@@ -1138,6 +1138,11 @@ input {
   height: 140px;
   width: 100%;
 }
+
+#team-container > li > img {
+  border-radius: 6px 6px 0px 0px;
+}
+
 #team-container > li .text-container {
   position: absolute;
   top: 50%;
