@@ -1118,16 +1118,16 @@ input {
 }
 #team-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-gap: 2rem;
   list-style-type: none;
   justify-content: center;
+  padding: 0px;
+  margin: auto 430px;
   /* background-color: #fff; */
 }
-#team-container > li > div {
+#team-container > li {
   background-color: #191926;
-  /* margin: auto 20px; */
-  /* width: 370px; */
   height: 440px;
   border-radius: 13px;
 }
