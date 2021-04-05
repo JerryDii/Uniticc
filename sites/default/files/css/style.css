@@ -1102,6 +1102,7 @@ input {
 /* About Page */
 #about-main {
   padding-top: 160px;
+  margin-bottom: 1rem;
 }
 #about-main > h1 {
   text-align: center;
@@ -1148,29 +1149,21 @@ input {
   top: 50%;
   transform: translate(0, -50%);
 }
-#team-container > li .text-container > .name {
+.team-name {
   display: inline-block;
   font-size: 1.3em;
   font-weight: 500;
   margin: 0 0 0 40px;
 }
-#team-container > li .text-container > .title {
+.team-title {
   color: #bfbebe;
   display: inline-block;
   font-size: 0.9em;
   margin: 10px 0 0 40px;
 }
-#team-container > li .text-container > .square-decoration {
+#team-container .text-container > .square-decoration {
   background-color: #c4c4c4;
   height: 10px;
   width: 10px;
   margin: 10px 0 0 40px;
-}
-#team-container > li > .unitic {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  margin-top: 40px;
-  font-size: 1.3em;
-  font-weight: 300;
 }
