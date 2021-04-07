@@ -72,6 +72,26 @@
     .svg-blue {
         filter: invert(65%) sepia(25%) saturate(1004%) hue-rotate(163deg) brightness(104%) contrast(104%);
     }
+    
+    #about-main.mobile {
+        background-image:
+          linear-gradient(
+            rgb(18, 18, 18),
+            rgba(0, 0, 0, 0),
+            rgb(18, 18, 18)
+          ),
+          url("/sites/default/files/images/about/about-bg-mobile.png")
+    }
+    
+    #about-main.desktop {
+        background-image:
+          linear-gradient(
+            rgb(18, 18, 18),
+            rgba(0, 0, 0, 0),
+            rgb(18, 18, 18)
+          ),
+          url("/sites/default/files/images/about/about-bg.png")
+    }
     </style>
 
     <!--nav.css-->
@@ -179,6 +199,7 @@
     <script src="/sites/default/files/js/nav.js"></script>
     
     <script>
+        $("#about-main").addClass(document.body.offsetWidth > 1024 ? "desktop" : "mobile");
         document.querySelectorAll("#team-container li").forEach(function(el) {
             el.addEventListener("click", function() {
                 $("#team-popup").addClass("active");
